@@ -301,7 +301,7 @@ export const MarketScannerPage: React.FC = () => {
             className="font-serif text-4xl md:text-5xl lg:text-[3.2rem] leading-[1.1] tracking-tight mb-5"
           >
             See the size of your{' '}
-            <span className="italic text-[#C5A059] font-normal">European opportunity</span>
+            <span className="text-[#C5A059] font-normal">European opportunity</span>
           </motion.h1>
           <motion.p {...stagger(0.2)} className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
             Real enterprise data across seven supply chain verticals and ten European markets.
@@ -518,7 +518,7 @@ export const MarketScannerPage: React.FC = () => {
             <h2 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-4">
               Now you know your market.
               <br />
-              <span className="italic text-[#C5A059] font-normal">Let's fill your calendar.</span>
+              <span className="text-[#C5A059] font-normal">Let's fill your calendar.</span>
             </h2>
             <p className="text-stone-400 mb-8 max-w-md mx-auto">
               {results.total.toLocaleString('en-GB')} companies are waiting. We'll tell you exactly how many demos we can

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
+import { WorldMap } from './WorldMap';
 
 const FAQS = [
   { q: 'What is the cost?', a: 'Pricing depends on scope - the number of markets you want to reach, the languages required, and the volume of outreach. We don\'t publish a standard rate because a company targeting two countries in English needs something very different to one running six-language European outreach with four callers. Book a call and we\'ll give you a clear number based on your actual requirements.' },
@@ -17,13 +18,13 @@ export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-[#1a1a1a] text-white">
+    <section id="faq" className="py-16 bg-[#1a1a1a] text-white">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left */}
           <div className="lg:col-span-5">
             <h2 className="font-serif text-4xl md:text-5xl mb-6 tracking-tight">
-              Questions we hear <span className="italic text-stone-400">every time.</span>
+              Questions we hear <span className="text-stone-400">every time.</span>
             </h2>
             <p className="text-stone-400 mb-12 leading-relaxed">
               If something isn't covered here, book a call - we'll give you a straight answer, not a sales pitch.
@@ -36,6 +37,7 @@ export const FAQ = () => {
                 Book a call →
               </a>
             </div>
+
           </div>
 
           {/* Right */}
@@ -68,6 +70,15 @@ export const FAQ = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* World Map — full width below FAQ */}
+        <div className="mt-16 pt-10 border-t border-stone-800">
+          <div className="text-center mb-6">
+            <div className="text-[10px] font-bold tracking-[0.2em] text-stone-500 uppercase mb-2">Where we operate</div>
+            <p className="text-stone-400 text-sm">6 languages. Native speakers across Europe.</p>
+          </div>
+          <WorldMap />
         </div>
       </div>
     </section>

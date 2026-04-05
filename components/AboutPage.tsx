@@ -27,7 +27,7 @@ export const AboutPage: React.FC = () => {
               </motion.div>
               <motion.h1 {...stagger(0.1)} className="font-serif text-5xl md:text-6xl lg:text-[3.4rem] leading-[1.08] tracking-tight mb-8">
                 The only outbound agency that speaks{' '}
-                <span className="italic text-[#C5A059] font-normal">supply chain.</span>
+                <span className="text-[#C5A059] font-normal">supply chain.</span>
               </motion.h1>
               <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed mb-4 max-w-xl">
                 Lynn exists because we watched brilliant supply chain SaaS companies pour money into agencies that didn't understand their buyers, their market, or their language. And we thought: someone should fix that.
@@ -86,7 +86,7 @@ export const AboutPage: React.FC = () => {
               </motion.div>
               <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-8">
                 Generalist agencies burn your budget. We{' '}
-                <span className="italic text-[#C5A059] font-normal">refuse</span> to do that.
+                <span className="text-[#C5A059] font-normal">refuse</span> to do that.
               </motion.h2>
               <motion.p {...stagger(0.2)} className="text-stone-600 leading-relaxed mb-4">
                 Most lead gen agencies work across 50+ industries. They rotate your account between junior reps who can't tell a WMS from a TMS. Your buyers hear it instantly — and they hang up.
@@ -207,7 +207,7 @@ export const AboutPage: React.FC = () => {
           </motion.div>
           <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-12 max-w-2xl">
             Six things that separate Lynn from every other{' '}
-            <span className="italic text-[#C5A059] font-normal">agency.</span>
+            <span className="text-[#C5A059] font-normal">agency.</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -270,7 +270,7 @@ export const AboutPage: React.FC = () => {
               </motion.div>
               <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-8">
                 Native speakers who understand your{' '}
-                <span className="text-[#C5A059] italic font-normal">buyers.</span>
+                <span className="text-[#C5A059] font-normal">buyers.</span>
               </motion.h2>
               <motion.p {...stagger(0.2)} className="text-stone-400 leading-relaxed mb-4">
                 We don't hire generalist SDRs and hand them a script. Every caller is recruited for native fluency in their language and trained specifically on supply chain, logistics, and procurement SaaS.
@@ -337,7 +337,7 @@ export const AboutPage: React.FC = () => {
           </motion.div>
           <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-12 max-w-2xl">
             What it's actually like to work{' '}
-            <span className="italic text-[#C5A059] font-normal">with us.</span>
+            <span className="text-[#C5A059] font-normal">with us.</span>
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -387,7 +387,7 @@ export const AboutPage: React.FC = () => {
         <div className="container mx-auto max-w-2xl">
           <motion.h2 {...fadeUp} className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-6">
             Ready to fill your{' '}
-            <span className="italic text-[#C5A059] font-normal">pipeline?</span>
+            <span className="text-[#C5A059] font-normal">pipeline?</span>
           </motion.h2>
           <motion.p {...stagger(0.1)} className="text-stone-400 text-lg leading-relaxed mb-10">
             Book a 20-minute strategy call. No obligation. We'll tell you honestly whether we're the right fit — and if we're not, we'll point you to someone who is.

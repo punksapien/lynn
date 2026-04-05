@@ -4,12 +4,12 @@ import { CountUp } from './CountUp';
 
 export const WhoWeReach = () => {
   return (
-    <section id="who-we-reach" className="py-24 bg-[#F9F8F4]">
+    <section id="who-we-reach" className="py-16 bg-[#F9F8F4]">
       <div className="container mx-auto px-6">
         <div className="mb-16">
           <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">Who We Reach</div>
           <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-6 tracking-tight max-w-3xl">
-            Enterprise accounts. <span className="italic text-[#C5A059]">Senior</span> decision-makers.
+            Enterprise accounts. <span className="text-[#C5A059]">Senior</span> decision-makers.
           </h2>
           <p className="text-lg text-stone-600 max-w-3xl leading-relaxed">
             We book meetings into the world's largest freight operators, manufacturers, and procurement organisations - and we get straight to the people with the budget and authority to buy your software.
@@ -154,7 +154,7 @@ export const WhoWeReach = () => {
           ].map((item, i) => (
             <div key={i}>
               <div className="text-3xl font-serif text-[#C5A059] mb-2">
-                {item.isText ? item.stat : <CountUp end={item.stat as number} prefix={item.prefix} suffix={item.suffix} />}
+                {item.isText ? item.stat : `${item.prefix}${item.stat.toLocaleString()}${item.suffix}`}
               </div>
               <div className="text-xs text-stone-400 leading-relaxed">{item.label}</div>
             </div>

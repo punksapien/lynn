@@ -3,12 +3,12 @@ import { Check, X, Minus } from 'lucide-react';
 
 export const Comparison = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-6 max-w-5xl">
         <div className="text-center mb-16">
           <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">How We Compare</div>
           <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-6 tracking-tight">
-            Why clients choose Lynn over <span className="italic text-[#C5A059]">everyone else.</span>
+            Why clients choose Lynn over <span className="text-[#C5A059]">everyone else.</span>
           </h2>
           <p className="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
             There are plenty of outbound agencies. Most are generalists running the same playbook for any SaaS company that will have them. Lynn is built for one market, and one market only - and that specificity shows up in every part of how we operate.

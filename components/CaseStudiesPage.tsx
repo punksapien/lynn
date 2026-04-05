@@ -148,7 +148,7 @@ export const CaseStudiesPage: React.FC = () => {
             className="font-serif text-5xl md:text-6xl leading-[1.08] tracking-tight mb-6 max-w-3xl mx-auto"
           >
             Real results for supply chain{' '}
-            <span className="italic text-[#C5A059] font-normal">SaaS companies.</span>
+            <span className="text-[#C5A059] font-normal">SaaS companies.</span>
           </motion.h1>
           <motion.p
             {...fadeUp}

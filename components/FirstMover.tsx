@@ -7,14 +7,14 @@ export const FirstMover = () => {
   const [activeStep, setActiveStep] = useState(1);
 
   return (
-    <section id="first-mover" className="py-24 bg-white border-t border-stone-200">
+    <section id="first-mover" className="py-16 bg-white border-t border-stone-200">
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">First Mover Advantage</div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <div className="lg:sticky lg:top-40 lg:h-fit">
             <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-6 tracking-tight leading-tight">
-              The first vendor in the room <span className="italic text-[#C5A059]">almost always wins.</span>
+              The first vendor in the room <span className="text-[#C5A059]">almost always wins.</span>
             </h2>
             <p className="text-lg text-stone-600 leading-relaxed mb-8">
               Enterprise supply chain deals run anywhere from <strong>130 days to over a year</strong>, and involve more than a dozen internal stakeholders. Once a competitor is sitting in that evaluation, displacing them is extraordinarily difficult. The company that gets there first shapes the criteria, the shortlist, and ultimately the decision.

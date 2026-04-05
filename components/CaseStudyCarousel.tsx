@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
+const verticals = ["supply chain", "logistics", "procurement"];
+
 interface CarouselStudy {
   slug: string;
   name: string;
@@ -110,6 +112,14 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [currentVertical, setCurrentVertical] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVertical(prev => (prev + 1) % verticals.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
 
   const total = STUDIES.length;
 
@@ -144,15 +154,27 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
   };
 
   return (
-    <section id="case-studies" className="py-24 md:py-32 bg-[#F9F8F4] border-t border-stone-200">
+    <section id="case-studies" className="py-16 md:py-20 bg-[#F9F8F4] border-t border-stone-200">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <div className="inline-block mb-4 text-xs font-bold tracking-widest text-stone-400 uppercase">Case Studies</div>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] leading-tight">
-              Real results for supply chain{' '}
-              <span className="italic text-[#C5A059] font-normal">SaaS.</span>
+              Real results for{' '}
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentVertical}
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -12 }}
+                  transition={{ duration: 0.25 }}
+                  className="inline-block"
+                >
+                  {verticals[currentVertical]}
+                </motion.span>
+              </AnimatePresence>
+              {' '}<span className="text-[#C5A059]">SaaS.</span>
             </h2>
           </div>
           <div className="flex items-center gap-3">

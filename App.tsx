@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Phone, Globe, Calendar, ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowRight, Phone, Globe, Calendar, ArrowUpRight, Menu, X, ChevronDown, Calculator, BarChart3 } from 'lucide-react';
 import { CalendarUI } from './components/CalendarUI';
 import { WhoWeReach } from './components/WhoWeReach';
 import { FirstMover } from './components/FirstMover';
@@ -41,6 +41,7 @@ const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
 
   useEffect(() => {
@@ -89,7 +90,7 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <a href="#/" className="flex items-center gap-2.5 cursor-pointer no-underline" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <img src="/assets/light_logo.jpeg" alt="Lynn" className="h-10 w-auto" />
-            <span className="font-serif font-bold text-xl tracking-tight text-[#1a1a1a]">Lynn Lead Gen</span>
+            <span className="font-serif font-normal text-xl tracking-tight text-[#1a1a1a]">Lynn Lead Gen</span>
           </a>
           
           <div className="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide text-stone-600">
@@ -106,6 +107,55 @@ const App: React.FC = () => {
                 {link.label}
               </a>
             ))}
+
+            {/* Tools dropdown */}
+            <div className="relative" onMouseEnter={() => setToolsOpen(true)} onMouseLeave={() => setToolsOpen(false)}>
+              <button
+                className={`flex items-center gap-1 transition-colors cursor-pointer ${
+                  route === '#/roi-calculator' || route === '#/market-scanner' ? 'text-[#C5A059]' : 'hover:text-[#C5A059]'
+                }`}
+              >
+                Tools <ChevronDown size={14} className={`transition-transform duration-200 ${toolsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {toolsOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15, ease: "easeOut" }}
+                    className="absolute top-full right-0 mt-2 w-64 bg-white rounded-xl border border-stone-200 shadow-xl overflow-hidden"
+                  >
+                    <a
+                      href="#/roi-calculator"
+                      className="flex items-start gap-3 px-4 py-3.5 hover:bg-stone-50 transition-colors group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#C5A059]/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#C5A059]/20 transition-colors">
+                        <Calculator size={16} className="text-[#C5A059]" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-[#1a1a1a] text-sm">ROI Calculator</div>
+                        <div className="text-xs text-stone-400 mt-0.5">Calculate your return on outbound</div>
+                      </div>
+                    </a>
+                    <div className="border-t border-stone-100" />
+                    <a
+                      href="#/market-scanner"
+                      className="flex items-start gap-3 px-4 py-3.5 hover:bg-stone-50 transition-colors group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#C5A059]/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-[#C5A059]/20 transition-colors">
+                        <BarChart3 size={16} className="text-[#C5A059]" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-[#1a1a1a] text-sm">Market Scanner</div>
+                        <div className="text-xs text-stone-400 mt-0.5">Size your European opportunity</div>
+                      </div>
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <a
               href="#contact"
               onClick={scrollToSection('contact')}
@@ -128,6 +178,8 @@ const App: React.FC = () => {
             <a href="#/case-studies" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer">Case Studies</a>
             <a href="#/about" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer">About</a>
             <a href="#/resources" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer">Resources</a>
+            <a href="#/roi-calculator" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer text-base text-stone-400">ROI Calculator</a>
+            <a href="#/market-scanner" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer text-base text-stone-400">Market Scanner</a>
             <a
               href="#contact"
               onClick={scrollToSection('contact')}
@@ -178,7 +230,7 @@ const App: React.FC = () => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: -20, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute left-0 italic text-[#8c3b3b]"
+                        className="absolute left-0 text-[#8c3b3b]"
                       >
                         {words[currentWord]}
                       </motion.span>
@@ -190,9 +242,9 @@ const App: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-                  className="font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.1] text-[#1a1a1a] max-w-xl xl:max-w-2xl mb-6 tracking-tight"
+                  className="font-serif text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] text-[#1a1a1a] max-w-xl xl:max-w-2xl mb-6 tracking-tight"
                 >
-                  Your sales team deserves a <span className="italic text-[#C5A059] font-normal">full calendar.</span>
+                  Your sales team deserves a <span className="text-[#C5A059]">full calendar.</span>
                 </motion.h1>
                 
                 <motion.p 
@@ -204,34 +256,6 @@ const App: React.FC = () => {
                   Lynn is the only outbound agency built exclusively for <strong>Supply Chain, Logistics, and Procurement SaaS</strong> - with domain-trained callers who speak your buyers' language, literally and technically, across Europe.
                 </motion.p>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                  className="bg-emerald-50/50 border border-emerald-200 rounded-xl p-5 flex gap-4 items-start mb-8 w-full max-w-xl"
-                >
-                  <div className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-[#1a1a1a] mb-1">30 qualified demos in 90 days - guaranteed</div>
-                    <div className="text-sm text-stone-600">If we don't hit it, we keep working at no extra cost. No other agency in this space commits to a number. We do.</div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                  className="flex flex-col gap-2 mb-10 text-sm text-stone-600"
-                >
-                  <div className="flex items-center gap-3"><span className="text-emerald-600 font-bold">✓</span> First meetings in week 3</div>
-                  <div className="flex items-center gap-3"><span className="text-emerald-600 font-bold">✓</span> Human callers in 6 European languages, natively</div>
-                  <div className="flex items-center gap-3"><span className="text-emerald-600 font-bold">✓</span> 200+ precision dials per day</div>
-                  <div className="flex items-center gap-3"><span className="text-emerald-600 font-bold">✓</span> No long-term lock-in</div>
-                  <div className="flex items-center gap-3"><span className="text-emerald-600 font-bold">✓</span> We supply all the data - no list-building on your end</div>
-                </motion.div>
-                
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -247,18 +271,42 @@ const App: React.FC = () => {
                 </motion.div>
               </div>
 
-              {/* Right Column: Calendar UI */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-                className="relative w-full h-[420px] md:h-[480px] lg:h-[520px] z-20"
-                style={{ perspective: '1200px' }}
-              >
-                <div className="w-full h-full" style={{ transform: 'rotateY(-2deg) rotateX(1deg)' }}>
-                  <CalendarUI />
-                </div>
-              </motion.div>
+              {/* Right Column: Calendar + Guarantee + Languages */}
+              <div className="flex flex-col gap-5">
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+                  className="relative w-full h-[420px] md:h-[480px] lg:h-[520px] z-20"
+                  style={{ perspective: '1200px' }}
+                >
+                  <div className="w-full h-full" style={{ transform: 'rotateY(-2deg) rotateX(1deg)' }}>
+                    <CalendarUI />
+                  </div>
+                </motion.div>
+
+                {/* Guarantee bar + Languages — subtle, secondary to calendar */}
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                  className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 px-1"
+                >
+                  <div className="flex items-center gap-2.5 text-sm text-stone-600">
+                    <div className="w-5 h-5 rounded-full bg-[#C5A059]/15 text-[#C5A059] flex items-center justify-center shrink-0">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span><strong className="text-[#1a1a1a]">30 demos in 90 days</strong> — guaranteed</span>
+                  </div>
+                  <div className="h-4 w-px bg-stone-300 hidden sm:block" />
+                  <div className="flex items-center gap-1.5 text-xs text-stone-400">
+                    {['EN', 'FR', 'DE', 'ES', 'IT', 'PT'].map((code, i) => (
+                      <span key={i} className="px-2 py-1 rounded bg-stone-100 text-stone-500 font-medium">{code}</span>
+                    ))}
+                    <span className="pl-1 text-[11px]">native speakers</span>
+                  </div>
+                </motion.div>
+              </div>
             </div>
 
             {/* Logo Bar — infinite scroll */}
@@ -303,14 +351,14 @@ const App: React.FC = () => {
         </header>
 
         {/* Guarantee Section */}
-        <section id="guarantee" className="py-24 bg-[#1a1a1a] text-[#F9F8F4]">
+        <section id="guarantee" className="py-16 bg-[#1a1a1a] text-[#F9F8F4]">
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <div className="inline-block px-3 py-1 bg-stone-800 text-stone-300 text-[10px] uppercase tracking-wider font-bold rounded-full mb-6">THE GUARANTEE</div>
                 <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
                   30 qualified demos. 90 days.<br/>
-                  <span className="text-[#C5A059] italic font-normal">Or we keep going.</span>
+                  <span className="text-[#C5A059] font-normal">Or we keep going.</span>
                 </h2>
                 <p className="text-xl text-stone-400 mb-8 leading-relaxed">
                   If we don't hit 30 demos in 90 days - we work at no extra cost until you get them.
@@ -340,7 +388,7 @@ const App: React.FC = () => {
                   <div key={i} className="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-center">
                     <div className="font-serif text-xl font-bold text-stone-300 mb-4">{proof.logo}</div>
                     <div className="text-4xl font-serif text-[#C5A059] mb-2">
-                      <CountUp end={proof.stat} />
+                      {proof.stat}
                     </div>
                     <div className="text-[10px] font-bold tracking-widest text-stone-500 uppercase">Demos booked</div>
                   </div>
@@ -350,15 +398,18 @@ const App: React.FC = () => {
           </div>
         </section>
 
+        {/* Case Studies Carousel */}
+        <CaseStudyCarousel scrollToSection={scrollToSection} />
+
         <WhoWeReach />
         <FirstMover />
 
         {/* Pipeline Visualization Section */}
-        <section className="py-24 md:py-32 bg-white relative">
+        <section className="py-16 md:py-20 bg-white relative">
           <div className="container mx-auto px-6 max-w-6xl">
             <div className="text-center mb-16 md:mb-20">
               <div className="inline-block mb-4 text-xs font-bold tracking-widest text-stone-400 uppercase">The Process</div>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] leading-tight mb-6">Precision <span className="italic text-stone-400 font-normal">and</span> Speed.</h2>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] leading-tight mb-6">Precision <span className="text-stone-400 font-normal">and</span> Speed.</h2>
               <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
                 We don't rely on passive email campaigns. We build highly targeted lists and hit the phones. Native speakers, high volume, relentless execution.
               </p>
@@ -423,14 +474,11 @@ const App: React.FC = () => {
 
         <Pipeline />
 
-        {/* Case Studies Carousel */}
-        <CaseStudyCarousel scrollToSection={scrollToSection} />
-
         <Comparison />
         <FAQ />
 
         {/* CTA Section */}
-        <section id="contact" className="py-32 bg-white border-t border-stone-100">
+        <section id="contact" className="py-20 bg-white border-t border-stone-100">
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-serif text-4xl md:text-6xl text-[#1a1a1a] mb-8 leading-tight">Your sales team deserves a full calendar.</h2>
             <p className="text-xl text-stone-600 font-light max-w-2xl mx-auto mb-12">

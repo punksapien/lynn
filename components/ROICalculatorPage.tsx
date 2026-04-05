@@ -89,7 +89,7 @@ export const ROICalculatorPage: React.FC = () => {
           </motion.div>
           <motion.h1 {...stagger(0.1)} className="font-serif text-5xl md:text-6xl lg:text-[3.4rem] leading-[1.08] tracking-tight mb-6 max-w-3xl">
             Calculate your return on{' '}
-            <span className="italic text-[#C5A059] font-normal">outbound.</span>
+            <span className="text-[#C5A059] font-normal">outbound.</span>
           </motion.h1>
           <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed max-w-2xl">
             We guarantee 30 qualified demos in 90 days. Plug in your numbers to see what that means for your pipeline, revenue, and payback period.
@@ -464,7 +464,7 @@ export const ROICalculatorPage: React.FC = () => {
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-white leading-tight mb-4 max-w-xl mx-auto">
               Ready to see these numbers in{' '}
-              <span className="italic text-[#C5A059] font-normal">your pipeline?</span>
+              <span className="text-[#C5A059] font-normal">your pipeline?</span>
             </h2>
             <p className="text-stone-400 text-base mb-8 max-w-md mx-auto leading-relaxed">
               Book a 30-minute call. We'll review your ICP, target markets, and show you exactly

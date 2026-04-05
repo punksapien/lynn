@@ -770,7 +770,7 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           {study.quote && (
             <motion.div {...fadeUp} className="bg-[#1a1a1a] rounded-2xl p-8 md:p-10 mb-16 relative">
               <div className="font-serif text-6xl text-stone-700 leading-none absolute top-5 left-7">"</div>
-              <p className="text-stone-300 text-lg leading-relaxed italic pt-8 mb-6">{study.quote.text}</p>
+              <p className="text-stone-300 text-lg leading-relaxed pt-8 mb-6">{study.quote.text}</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-stone-700" />
                 <div>

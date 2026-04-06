@@ -206,7 +206,7 @@ export const CalendarUI: React.FC = () => {
             </AnimatePresence>
           </div>
           <a
-            href="https://cal.com"
+            href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#1a1a1a] text-white rounded-lg text-[11px] font-medium hover:bg-stone-800 transition-colors"

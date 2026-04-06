@@ -182,13 +182,15 @@ export const AboutPage: React.FC = () => {
 
               <motion.div {...stagger(0.35)} className="flex flex-wrap gap-3">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/lynn-lead-gen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-medium text-[#C5A059] border border-[#C5A059] px-5 py-2.5 rounded-xl hover:bg-[#C5A059]/10 transition-colors"
                 >
                   Connect on LinkedIn
                 </a>
                 <a
-                  href="#contact"
+                  href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
                   className="text-sm font-medium text-white bg-[#1a1a1a] px-5 py-2.5 rounded-xl hover:bg-stone-800 transition-colors"
                 >
                   Book a call with me
@@ -394,7 +396,7 @@ export const AboutPage: React.FC = () => {
           </motion.p>
           <motion.div {...stagger(0.2)} className="flex flex-wrap justify-center gap-4">
             <a
-              href="#contact"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-200 transition-colors shadow-lg"
             >
               Book a strategy call

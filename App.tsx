@@ -157,7 +157,7 @@ const App: React.FC = () => {
             </div>
 
             <a
-              href="#contact"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
               onClick={scrollToSection('contact')}
               className="px-6 py-2.5 bg-[#1a1a1a] text-white rounded-full hover:bg-stone-800 transition-colors shadow-sm cursor-pointer"
             >
@@ -181,7 +181,7 @@ const App: React.FC = () => {
             <a href="#/roi-calculator" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer text-base text-stone-400">ROI Calculator</a>
             <a href="#/market-scanner" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer text-base text-stone-400">Market Scanner</a>
             <a
-              href="#contact"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
               onClick={scrollToSection('contact')}
               className="px-8 py-4 bg-[#1a1a1a] text-white rounded-full shadow-lg cursor-pointer mt-4"
             >
@@ -262,7 +262,7 @@ const App: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                   className="flex flex-wrap items-center gap-6"
                 >
-                  <a href="#contact" onClick={scrollToSection('contact')} className="group inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
+                  <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="group inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
                     Book a strategy call
                   </a>
                   <a href="#pipeline" onClick={scrollToSection('pipeline')} className="text-sm font-medium text-[#C5A059] hover:text-[#1a1a1a] transition-colors flex items-center gap-2">
@@ -326,20 +326,22 @@ const App: React.FC = () => {
                     <div key={setIdx} className="flex shrink-0 items-center gap-16 px-8">
                       {[
                         { name: 'Alpega Group', logo: '/assets/brand_alpega.avif' },
-                        { name: 'Mintec', logo: '/assets/brand_mintec.avif' },
-                        { name: 'Easy4Pro', logo: null },
-                        { name: 'Descartes', logo: null },
-                        { name: 'WowFlow', logo: null },
-                        { name: 'Teamlearn', logo: null },
-                        { name: 'Tendereasy', logo: null },
-                        { name: 'SmartBooking', logo: null },
+                        { name: 'Mintec', logo: '/assets/mintec.jpg' },
+                        { name: 'Easy4Pro', logo: '/assets/easypro.avif' },
+                        { name: 'Descartes', logo: '/assets/descartes.png' },
+                        { name: 'WowFlow', logo: '/assets/wowflow.svg' },
+                        { name: 'Trayport', logo: '/assets/tmx_trayport.jpg' },
+                        { name: 'Hyperplan', logo: '/assets/Hyperplan.png' },
+                        { name: 'Optimix', logo: '/assets/Optimix.svg' },
+                        { name: 'BuyCo', logo: '/assets/buyco.png' },
+                        { name: 'FreightGate', logo: '/assets/freightgate.png' },
+                        { name: 'Matium', logo: '/assets/matium.svg' },
+                        { name: 'Meight', logo: '/assets/meight.png' },
+                        { name: 'ShipmentX', logo: '/assets/shipmentx.png' },
+                        { name: 'Sutherland', logo: '/assets/sutherland.svg' },
                       ].map((brand, i) => (
                         <div key={i} className="shrink-0 flex items-center justify-center h-16 opacity-50 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-500">
-                          {brand.logo ? (
-                            <img src={brand.logo} alt={brand.name} className="h-14 w-auto object-contain" />
-                          ) : (
-                            <span className="font-serif text-xl md:text-2xl font-bold text-stone-800 whitespace-nowrap">{brand.name}</span>
-                          )}
+                          <img src={brand.logo} alt={brand.name} className="h-12 w-auto object-contain max-w-[120px]" />
                         </div>
                       ))}
                     </div>
@@ -370,7 +372,7 @@ const App: React.FC = () => {
                 </div>
                 
                 <div className="flex flex-wrap items-center gap-6">
-                  <a href="#contact" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-200 transition-all shadow-lg">
+                  <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-200 transition-all shadow-lg">
                     Book a strategy call
                   </a>
                   <a href="#pipeline" onClick={scrollToSection('pipeline')} className="text-sm font-medium text-stone-400 hover:text-white transition-colors flex items-center gap-2">
@@ -484,7 +486,7 @@ const App: React.FC = () => {
             <p className="text-xl text-stone-600 font-light max-w-2xl mx-auto mb-12">
               30 qualified demos in 90 days. If we don't hit it, we keep working until we do. Book a call and we'll show you exactly how it works for your market.
             </p>
-            <a href="#contact" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-base font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
+            <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-base font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
               Book your strategy call →
             </a>
           </div>
@@ -534,9 +536,9 @@ const App: React.FC = () => {
               <div>
                 <h4 className="text-white font-medium mb-4">Contact</h4>
                 <ul className="space-y-2.5 text-sm">
-                  <li><a href="#contact" className="hover:text-white transition-colors">Book a strategy call</a></li>
+                  <li><a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Book a strategy call</a></li>
                   <li><a href="mailto:christian@lynnleadgen.com" className="hover:text-white transition-colors">christian@lynnleadgen.com</a></li>
-                  <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+                  <li><a href="https://www.linkedin.com/company/lynn-lead-gen/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
                 </ul>
               </div>
             </div>
@@ -560,7 +562,7 @@ const App: React.FC = () => {
           >
             <div className="container mx-auto max-w-6xl flex justify-between items-center">
               <div className="text-sm font-medium text-[#1a1a1a] hidden sm:block">30 demos in 90 days, guaranteed.</div>
-              <a href="#contact" onClick={scrollToSection('contact')} className="w-full sm:w-auto text-center px-8 py-3 bg-[#1a1a1a] text-white rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
+              <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="w-full sm:w-auto text-center px-8 py-3 bg-[#1a1a1a] text-white rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
                 Book a call
               </a>
             </div>

@@ -182,7 +182,7 @@ export const Comparison = () => {
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-serif text-[#1a1a1a] mb-2">Still evaluating your options?</h3>
           <p className="text-stone-600 mb-8 max-w-2xl mx-auto">Book a 20-minute call. We'll tell you honestly whether we're the right fit — and if we're not, we'll point you to someone who is.</p>
-          <a href="#contact" className="inline-flex items-center gap-3 px-8 py-4 bg-white border border-stone-200 text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-50 transition-all shadow-sm">
+          <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-white border border-stone-200 text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-50 transition-all shadow-sm">
             Talk to us
           </a>
         </div>

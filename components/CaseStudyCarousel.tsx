@@ -273,7 +273,7 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
         {/* Bottom CTA */}
         <div className="mt-14 text-center">
           <p className="text-stone-500 mb-6">Your competitors are already booking meetings like these.</p>
-          <a href="#contact" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
+          <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
             Book a strategy call
           </a>
         </div>

@@ -239,7 +239,7 @@ export const CaseStudiesPage: React.FC = () => {
               <p className="text-sm text-stone-400">Book a strategy call and we'll show you what we can do for your pipeline.</p>
             </div>
             <a
-              href="#contact"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium hover:bg-stone-100 transition-colors shadow-lg"
             >
               Book a strategy call <ArrowRight size={16} />

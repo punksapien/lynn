@@ -33,7 +33,7 @@ export const FAQ = () => {
             <div className="bg-stone-900 border border-stone-800 p-8 rounded-2xl">
               <h3 className="text-xl font-medium mb-2">Still have questions?</h3>
               <p className="text-stone-400 mb-6">Book a 20-minute call. No pitch — just straight answers about whether this works for your market.</p>
-              <a href="#contact" className="inline-flex items-center justify-center w-full px-6 py-3 bg-white text-[#1a1a1a] rounded-full text-sm font-medium hover:bg-stone-200 transition-all">
+              <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-full px-6 py-3 bg-white text-[#1a1a1a] rounded-full text-sm font-medium hover:bg-stone-200 transition-all">
                 Book a call →
               </a>
             </div>

@@ -56,68 +56,6 @@ const TOAST_MESSAGES: ToastData[] = [
   { title: 'Meeting confirmed!', detail: 'VP Logistics · FedEx · Netherlands' },
 ];
 
-const DOT_STAGGER = 0.18;
-const DOT_PHASE_WAIT = 4000; // ms before cards expand
-const CARD_STAGGER = 0.15;
-
-// Soft notification chime via Web Audio API
-// Shared AudioContext — initialized on first user interaction to satisfy browser autoplay policy
-let _audioCtx: AudioContext | null = null;
-const getAudioCtx = (): AudioContext | null => {
-  if (_audioCtx) return _audioCtx;
-  try {
-    _audioCtx = new (window.AudioContext || (window as any).webkitAudioContext)();
-  } catch { return null; }
-  return _audioCtx;
-};
-
-// Resume audio context on any user interaction (click/scroll/key)
-if (typeof window !== 'undefined') {
-  const unlock = () => {
-    const ctx = getAudioCtx();
-    if (ctx && ctx.state === 'suspended') ctx.resume();
-    window.removeEventListener('click', unlock);
-    window.removeEventListener('scroll', unlock);
-    window.removeEventListener('keydown', unlock);
-  };
-  window.addEventListener('click', unlock, { once: true });
-  window.addEventListener('scroll', unlock, { once: true });
-  window.addEventListener('keydown', unlock, { once: true });
-}
-
-const playTing = () => {
-  try {
-    const ctx = getAudioCtx();
-    if (!ctx || ctx.state === 'suspended') return;
-
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
-
-    osc.connect(gain);
-    gain.connect(ctx.destination);
-
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(1200, ctx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(800, ctx.currentTime + 0.15);
-
-    gain.gain.setValueAtTime(0.08, ctx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
-
-    osc.start(ctx.currentTime);
-    osc.stop(ctx.currentTime + 0.3);
-  } catch {}
-};
-
-// Indices of dots that pulse during dot phase
-const PULSE_INDICES = [2, 7, 14];
-
-const getDotColor = (meeting: Meeting) => {
-  if (meeting.status === 'confirmed') return 'bg-stone-600';
-  if (meeting.type === 'demo') return 'bg-[#C5A059]';
-  if (meeting.type === 'discovery') return 'bg-emerald-400';
-  return 'bg-stone-400';
-};
-
 const getCardClasses = (meeting: Meeting) => {
   if (meeting.status === 'confirmed') return { bg: 'bg-stone-700', text: 'text-stone-100', border: 'border-stone-600' };
   if (meeting.type === 'demo') return { bg: 'bg-[#C5A059]/12', text: 'text-[#9c7a3d]', border: 'border-[#C5A059]/20' };
@@ -127,54 +65,63 @@ const getCardClasses = (meeting: Meeting) => {
 
 export const CalendarUI: React.FC = () => {
   const [hoveredMeeting, setHoveredMeeting] = useState<string | null>(null);
-  const [phase, setPhase] = useState<'hidden' | 'dots' | 'cards'>('hidden');
+  // Each meeting goes through: hidden → dot → card (single element, CSS transitions)
+  const [meetingStates, setMeetingStates] = useState<Record<string, 'hidden' | 'dot' | 'card'>>({});
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [activeToast, setActiveToast] = useState<ToastData | null>(null);
   const [meetingCount, setMeetingCount] = useState(0);
+  const [showVideo, setShowVideo] = useState(false);
   const toastIndexRef = useRef(0);
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  // Phase orchestration
   useEffect(() => {
-    // Start dot phase immediately
-    setPhase('dots');
+    const DOT_DELAY = 150; // ms between each dot appearing
+    const DOT_PHASE = 800; // ms before dots start
+    const CARD_PHASE_START = DOT_PHASE + MEETINGS.length * DOT_DELAY + 800; // pause after all dots
+    const CARD_DELAY = 130; // ms between each card expanding
 
-    // Transition to card phase after dots are all visible
-    const cardTimer = setTimeout(() => setPhase('cards'), DOT_PHASE_WAIT);
-    timersRef.current.push(cardTimer);
+    // Phase 1: dots appear staggered
+    MEETINGS.forEach((meeting, i) => {
+      const t = setTimeout(() => {
+        setMeetingStates(prev => ({ ...prev, [meeting.id]: 'dot' }));
+      }, DOT_PHASE + i * DOT_DELAY);
+      timersRef.current.push(t);
+    });
+
+    // Phase 2: dots expand to cards staggered
+    MEETINGS.forEach((meeting, i) => {
+      const t = setTimeout(() => {
+        setMeetingStates(prev => ({ ...prev, [meeting.id]: 'card' }));
+        setMeetingCount(i + 1);
+      }, CARD_PHASE_START + i * CARD_DELAY);
+      timersRef.current.push(t);
+    });
+
+    // Show video pill after all cards
+    const totalTime = CARD_PHASE_START + MEETINGS.length * CARD_DELAY;
+    const videoT = setTimeout(() => setShowVideo(true), totalTime + 500);
+    timersRef.current.push(videoT);
+
+    // Start toast cycle
+    const toastStart = setTimeout(() => startToastCycle(), totalTime + 2000);
+    timersRef.current.push(toastStart);
 
     return () => timersRef.current.forEach(t => clearTimeout(t));
   }, []);
 
-  // Meeting counter — ticks up during card phase
-  useEffect(() => {
-    if (phase !== 'cards') return;
-    const total = MEETINGS.length;
-    for (let i = 0; i < total; i++) {
-      const t = setTimeout(() => setMeetingCount(i + 1), i * CARD_STAGGER * 1000 + 300);
-      timersRef.current.push(t);
-    }
-  }, [phase]);
-
-  // Toast notification loop
-  useEffect(() => {
-    if (phase !== 'cards') return;
-
+  const startToastCycle = () => {
     const showToast = () => {
       if (toastIndexRef.current >= 5) return;
-      const msg = TOAST_MESSAGES[toastIndexRef.current % TOAST_MESSAGES.length];
+      const msg = TOAST_MESSAGES[toastIndexRef.current];
       setActiveToast(msg);
-      playTing();
       toastIndexRef.current++;
 
-      const hideTimer = setTimeout(() => setActiveToast(null), 3500);
-      const nextTimer = setTimeout(showToast, 8000 + Math.random() * 4000);
-      timersRef.current.push(hideTimer, nextTimer);
+      const hideT = setTimeout(() => setActiveToast(null), 3500);
+      const nextT = setTimeout(showToast, 8000 + Math.random() * 4000);
+      timersRef.current.push(hideT, nextT);
     };
-
-    const initialDelay = setTimeout(showToast, 2500);
-    timersRef.current.push(initialDelay);
-  }, [phase]);
+    showToast();
+  };
 
   // Escape key to close video
   useEffect(() => {
@@ -188,22 +135,16 @@ export const CalendarUI: React.FC = () => {
 
   return (
     <>
-      <div className="w-full h-full bg-white rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] border border-stone-200/80 flex flex-col overflow-hidden font-sans relative">
-        {/* Header with counter */}
-        <div className="flex items-center justify-between px-4 py-2.5 border-b border-stone-100 bg-stone-50/80">
+      <div className="w-full h-full bg-white rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] border border-stone-200/80 flex flex-col overflow-visible font-sans relative">
+        {/* Header */}
+        <div className="flex items-center justify-between px-4 py-2.5 border-b border-stone-100 bg-stone-50/80 rounded-t-2xl">
           <div className="text-xs font-semibold text-stone-400 tracking-wide">
             This week
-            <AnimatePresence>
-              {meetingCount > 0 && (
-                <motion.span
-                  initial={{ opacity: 0, x: -5 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="ml-1.5"
-                >
-                  — <span className="text-[#C5A059]">{meetingCount}</span> meetings
-                </motion.span>
-              )}
-            </AnimatePresence>
+            {meetingCount > 0 && (
+              <span className="ml-1.5">
+                — <span className="text-[#C5A059]">{meetingCount}</span> meetings
+              </span>
+            )}
           </div>
           <a
             href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04"
@@ -227,7 +168,7 @@ export const CalendarUI: React.FC = () => {
         </div>
 
         {/* Body */}
-        <div className="flex flex-1 relative bg-white pt-1">
+        <div className="flex flex-1 relative bg-white pt-1 rounded-b-2xl">
           {/* Time Labels */}
           <div className="w-14 shrink-0 border-r border-stone-100 flex flex-col relative z-10 bg-white">
             {Array.from({ length: TOTAL_HOURS + 1 }).map((_, i) => (
@@ -250,11 +191,11 @@ export const CalendarUI: React.FC = () => {
           <AnimatePresence>
             {activeToast && (
               <motion.div
-                initial={{ opacity: 0, y: -8, x: 8, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, x: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -6, scale: 0.95 }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute top-3 right-3 z-50 bg-white border border-stone-200 rounded-xl shadow-lg px-3.5 py-2.5 flex items-start gap-2.5 w-56"
+                initial={{ opacity: 0, y: -8, x: 8 }}
+                animate={{ opacity: 1, y: 0, x: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="absolute top-3 right-3 z-[70] bg-white border border-stone-200 rounded-xl shadow-lg px-3.5 py-2.5 flex items-start gap-2.5 w-56"
               >
                 <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
                   <CalendarCheck size={12} className="text-emerald-600" />
@@ -271,79 +212,78 @@ export const CalendarUI: React.FC = () => {
           <div className="flex-1 flex relative">
             {DAYS.map((_, dayIndex) => (
               <div key={dayIndex} className={`flex-1 relative ${dayIndex !== 0 ? 'border-l border-stone-100/60' : ''}`}>
-                {phase !== 'hidden' && MEETINGS.filter(m => m.day === dayIndex).map((meeting) => {
+                {MEETINGS.filter(m => m.day === dayIndex).map((meeting) => {
                   const topPercent = ((meeting.start - START_HOUR) / TOTAL_HOURS) * 100;
                   const heightPercent = (meeting.duration / TOTAL_HOURS) * 100;
-                  const globalIndex = MEETINGS.findIndex(m => m.id === meeting.id);
+                  const state = meetingStates[meeting.id] || 'hidden';
                   const isHovered = hoveredMeeting === meeting.id;
                   const cardClasses = getCardClasses(meeting);
-                  const dotColor = getDotColor(meeting);
-                  const shouldPulse = phase === 'dots' && PULSE_INDICES.includes(globalIndex);
+                  const isDot = state === 'dot';
+                  const isCard = state === 'card';
+                  const isVisible = isDot || isCard;
+
+                  // Dot color based on meeting type
+                  const dotBg = meeting.status === 'confirmed' ? 'bg-stone-500'
+                    : meeting.type === 'demo' ? 'bg-[#C5A059]'
+                    : meeting.type === 'discovery' ? 'bg-emerald-400'
+                    : 'bg-stone-400';
 
                   return (
                     <div
                       key={meeting.id}
-                      className="absolute left-1.5 right-1.5"
+                      className={`absolute left-1.5 right-1.5 ${isHovered ? 'z-[60]' : 'z-0'}`}
                       style={{
                         top: `${topPercent}%`,
                         height: `calc(${heightPercent}% - 4px)`,
                       }}
                     >
-                      {/* Dot phase */}
-                      <AnimatePresence>
-                        {phase === 'dots' && (
-                          <motion.div
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{
-                              opacity: 1,
-                              scale: shouldPulse ? [1, 1.5, 1] : 1,
-                            }}
-                            transition={{
-                              opacity: { duration: 0.3, delay: globalIndex * DOT_STAGGER },
-                              scale: shouldPulse
-                                ? { duration: 1.2, delay: globalIndex * DOT_STAGGER + 0.5, repeat: Infinity, repeatType: 'reverse' as const }
-                                : { duration: 0.3, delay: globalIndex * DOT_STAGGER, ease: [0.34, 1.56, 0.64, 1] },
-                            }}
-                            exit={{ opacity: 0, scale: 0, transition: { duration: 0.15 } }}
-                            className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full ${dotColor}`}
-                          />
+                      {/* Single element: dot → card via CSS transitions */}
+                      <div
+                        className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out ${
+                          isCard
+                            ? `rounded-lg border p-2 cursor-pointer ${cardClasses.bg} ${cardClasses.text} ${cardClasses.border} ${isHovered ? 'ring-2 ring-[#C5A059] ring-offset-1 shadow-md z-30' : 'z-10 hover:z-20'}`
+                            : isDot
+                            ? 'rounded-full'
+                            : ''
+                        }`}
+                        style={{
+                          opacity: isVisible ? 1 : 0,
+                          transform: !isVisible ? 'scale(0)' : isCard ? 'scale(1)' : 'scale(1)',
+                          width: isDot ? '8px' : '100%',
+                          height: isDot ? '8px' : '100%',
+                          top: isDot ? '50%' : '0',
+                          left: isDot ? '50%' : '0',
+                          marginTop: isDot ? '-4px' : '0',
+                          marginLeft: isDot ? '-4px' : '0',
+                          position: 'absolute',
+                        }}
+                        onMouseEnter={() => isCard ? setHoveredMeeting(meeting.id) : null}
+                        onMouseLeave={() => setHoveredMeeting(null)}
+                      >
+                        {/* Dot state — colored circle */}
+                        {isDot && (
+                          <div className={`w-full h-full rounded-full ${dotBg}`} />
                         )}
-                      </AnimatePresence>
 
-                      {/* Card phase */}
-                      <AnimatePresence>
-                        {phase === 'cards' && (
-                          <motion.div
-                            initial={{ opacity: 0, scale: 0.3, borderRadius: 20 }}
-                            animate={{ opacity: 1, scale: 1, borderRadius: 8 }}
-                            transition={{
-                              duration: 0.5,
-                              delay: globalIndex * CARD_STAGGER,
-                              ease: [0.16, 1, 0.3, 1],
-                            }}
-                            className={`w-full h-full rounded-lg border p-2 cursor-pointer transition-all duration-200 backdrop-blur-sm ${cardClasses.bg} ${cardClasses.text} ${cardClasses.border} ${isHovered ? 'ring-2 ring-[#C5A059] ring-offset-1 z-30 shadow-md scale-[1.02]' : 'z-10 hover:z-20'}`}
-                            onMouseEnter={() => setHoveredMeeting(meeting.id)}
-                            onMouseLeave={() => setHoveredMeeting(null)}
-                          >
-                            {/* Title fades in after card expands */}
-                            <motion.div
-                              initial={{ opacity: 0, y: 4 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.25, delay: globalIndex * CARD_STAGGER + 0.3 }}
-                              className="font-semibold text-[11px] leading-tight truncate"
+                        {/* Card state — meeting content */}
+                        {isCard && (
+                          <>
+                            <div
+                              className="font-semibold text-[11px] leading-tight truncate transition-opacity duration-300"
+                              style={{ opacity: isCard ? 1 : 0 }}
                             >
                               {meeting.title}
-                            </motion.div>
+                            </div>
 
                             {/* Tooltip */}
                             <AnimatePresence>
                               {isHovered && (
                                 <motion.div
-                                  initial={{ opacity: 0, y: 5, scale: 0.95 }}
-                                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                                  exit={{ opacity: 0, y: 5, scale: 0.95 }}
-                                  transition={{ duration: 0.15 }}
-                                  className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 bg-[#1a1a1a] text-white text-[11px] leading-relaxed p-3 rounded-lg shadow-xl border border-stone-700 z-50 pointer-events-none"
+                                  initial={{ opacity: 0, y: 4 }}
+                                  animate={{ opacity: 1, y: 0 }}
+                                  exit={{ opacity: 0, y: 4 }}
+                                  transition={{ duration: 0.12 }}
+                                  className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 bg-[#1a1a1a] text-white text-[11px] leading-relaxed p-3 rounded-lg shadow-xl border border-stone-700 z-[70] pointer-events-none"
                                 >
                                   <div className="font-medium text-[#C5A059] mb-1">{meeting.title.split('—')[0].trim()}</div>
                                   <div className="text-stone-300">{meeting.tooltip.split('·').slice(1).join('·').trim()}</div>
@@ -351,9 +291,9 @@ export const CalendarUI: React.FC = () => {
                                 </motion.div>
                               )}
                             </AnimatePresence>
-                          </motion.div>
+                          </>
                         )}
-                      </AnimatePresence>
+                      </div>
                     </div>
                   );
                 })}
@@ -361,19 +301,20 @@ export const CalendarUI: React.FC = () => {
             ))}
           </div>
 
-          {/* Play Video Pill — appears after cards are done */}
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            animate={phase === 'cards' ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-            transition={{ delay: phase === 'cards' ? MEETINGS.length * CARD_STAGGER + 0.5 : 0, duration: 0.5 }}
-            onClick={() => setIsVideoOpen(true)}
-            className="absolute bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-2.5 bg-stone-800 text-stone-100 rounded-full text-xs font-medium shadow-xl hover:bg-stone-700 hover:scale-105 transition-all group border border-stone-600"
+          {/* Play Video Pill */}
+          <div
+            className={`absolute bottom-6 right-6 z-40 transition-all duration-500 ${showVideo ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'}`}
           >
-            <div className="w-5 h-5 rounded-full bg-[#C5A059] flex items-center justify-center text-[#1a1a1a] group-hover:bg-white transition-colors">
-              <Play size={10} className="ml-0.5" fill="currentColor" />
-            </div>
-            See how it works · 4 min
-          </motion.button>
+            <button
+              onClick={() => setIsVideoOpen(true)}
+              className="flex items-center gap-2 px-4 py-2.5 bg-stone-800 text-stone-100 rounded-full text-xs font-medium shadow-xl hover:bg-stone-700 hover:scale-105 transition-all group border border-stone-600"
+            >
+              <div className="w-5 h-5 rounded-full bg-[#C5A059] flex items-center justify-center text-[#1a1a1a] group-hover:bg-white transition-colors">
+                <Play size={10} className="ml-0.5" fill="currentColor" />
+              </div>
+              See how it works · 4 min
+            </button>
+          </div>
         </div>
       </div>
 

@@ -147,14 +147,14 @@ export const WhoWeReach = () => {
         {/* Stats Bar */}
         <div className="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 text-white grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { stat: 2298, prefix: '', suffix: '+', label: 'qualified demos booked for clients' },
-            { stat: 18, prefix: '£', suffix: 'M+', label: 'new pipeline generated' },
-            { stat: 'C-suite to Head of', isText: true, label: 'seniority verified before every booking' },
-            { stat: 'ICP-matched', isText: true, label: 'every contact checked against your ideal profile' }
+            { stat: '2,298+', label: 'qualified demos booked for clients' },
+            { stat: '£18M+', label: 'new pipeline generated' },
+            { stat: 'C-suite to Head of', label: 'seniority verified before every booking' },
+            { stat: 'ICP-matched', label: 'every contact checked against your ideal profile' },
           ].map((item, i) => (
             <div key={i}>
-              <div className="text-3xl font-serif text-[#C5A059] mb-2">
-                {item.isText ? item.stat : `${item.prefix}${item.stat.toLocaleString()}${item.suffix}`}
+              <div className="text-xl md:text-2xl font-serif text-[#C5A059] mb-2">
+                {item.stat}
               </div>
               <div className="text-xs text-stone-400 leading-relaxed">{item.label}</div>
             </div>

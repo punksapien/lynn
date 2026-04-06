@@ -325,23 +325,23 @@ const App: React.FC = () => {
                   {[...Array(2)].map((_, setIdx) => (
                     <div key={setIdx} className="flex shrink-0 items-center gap-16 px-8">
                       {[
-                        { name: 'Alpega Group', logo: '/assets/brand_alpega.avif' },
-                        { name: 'Mintec', logo: '/assets/mintec.jpg' },
-                        { name: 'Easy4Pro', logo: '/assets/easypro.avif' },
-                        { name: 'Descartes', logo: '/assets/descartes.png' },
-                        { name: 'WowFlow', logo: '/assets/wowflow.svg' },
-                        { name: 'Trayport', logo: '/assets/tmx_trayport.jpg' },
-                        { name: 'Hyperplan', logo: '/assets/Hyperplan.png' },
-                        { name: 'Optimix', logo: '/assets/Optimix.svg' },
-                        { name: 'BuyCo', logo: '/assets/buyco.png' },
-                        { name: 'FreightGate', logo: '/assets/freightgate.png' },
-                        { name: 'Matium', logo: '/assets/matium.svg' },
-                        { name: 'Meight', logo: '/assets/meight.png' },
-                        { name: 'ShipmentX', logo: '/assets/shipmentx.png' },
-                        { name: 'Sutherland', logo: '/assets/sutherland.svg' },
+                        { name: 'Alpega Group', logo: '/assets/brand_alpega.avif', h: 'h-8' },
+                        { name: 'Mintec', logo: '/assets/mintec.jpg', h: 'h-8' },
+                        { name: 'Easy4Pro', logo: '/assets/easypro.avif', h: 'h-8' },
+                        { name: 'Descartes', logo: '/assets/descartes.png', h: 'h-8' },
+                        { name: 'WowFlow', logo: '/assets/wowflow.svg', h: 'h-8' },
+                        { name: 'Trayport', logo: '/assets/tmx_trayport.png', h: 'h-14' },
+                        { name: 'Hyperplan', logo: '/assets/Hyperplan.png', h: 'h-10' },
+                        { name: 'Optimix', logo: '/assets/Optimix.svg', h: 'h-8' },
+                        { name: 'BuyCo', logo: '/assets/buyco.png', h: 'h-8' },
+                        { name: 'FreightGate', logo: '/assets/freightgate.png', h: 'h-8' },
+                        { name: 'Matium', logo: '/assets/matium.svg', h: 'h-8' },
+                        { name: 'Meight', logo: '/assets/meight.png', h: 'h-8' },
+                        { name: 'ShipmentX', logo: '/assets/shipmentx.png', h: 'h-8' },
+                        { name: 'Sutherland', logo: '/assets/sutherland.svg', h: 'h-8' },
                       ].map((brand, i) => (
-                        <div key={i} className="shrink-0 flex items-center justify-center h-16 opacity-50 grayscale hover:opacity-80 hover:grayscale-0 transition-all duration-500">
-                          <img src={brand.logo} alt={brand.name} className="h-12 w-auto object-contain max-w-[120px]" />
+                        <div key={i} className="shrink-0 flex items-center justify-center h-16 opacity-40 grayscale hover:opacity-70 hover:grayscale-0 transition-all duration-500">
+                          <img src={brand.logo} alt={brand.name} className={`${brand.h} w-auto object-contain`} style={{ mixBlendMode: 'multiply' }} />
                         </div>
                       ))}
                     </div>

@@ -15,15 +15,15 @@ interface Resource {
 const RESOURCES: Resource[] = [
   {
     type: 'blog',
-    title: 'Why Cold Email Reply Rates Are Under 2% in Supply Chain SaaS (And What to Do Instead)',
-    desc: 'The data behind why email-first outbound is failing for supply chain SaaS, and why human cold calling is producing 5-10x more qualified demos.',
+    title: 'Why Email Reply Rates Are Under 2% in Supply Chain Software (And What to Do About It)',
+    desc: 'The data behind why email-first outbound is failing for supply chain software, and why human cold calling is producing 5-10x more qualified demos.',
     readTime: '5 min read',
     date: 'March 2025',
   },
   {
     type: 'guide',
     title: 'The True Cost of an In-House SDR vs. Outsourced Outbound',
-    desc: 'A breakdown of what it actually costs to hire, train, and retain an SDR for supply chain SaaS — compared to outsourcing to a specialist agency.',
+    desc: 'A breakdown of what it actually costs to hire, train, and retain an SDR for supply chain software — compared to outsourcing to a specialist agency.',
     readTime: '8 min read',
     date: 'February 2025',
   },
@@ -36,21 +36,21 @@ const RESOURCES: Resource[] = [
   },
   {
     type: 'report',
-    title: 'Supply Chain SaaS Outbound Benchmark Report 2025',
+    title: 'Supply Chain Software Outbound Benchmark Report 2025',
     desc: 'Aggregated data from our campaigns — dial-to-connect ratios, connect-to-meeting conversion, best times to call, and which titles pick up across markets.',
     readTime: '12 min read',
     date: 'January 2025',
   },
   {
     type: 'blog',
-    title: 'AI SDRs vs. Human Callers: The Data Supply Chain SaaS Companies Need to See',
-    desc: 'Why AI-generated outreach is producing zero pipeline for supply chain SaaS companies, and what\'s actually working in 2025.',
+    title: 'AI SDRs vs. Human Callers: The Data Supply Chain Software Companies Need to See',
+    desc: 'Why AI-generated outreach is producing zero pipeline for supply chain software companies, and what\'s actually working in 2025.',
     readTime: '6 min read',
     date: 'December 2024',
   },
   {
     type: 'video',
-    title: 'How We Booked 280 Demos for Alpega in 12 Months',
+    title: 'How We Book 80+ Demos Per Month for Alpega',
     desc: 'A walkthrough of the campaign structure, multilingual strategy, and scaling process behind our largest client engagement.',
     readTime: '14 min watch',
     date: 'November 2024',
@@ -122,7 +122,7 @@ export const ResourcesPage: React.FC = () => {
             className="font-serif text-5xl md:text-6xl leading-[1.08] tracking-tight mb-5"
           >
             Outbound playbooks for supply chain{' '}
-            <span className="text-[#C5A059] font-normal">SaaS.</span>
+            <span className="text-[#C5A059] font-normal">software.</span>
           </motion.h1>
           <motion.p
             {...fadeUp}
@@ -174,10 +174,10 @@ export const ResourcesPage: React.FC = () => {
             <div className="p-10 flex flex-col justify-center">
               <div className="text-[10px] font-bold tracking-[0.2em] text-[#C5A059] uppercase mb-3">Featured Guide</div>
               <h3 className="font-serif text-2xl md:text-3xl text-white leading-tight mb-3">
-                The Supply Chain SaaS Outbound Playbook: Cold Calling in 2025
+                The Supply Chain Software Outbound Playbook: Calling and Email in 2025
               </h3>
               <p className="text-sm text-stone-400 leading-relaxed mb-5">
-                Everything we know about booking qualified enterprise demos in supply chain, logistics, and procurement SaaS — from ICP definition to multilingual calling at scale.
+                Everything we know about booking qualified enterprise demos in supply chain, logistics, and procurement software — from ICP definition to multilingual outbound at scale.
               </p>
               <span className="text-sm font-medium text-[#C5A059] group-hover:underline flex items-center gap-1">
                 Read the guide <ArrowRight size={14} />
@@ -230,7 +230,7 @@ export const ResourcesPage: React.FC = () => {
             className="mt-16 bg-white border border-stone-200 rounded-2xl p-8 md:p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-center"
           >
             <div>
-              <h3 className="font-serif text-2xl mb-1">Get outbound insights for supply chain SaaS</h3>
+              <h3 className="font-serif text-2xl mb-1">Get outbound insights for supply chain software</h3>
               <p className="text-sm text-stone-500">No spam. One email when we publish something worth reading. Unsubscribe any time.</p>
             </div>
             <div className="flex gap-2">

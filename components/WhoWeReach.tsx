@@ -12,7 +12,7 @@ export const WhoWeReach = () => {
             Enterprise accounts. <span className="text-[#C5A059]">Senior</span> decision-makers.
           </h2>
           <p className="text-lg text-stone-600 max-w-3xl leading-relaxed">
-            We book meetings into the world's largest freight operators, manufacturers, and procurement organisations - and we get straight to the people with the budget and authority to buy your software.
+            We book meetings into the world's largest freight operators, manufacturers, and procurement organisations — and we get straight to the people with the budget and authority to buy your software.
           </p>
         </div>
         
@@ -26,7 +26,7 @@ export const WhoWeReach = () => {
             className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-[10px] uppercase tracking-wider font-bold rounded-full mb-6">FREIGHT & LOGISTICS</div>
-            <h3 className="text-xl font-serif font-medium text-[#1a1a1a] mb-3">Global 3PLs, freight forwarders & carriers</h3>
+            <h3 className="text-xl font-serif font-medium text-[#1a1a1a] mb-3">Global 3PLs, freight forwarders and carriers</h3>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">Enterprise operators managing complex transport networks across road, air, and sea</p>
             
             <div className="text-[10px] font-bold tracking-[0.1em] text-stone-400 uppercase mb-3">Examples</div>
@@ -110,7 +110,7 @@ export const WhoWeReach = () => {
             className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="inline-block px-3 py-1 bg-emerald-50 text-emerald-700 text-[10px] uppercase tracking-wider font-bold rounded-full mb-6">RETAIL & CONSUMER GOODS</div>
-            <h3 className="text-xl font-serif font-medium text-[#1a1a1a] mb-3">Retailers & FMCG companies managing high-volume supply chains</h3>
+            <h3 className="text-xl font-serif font-medium text-[#1a1a1a] mb-3">Retailers and FMCG companies managing high-volume supply chains</h3>
             <p className="text-stone-500 text-sm leading-relaxed mb-6">Operators under constant pressure on demand planning, inventory, and supplier management</p>
             
             <div className="text-[10px] font-bold tracking-[0.1em] text-stone-400 uppercase mb-3">Examples</div>
@@ -148,7 +148,7 @@ export const WhoWeReach = () => {
         <div className="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 text-white grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { stat: '2,298+', label: 'qualified demos booked for clients' },
-            { stat: '£18M+', label: 'new pipeline generated' },
+            { stat: '$22M+', label: 'new pipeline generated' },
             { stat: 'C-suite to Head of', label: 'seniority verified before every booking' },
             { stat: 'ICP-matched', label: 'every contact checked against your ideal profile' },
           ].map((item, i) => (

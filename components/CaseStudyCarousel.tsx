@@ -17,13 +17,13 @@ const STUDIES: CarouselStudy[] = [
   {
     slug: 'alpega',
     name: 'Alpega Group',
-    tag: 'TMS / Logistics SaaS',
+    tag: 'TMS / Logistics Software',
     gradient: 'from-stone-800 to-stone-600',
-    desc: 'Enterprise logistics SaaS needed to scale outbound across 6 European markets with zero internal SDR capacity.',
+    desc: 'Enterprise logistics software company needed to scale outbound across 6 European markets with zero internal SDR capacity.',
     metrics: [
-      { num: '280', label: 'demos in year one' },
-      { num: '£10M+', label: 'pipeline generated' },
-      { num: '60-80', label: 'per month ongoing' },
+      { num: '80+', label: 'demos per month' },
+      { num: '$12M+', label: 'pipeline generated' },
+      { num: '12+', label: 'months ongoing' },
     ],
   },
   {
@@ -31,10 +31,10 @@ const STUDIES: CarouselStudy[] = [
     name: 'Mintec / Expana',
     tag: 'Procurement Intelligence',
     gradient: 'from-[#6b5630] to-[#C5A059]',
-    desc: 'Commodity data platform needed enterprise demos with procurement leaders at £250M+ manufacturers.',
+    desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
     metrics: [
-      { num: '151', label: 'demos in 180 days' },
-      { num: '£4.5M', label: 'pipeline generated' },
+      { num: '30+', label: 'demos per month' },
+      { num: '$5.5M', label: 'pipeline generated' },
     ],
   },
   {
@@ -44,8 +44,8 @@ const STUDIES: CarouselStudy[] = [
     gradient: 'from-emerald-900 to-emerald-700',
     desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
     metrics: [
-      { num: '73', label: 'meetings in 90 days' },
-      { num: '20-30', label: 'per month ongoing' },
+      { num: '28+', label: 'demos per month' },
+      { num: '4', label: 'markets covered' },
     ],
   },
   {
@@ -70,20 +70,20 @@ const STUDIES: CarouselStudy[] = [
   {
     slug: 'wowflow',
     name: 'WowFlow',
-    tag: 'Operations / Facilities SaaS',
+    tag: 'Operations / Facilities Software',
     gradient: 'from-emerald-900 to-emerald-600',
     desc: 'Needed to expand across multiple EU countries simultaneously from a standing start.',
-    metrics: [{ num: '300', label: 'qualified leads in 100 days' }],
+    metrics: [{ num: '300', label: 'qualified meetings in 100 days' }],
   },
   {
     slug: 'teamlearn',
     name: 'Teamlearn',
-    tag: 'Enterprise SaaS / L&D',
+    tag: 'Enterprise Software / L&D',
     gradient: 'from-[#4a3a18] to-[#8a7a38]',
     desc: 'Had 1-2 demos per month with no structured outbound — needed to scale pipeline fast.',
     metrics: [
       { num: '20-30', label: 'demos/month (from 1-2)' },
-      { num: '£1.2M', label: 'pipeline generated' },
+      { num: '$1.5M', label: 'pipeline generated' },
     ],
   },
   {
@@ -157,11 +157,11 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
     <section id="case-studies" className="py-16 md:py-20 bg-[#F9F8F4] border-t border-stone-200">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-end gap-6 mb-12">
           <div>
             <div className="inline-block mb-4 text-xs font-bold tracking-widest text-stone-400 uppercase">Case Studies</div>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] leading-tight">
-              Real results for{' '}
+            <h2 className="font-serif text-4xl md:text-[2.7rem] text-[#1a1a1a] leading-tight">
+              Proven results in{' '}
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentVertical}
@@ -174,11 +174,10 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
                   {verticals[currentVertical]}
                 </motion.span>
               </AnimatePresence>
-              {' '}<span className="text-[#C5A059]">SaaS.</span>
+              {' '}<span className="text-[#C5A059]">software.</span>
             </h2>
           </div>
-          <div className="flex items-center gap-3">
-            {/* Nav arrows */}
+          <div className="flex items-center gap-3 shrink-0">
             <button
               onClick={() => go(-1)}
               className="w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-500 hover:border-[#C5A059] hover:text-[#C5A059] transition-colors"
@@ -193,7 +192,7 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
             </button>
             <a
               href="#/case-studies"
-              className="ml-4 text-sm font-medium text-[#C5A059] hover:text-[#1a1a1a] transition-colors flex items-center gap-1.5"
+              className="ml-2 text-sm font-medium text-[#C5A059] hover:text-[#1a1a1a] transition-colors flex items-center gap-1.5 whitespace-nowrap"
             >
               View all <ArrowRight size={14} />
             </a>
@@ -272,7 +271,6 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
 
         {/* Bottom CTA */}
         <div className="mt-14 text-center">
-          <p className="text-stone-500 mb-6">Your competitors are already booking meetings like these.</p>
           <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
             Book a strategy call
           </a>

@@ -18,7 +18,7 @@ import { MarketScannerPage } from './components/MarketScannerPage';
 
 import { CountUp } from './components/CountUp';
 
-const words = ["Supply Chain SaaS", "Logistics SaaS", "Procurement SaaS"];
+const words = ["Supply Chain Software", "Logistics Software", "Procurement Software"];
 
 const useHashRoute = () => {
   const [route, setRoute] = useState(window.location.hash || '#/');
@@ -148,7 +148,7 @@ const App: React.FC = () => {
                       </div>
                       <div>
                         <div className="font-medium text-[#1a1a1a] text-sm">Market Scanner</div>
-                        <div className="text-xs text-stone-400 mt-0.5">Size your European opportunity</div>
+                        <div className="text-xs text-stone-400 mt-0.5">Size your addressable market</div>
                       </div>
                     </a>
                   </motion.div>
@@ -221,7 +221,7 @@ const App: React.FC = () => {
                   transition={{ duration: 0.8, ease: "easeOut" }}
                   className="flex items-center gap-2 mb-8 text-sm font-medium text-stone-500"
                 >
-                  <span>We help generating leads in</span>
+                  <span>We generate leads in</span>
                   <div className="relative h-6 overflow-hidden w-40">
                     <AnimatePresence mode="wait">
                       <motion.span
@@ -253,7 +253,7 @@ const App: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                   className="text-lg text-stone-600 leading-relaxed max-w-xl mb-8"
                 >
-                  Lynn is the only outbound agency built exclusively for <strong>Supply Chain, Logistics, and Procurement SaaS</strong> - with domain-trained callers who speak your buyers' language, literally and technically, across Europe.
+                  Lynn is the only outbound agency built exclusively for <strong>supply chain, logistics, and procurement software</strong> — with domain-trained teams who speak your buyers' language, literally and technically, wherever they are in the world.
                 </motion.p>
 
                 <motion.div
@@ -316,7 +316,7 @@ const App: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="mt-24 pt-12 border-t border-stone-200"
             >
-              <div className="text-center text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-8">Trusted by supply chain SaaS companies across Europe</div>
+              <div className="text-center text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-8">Trusted by supply chain software companies across Europe</div>
               <div className="relative overflow-hidden">
                 {/* Fade edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F9F8F4] to-transparent z-10 pointer-events-none" />
@@ -363,7 +363,7 @@ const App: React.FC = () => {
                   <span className="text-[#C5A059] font-normal">Or we keep going.</span>
                 </h2>
                 <p className="text-xl text-stone-400 mb-8 leading-relaxed">
-                  If we don't hit 30 demos in 90 days - we work at no extra cost until you get them.
+                  If we don't hit 30 demos in 90 days, we keep working at no extra cost for up to 45 additional days.
                 </p>
                 <div className="bg-stone-900 border border-stone-800 p-6 rounded-xl mb-10">
                   <p className="text-stone-300 leading-relaxed">
@@ -383,16 +383,16 @@ const App: React.FC = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
-                  { logo: 'Alpega', stat: 280 },
-                  { logo: 'Mintec', stat: 151 },
-                  { logo: 'Easy4Pro', stat: 73 }
+                  { logo: 'Alpega', stat: '80+' },
+                  { logo: 'Mintec', stat: '30+' },
+                  { logo: 'Easy4Pro', stat: '28+' }
                 ].map((proof, i) => (
                   <div key={i} className="bg-stone-900 border border-stone-800 p-6 rounded-2xl text-center">
                     <div className="font-serif text-xl font-bold text-stone-300 mb-4">{proof.logo}</div>
                     <div className="text-4xl font-serif text-[#C5A059] mb-2">
                       {proof.stat}
                     </div>
-                    <div className="text-[10px] font-bold tracking-widest text-stone-500 uppercase">Demos booked</div>
+                    <div className="text-[10px] font-bold tracking-widest text-stone-500 uppercase">demos per month</div>
                   </div>
                 ))}
               </div>
@@ -413,7 +413,7 @@ const App: React.FC = () => {
               <div className="inline-block mb-4 text-xs font-bold tracking-widest text-stone-400 uppercase">The Process</div>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] leading-tight mb-6">Precision <span className="text-stone-400 font-normal">and</span> Speed.</h2>
               <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
-                We don't rely on passive email campaigns. We build highly targeted lists and hit the phones. Native speakers, high volume, relentless execution.
+                We build highly targeted lists and run coordinated outbound — calling and email, working together. Native speakers, high volume, relentless execution.
               </p>
             </div>
 
@@ -423,21 +423,21 @@ const App: React.FC = () => {
                   step: 1,
                   icon: <Phone size={22} />,
                   title: '200+ Dials Per Day',
-                  desc: 'Outbound calling is our primary weapon. We bypass the crowded inbox and speak directly to decision-makers.',
+                  desc: 'Calling is our primary channel. We get decision-makers on the phone while email sequences warm the accounts around them.',
                   highlight: false,
                 },
                 {
                   step: 2,
                   icon: <Globe size={22} />,
                   title: 'Native Language',
-                  desc: 'Our callers are native speakers across 6 European languages. We build rapport instantly, no matter the region.',
+                  desc: 'Our teams are native speakers across 6 European languages, with full English coverage for the US and global markets. We build rapport instantly, no matter the region.',
                   highlight: false,
                 },
                 {
                   step: 3,
                   icon: <Calendar size={22} />,
                   title: '30 Guaranteed Demos',
-                  desc: 'Within 90 days, your calendar is full of qualified prospects ready to discuss your SaaS solution.',
+                  desc: 'Within 90 days, your calendar is full of qualified prospects — booked through calls, email replies, or both — ready to discuss your solution.',
                   highlight: true,
                 },
               ].map((item, i) => (
@@ -484,7 +484,7 @@ const App: React.FC = () => {
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-serif text-4xl md:text-6xl text-[#1a1a1a] mb-8 leading-tight">Your sales team deserves a full calendar.</h2>
             <p className="text-xl text-stone-600 font-light max-w-2xl mx-auto mb-12">
-              30 qualified demos in 90 days. If we don't hit it, we keep working until we do. Book a call and we'll show you exactly how it works for your market.
+              30 qualified demos in 90 days. If we don't hit it, we keep working for up to 45 more days at no extra cost. Book a call and we'll show you exactly how it works for your market.
             </p>
             <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-base font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
               Book your strategy call →
@@ -508,7 +508,7 @@ const App: React.FC = () => {
                 </div>
                 <div className="border-t border-stone-700 pt-5">
                   <p className="text-sm text-stone-500 leading-relaxed max-w-xs">
-                    The only outbound lead generation agency built exclusively for supply chain, logistics, and procurement SaaS.
+                    The only outbound agency built exclusively for supply chain, logistics, and procurement software. UK-based, operating globally.
                   </p>
                 </div>
               </div>

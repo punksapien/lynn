@@ -22,7 +22,7 @@ export const FirstMover = () => {
             
             <div className="bg-[#1a1a1a] rounded-2xl p-8 text-white">
               <p className="text-lg font-medium mb-4">Lynn reaches 90% of your addressable market before your competitors do.</p>
-              <p className="text-stone-400 leading-relaxed">We're making calls into your target accounts right now - the only question is whether they hear from you first, or someone else.</p>
+              <p className="text-stone-400 leading-relaxed">We're reaching out to your target accounts right now — the only question is whether they hear from you first, or someone else.</p>
             </div>
           </div>
           
@@ -162,8 +162,8 @@ export const FirstMover = () => {
             <div className="font-serif text-5xl text-[#1a1a1a] mb-2">
               <CountUp end={200} suffix="+" />
             </div>
-            <div className="font-semibold text-[#1a1a1a] mb-4">precision dials into your market, every day</div>
-            <div className="text-sm text-stone-600 leading-relaxed">While your team focuses on deals in motion, Lynn is making contact across the full addressable market - ensuring you're consistently first to the table.</div>
+            <div className="font-semibold text-[#1a1a1a] mb-4">precision dials and targeted email sequences into your market, every day</div>
+            <div className="text-sm text-stone-600 leading-relaxed">While your team focuses on deals in motion, Lynn is reaching your full addressable market by phone and email — ensuring you're consistently first to the table.</div>
           </div>
           
           <div className="bg-[#1a1a1a] rounded-2xl p-8 text-white">
@@ -171,7 +171,7 @@ export const FirstMover = () => {
             <div className="font-serif text-5xl mb-2">
               <CountUp end={30} suffix=" demos" />
             </div>
-            <div className="font-semibold mb-4">in 90 days - or we keep working</div>
+            <div className="font-semibold mb-4">in 90 days — or we keep working</div>
             <div className="text-sm text-stone-400 leading-relaxed">Thirty first conversations with decision-makers who fit your ICP. At your average deal size, it takes one closed deal to pay for the programme many times over. Guaranteed.</div>
           </div>
         </div>

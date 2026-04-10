@@ -30,10 +30,10 @@ export const AboutPage: React.FC = () => {
                 <span className="text-[#C5A059] font-normal">supply chain.</span>
               </motion.h1>
               <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed mb-4 max-w-xl">
-                Lynn exists because we watched brilliant supply chain SaaS companies pour money into agencies that didn't understand their buyers, their market, or their language. And we thought: someone should fix that.
+                Lynn exists because we watched brilliant supply chain software companies pour money into agencies that didn't understand their buyers, their market, or their language. And we thought: someone should fix that.
               </motion.p>
               <motion.p {...stagger(0.3)} className="text-lg text-stone-600 leading-relaxed max-w-xl">
-                So we built the agency we wished existed when we were on the other side of the table — one that only works in supply chain, logistics, and procurement SaaS. One that hires native-speaking callers who actually understand what a TMS does. One that guarantees results because it knows it will hit the number.
+                So we built the agency we wished existed when we were on the other side of the table — one that only works in supply chain, logistics, and procurement software. One that hires native speakers who actually understand what a TMS does — and puts them on the phones and behind the email copy. One that guarantees results because it knows it will hit the number.
               </motion.p>
             </div>
 
@@ -63,7 +63,7 @@ export const AboutPage: React.FC = () => {
           >
             {[
               { num: '2,298+', label: 'qualified demos booked' },
-              { num: '£18M+', label: 'pipeline generated for clients' },
+              { num: '$22M+', label: 'pipeline generated for clients' },
               { num: '6', label: 'languages, native speakers' },
               { num: '30', label: 'demos in 90 days, guaranteed' },
             ].map((stat, i) => (
@@ -92,7 +92,7 @@ export const AboutPage: React.FC = () => {
                 Most lead gen agencies work across 50+ industries. They rotate your account between junior reps who can't tell a WMS from a TMS. Your buyers hear it instantly — and they hang up.
               </motion.p>
               <motion.p {...stagger(0.25)} className="text-stone-600 leading-relaxed mb-4">
-                We made a different bet. We chose one vertical and went deep. Every caller, every script, every contact list, every piece of intelligence we've gathered across years of campaigns in this space — it all compounds. When our caller picks up the phone, they can hold a real conversation about freight management, procurement workflows, or supply chain visibility.
+                We made a different bet. We chose one vertical and went deep. Every caller, every script, every email sequence, every contact list, every piece of intelligence we've gathered across years of campaigns in this space — it all compounds. When our team picks up the phone or writes an outbound email, they can hold a real conversation about freight management, procurement workflows, or supply chain visibility.
               </motion.p>
               <motion.p {...stagger(0.3)} className="text-stone-600 leading-relaxed">
                 The result: we know what works before we start. We know which titles pick up, which pain points land, which markets respond to calling vs. email, and which objections to expect. That's not something a generalist agency can offer you.
@@ -110,7 +110,7 @@ export const AboutPage: React.FC = () => {
                 {
                   num: '01',
                   title: 'Single-niche focus',
-                  desc: 'We only work in supply chain, logistics, and procurement SaaS. That\'s it. Every campaign makes the next one better.',
+                  desc: 'We only work in supply chain, logistics, and procurement software. That\'s it. Every campaign makes the next one better.',
                 },
                 {
                   num: '02',
@@ -119,8 +119,8 @@ export const AboutPage: React.FC = () => {
                 },
                 {
                   num: '03',
-                  title: 'Domain-trained callers',
-                  desc: 'Our callers are briefed on your product, your competitive landscape, and your buyers\' day-to-day problems.',
+                  title: 'Domain-trained teams',
+                  desc: 'Our teams are briefed on your product, your competitive landscape, and your buyers\' day-to-day problems — whether they\'re on the phone or writing outbound email.',
                 },
                 {
                   num: '04',
@@ -221,8 +221,8 @@ export const AboutPage: React.FC = () => {
               },
               {
                 num: '02',
-                title: 'Human callers, not AI',
-                desc: 'Every call is made by a real person. 200+ dials per day, per caller. Your buyers can tell the difference — and so can your conversion rates.',
+                title: 'Human teams, not AI',
+                desc: 'Every call is made by a real person. Every email is written by a native speaker with domain knowledge. Your buyers can tell the difference — and so can your conversion rates.',
               },
               {
                 num: '03',
@@ -237,12 +237,12 @@ export const AboutPage: React.FC = () => {
               {
                 num: '05',
                 title: 'Live in 2 weeks',
-                desc: 'No 3-month onboarding. Callers are trained and on the phones within 14 days. First meetings typically land in week 3.',
+                desc: 'No 3-month onboarding. Teams are trained and running within 14 days. First meetings typically land in week 3.',
               },
               {
                 num: '06',
-                title: 'Calling-first approach',
-                desc: 'Most agencies lead with email. We lead with the phone — because a 3-minute conversation beats a 2% reply rate every time.',
+                title: 'Calling-led outbound',
+                desc: 'We lead with the phone and back it with email — because a 3-minute conversation supported by a well-timed sequence outperforms either channel alone.',
               },
             ].map((card, i) => (
               <motion.div
@@ -272,21 +272,21 @@ export const AboutPage: React.FC = () => {
               </motion.div>
               <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-8">
                 Native speakers who understand your{' '}
-                <span className="text-[#C5A059] font-normal">buyers.</span>
+                <span className="text-[#C5A059] font-normal">buyers</span> — on the phone and in the inbox.
               </motion.h2>
               <motion.p {...stagger(0.2)} className="text-stone-400 leading-relaxed mb-4">
-                We don't hire generalist SDRs and hand them a script. Every caller is recruited for native fluency in their language and trained specifically on supply chain, logistics, and procurement SaaS.
+                We don't hire generalist SDRs and hand them a script. Every team member is recruited for native fluency in their language and trained specifically on supply chain, logistics, and procurement software — whether they're dialling or writing outbound email.
               </motion.p>
               <motion.p {...stagger(0.25)} className="text-stone-400 leading-relaxed mb-8">
-                When a French VP of Supply Chain picks up the phone, they hear someone who speaks their language — literally and technically. That changes the conversation entirely.
+                When a French VP of Supply Chain picks up the phone — or opens an email — they encounter someone who speaks their language, literally and technically. That changes the conversation entirely.
               </motion.p>
 
               {/* Stats */}
               <motion.div {...stagger(0.3)} className="grid grid-cols-2 gap-3">
                 {[
                   { num: '200+', label: 'dials per day per caller' },
-                  { num: 'Ready', label: 'callers available from day one' },
-                  { num: '0', label: 'AI-generated calls — ever' },
+                  { num: '6', label: 'Email sequences in all 6 languages' },
+                  { num: '0', label: 'AI-generated calls or emails — ever' },
                   { num: 'Scales', label: 'up the moment you need more' },
                 ].map((s, i) => (
                   <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5">
@@ -357,7 +357,7 @@ export const AboutPage: React.FC = () => {
               {
                 num: '03',
                 title: 'We adapt quickly',
-                desc: 'Market not responding? We shift. Script not landing? We rewrite it. New target vertical? We build the list. No fighting through layers of process.',
+                desc: 'Market not responding? We shift. Script not landing? We rewrite it. Email sequence underperforming? We test a new angle. No fighting through layers of process.',
               },
               {
                 num: '04',

@@ -16,14 +16,14 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'alpega',
     name: 'Alpega Group',
-    tag: 'TMS / Logistics SaaS',
+    tag: 'TMS / Logistics Software',
     tagColor: 'stone',
     gradient: 'from-stone-800 to-stone-600',
-    desc: 'Enterprise logistics SaaS needed to scale outbound across 6 European markets with zero internal SDR capacity.',
+    desc: 'Enterprise logistics software company needed to scale outbound across 6 European markets with zero internal SDR capacity.',
     metrics: [
-      { num: '280', label: 'demos in year one' },
-      { num: '£10M+', label: 'pipeline generated' },
-      { num: '60-80', label: 'per month ongoing' },
+      { num: '80+', label: 'demos per month' },
+      { num: '$12M+', label: 'pipeline generated' },
+      { num: '12+', label: 'months ongoing' },
     ],
   },
   {
@@ -32,10 +32,10 @@ const CASE_STUDIES: CaseStudy[] = [
     tag: 'Procurement Intelligence',
     tagColor: 'gold',
     gradient: 'from-[#6b5630] to-[#C5A059]',
-    desc: 'Commodity data platform needed enterprise demos with procurement leaders at £250M+ manufacturers.',
+    desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
     metrics: [
-      { num: '151', label: 'demos in 180 days' },
-      { num: '£4.5M', label: 'pipeline generated' },
+      { num: '30+', label: 'demos per month' },
+      { num: '$5.5M', label: 'pipeline generated' },
     ],
   },
   {
@@ -46,8 +46,8 @@ const CASE_STUDIES: CaseStudy[] = [
     gradient: 'from-emerald-900 to-emerald-700',
     desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
     metrics: [
-      { num: '73', label: 'meetings in 90 days' },
-      { num: '20-30', label: 'per month ongoing' },
+      { num: '28+', label: 'demos per month' },
+      { num: '4', label: 'markets covered' },
     ],
   },
   {
@@ -76,24 +76,24 @@ const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'wowflow',
     name: 'WowFlow',
-    tag: 'Operations / Facilities SaaS',
+    tag: 'Operations / Facilities Software',
     tagColor: 'green',
     gradient: 'from-emerald-900 to-emerald-600',
     desc: 'Needed to expand across multiple EU countries simultaneously from a standing start.',
     metrics: [
-      { num: '300', label: 'qualified leads in 100 days' },
+      { num: '300', label: 'qualified meetings in 100 days' },
     ],
   },
   {
     slug: 'teamlearn',
     name: 'Teamlearn',
-    tag: 'Enterprise SaaS / L&D',
+    tag: 'Enterprise Software / L&D',
     tagColor: 'gold',
     gradient: 'from-[#4a3a18] to-[#8a7a38]',
     desc: 'Had 1-2 demos per month with no structured outbound — needed to scale pipeline fast.',
     metrics: [
       { num: '20-30', label: 'demos/month (from 1-2)' },
-      { num: '£1.2M', label: 'pipeline generated' },
+      { num: '$1.5M', label: 'pipeline generated' },
     ],
   },
   {
@@ -148,7 +148,7 @@ export const CaseStudiesPage: React.FC = () => {
             className="font-serif text-5xl md:text-6xl leading-[1.08] tracking-tight mb-6 max-w-3xl mx-auto"
           >
             Real results for supply chain{' '}
-            <span className="text-[#C5A059] font-normal">SaaS companies.</span>
+            <span className="text-[#C5A059] font-normal">software companies.</span>
           </motion.h1>
           <motion.p
             {...fadeUp}
@@ -169,8 +169,8 @@ export const CaseStudiesPage: React.FC = () => {
         >
           {[
             { num: '2,298+', label: 'qualified demos booked' },
-            { num: '£18M+', label: 'pipeline generated' },
-            { num: '9', label: 'supply chain SaaS clients' },
+            { num: '$22M+', label: 'pipeline generated' },
+            { num: '9', label: 'supply chain software clients' },
             { num: '6', label: 'languages, native speakers' },
           ].map((stat, i) => (
             <div key={i}>

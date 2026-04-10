@@ -6,14 +6,14 @@ const STEPS = [
   {
     week: 'Week 0',
     title: 'Data & targeting',
-    content: 'We map your ICP across European markets and build verified contact lists.',
-    counter: '2,400 ICP-matched contacts identified across 4 European markets.',
+    content: 'We map your ICP across your target markets and build verified contact lists.',
+    counter: '2,400 ICP-matched contacts identified across your target markets.',
   },
   {
     week: 'Week 1–2',
-    title: 'Native-language calling',
-    content: 'Our team of native speakers engages prospects in 6 European languages. 200+ dials per day.',
-    counter: '200+ precision dials per day in 6 languages.',
+    title: 'Calling and email outreach',
+    content: 'Our team of native speakers engages prospects by phone and email. 200+ dials per day plus targeted email sequences.',
+    counter: '200+ dials + email sequences across your markets.',
   },
   {
     week: 'Week 3–8',
@@ -25,7 +25,7 @@ const STEPS = [
     week: 'Week 9–12',
     title: 'Your calendar is full',
     content: 'You take the meetings. We handle everything else. 30 demos delivered — guaranteed.',
-    counter: '£2M+ pipeline from qualified conversations.',
+    counter: '$2M+ pipeline from qualified conversations.',
   },
 ];
 

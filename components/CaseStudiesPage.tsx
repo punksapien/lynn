@@ -7,9 +7,10 @@ interface CaseStudy {
   name: string;
   tag: string;
   tagColor: 'gold' | 'green' | 'stone';
-  gradient: string;
   desc: string;
   metrics: { num: string; label: string }[];
+  logo?: string;
+  logoClass?: string;
 }
 
 const CASE_STUDIES: CaseStudy[] = [
@@ -18,78 +19,85 @@ const CASE_STUDIES: CaseStudy[] = [
     name: 'Alpega Group',
     tag: 'TMS / Logistics Software',
     tagColor: 'stone',
-    gradient: 'from-stone-800 to-stone-600',
+
     desc: 'Enterprise logistics software company needed to scale outbound across 6 European markets with zero internal SDR capacity.',
     metrics: [
       { num: '80+', label: 'demos per month' },
       { num: '$12M+', label: 'pipeline generated' },
       { num: '12+', label: 'months ongoing' },
     ],
+    logo: '/assets/brand_alpega.avif',
+    logoClass: 'max-h-20 max-w-[50%] mt-4',
   },
   {
     slug: 'mintec',
     name: 'Mintec / Expana',
     tag: 'Procurement Intelligence',
     tagColor: 'gold',
-    gradient: 'from-[#6b5630] to-[#C5A059]',
     desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
     metrics: [
       { num: '30+', label: 'demos per month' },
       { num: '$5.5M', label: 'pipeline generated' },
     ],
+    logo: '/assets/brand_mintec.avif',
+    logoClass: 'max-h-24 max-w-[50%]',
   },
   {
     slug: 'easy4pro',
     name: 'Easy4Pro',
     tag: 'Supply Chain Platform',
     tagColor: 'green',
-    gradient: 'from-emerald-900 to-emerald-700',
     desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
     metrics: [
       { num: '28+', label: 'demos per month' },
       { num: '4', label: 'markets covered' },
     ],
+    logo: '/assets/easypro.avif',
+    logoClass: 'max-h-16 max-w-[55%]',
   },
   {
     slug: 'trayport',
     name: 'Trayport',
     tag: 'Energy Trading / Procurement',
     tagColor: 'gold',
-    gradient: 'from-[#5a4418] to-[#9a7a38]',
     desc: 'Procurement platform for metals markets needed consistent qualified pipeline with senior decision-makers.',
     metrics: [
       { num: '20', label: 'qualified meetings/month' },
     ],
+    logo: '/assets/trayport.jpeg',
+    logoClass: 'max-h-12 max-w-[55%]',
   },
   {
     slug: 'descartes',
     name: 'Descartes Systems',
     tag: 'Compliance / Export Control',
     tagColor: 'stone',
-    gradient: 'from-stone-900 to-stone-700',
     desc: 'Global logistics tech leader needed outbound for their compliance division targeting aerospace and defence.',
     metrics: [
       { num: 'EMEA', label: 'wide outbound' },
       { num: 'A&D', label: 'aerospace & defence' },
     ],
+    logo: '/assets/descartes-dark.png',
+    logoClass: 'max-h-10 max-w-[55%]',
   },
   {
     slug: 'wowflow',
     name: 'WowFlow',
     tag: 'Operations / Facilities Software',
     tagColor: 'green',
-    gradient: 'from-emerald-900 to-emerald-600',
     desc: 'Needed to expand across multiple EU countries simultaneously from a standing start.',
     metrics: [
       { num: '300', label: 'qualified meetings in 100 days' },
     ],
+    logo: '/assets/wowflow.svg',
+    logoClass: 'max-h-12 max-w-[50%]',
   },
   {
     slug: 'teamlearn',
     name: 'Teamlearn',
     tag: 'Enterprise Software / L&D',
     tagColor: 'gold',
-    gradient: 'from-[#4a3a18] to-[#8a7a38]',
+
     desc: 'Had 1-2 demos per month with no structured outbound — needed to scale pipeline fast.',
     metrics: [
       { num: '20-30', label: 'demos/month (from 1-2)' },
@@ -101,18 +109,20 @@ const CASE_STUDIES: CaseStudy[] = [
     name: 'Tendereasy',
     tag: 'Procurement / Tendering',
     tagColor: 'gold',
-    gradient: 'from-[#3a2a10] to-[#7a6030]',
+
     desc: 'Procurement tendering platform needed a steady flow of qualified demos with enterprise buyers.',
     metrics: [
       { num: '20', label: 'demos/month' },
     ],
+    logo: '/assets/tendereasy.png',
+    logoClass: 'max-h-14 max-w-[55%]',
   },
   {
     slug: 'smartbooking',
     name: 'SmartBooking',
     tag: 'Logistics / Booking Platform',
     tagColor: 'stone',
-    gradient: 'from-stone-800 to-stone-500',
+
     desc: 'Logistics booking platform needed qualified meetings with operations and supply chain decision-makers.',
     metrics: [
       { num: '20', label: 'demos/month' },
@@ -121,9 +131,9 @@ const CASE_STUDIES: CaseStudy[] = [
 ];
 
 const tagStyles = {
-  gold: 'bg-white/20 text-white',
-  green: 'bg-white/20 text-white',
-  stone: 'bg-white/20 text-white',
+  gold: 'bg-[#C5A059]/10 text-[#C5A059]',
+  green: 'bg-emerald-50 text-emerald-700',
+  stone: 'bg-stone-100 text-stone-600',
 };
 
 const fadeUp = {
@@ -195,15 +205,23 @@ export const CaseStudiesPage: React.FC = () => {
                 transition={{ duration: 0.5, delay: (i % 3) * 0.1, ease: "easeOut" }}
                 className="group bg-white border border-stone-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col"
               >
-                {/* Card Top — Gradient with Logo */}
-                <div className={`relative aspect-[4/3] bg-gradient-to-br ${cs.gradient} flex items-center justify-center p-8`}>
-                  <span className={`absolute top-4 left-4 text-[10px] font-semibold tracking-wide px-3 py-1 rounded-full ${tagStyles[cs.tagColor]}`}>
+                {/* Card Top — Logo Area */}
+                <div className="relative aspect-[5/3] bg-white border-b border-stone-100 flex items-center justify-center overflow-hidden pt-6">
+                  <span className={`absolute top-4 left-4 z-10 text-[10px] font-semibold tracking-wide px-3 py-1 rounded-full ${tagStyles[cs.tagColor]}`}>
                     {cs.tag}
                   </span>
-                  <span className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white/70 group-hover:bg-white/20 transition-colors">
+                  <span className="absolute top-4 right-4 z-10 w-8 h-8 bg-stone-200/50 rounded-full flex items-center justify-center text-stone-400 group-hover:bg-stone-200 group-hover:text-stone-600 transition-colors">
                     <ArrowUpRight size={14} />
                   </span>
-                  <span className="font-serif text-3xl text-white text-center leading-tight">{cs.name}</span>
+                  {cs.logo ? (
+                    <img
+                      src={cs.logo}
+                      alt={cs.name}
+                      className={`object-contain ${cs.logoClass || 'max-h-16 max-w-[60%]'}`}
+                    />
+                  ) : (
+                    <span className="font-serif text-3xl text-[#1a1a1a] text-center leading-tight">{cs.name}</span>
+                  )}
                 </div>
 
                 {/* Card Body */}

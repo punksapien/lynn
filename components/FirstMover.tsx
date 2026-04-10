@@ -9,10 +9,9 @@ export const FirstMover = () => {
   return (
     <section id="first-mover" className="py-16 bg-white border-t border-stone-200">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">First Mover Advantage</div>
-        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <div className="lg:sticky lg:top-40 lg:h-fit">
+            <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">First Mover Advantage</div>
             <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-6 tracking-tight leading-tight">
               The first vendor in the room <span className="text-[#C5A059]">almost always wins.</span>
             </h2>
@@ -26,11 +25,11 @@ export const FirstMover = () => {
             </div>
           </div>
           
-          <div className="pt-10 pb-[20vh]">
+          <div className="pt-10 pb-8">
             <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-2">A Typical Enterprise Deal - Who Gets There First</div>
             <div className="inline-block bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-12">130–170 day cycle</div>
             
-            <div className="relative border-l border-stone-200 ml-4 space-y-[25vh] pb-4">
+            <div className="relative border-l border-stone-200 ml-4 space-y-16 pb-4">
               {/* Item 1 */}
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}

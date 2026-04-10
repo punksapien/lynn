@@ -30,7 +30,7 @@ const RESOURCES: Resource[] = [
   {
     type: 'blog',
     title: 'Multilingual Outbound: Why Calling a French VP in French Changes Everything',
-    desc: 'The conversion data behind native-language calling across European markets, and why translation isn\'t the same as fluency.',
+    desc: 'The conversion data behind multilingual calling across European markets, and why translation isn\'t the same as fluency.',
     readTime: '4 min read',
     date: 'January 2025',
   },

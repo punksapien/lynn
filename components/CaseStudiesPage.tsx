@@ -171,7 +171,7 @@ export const CaseStudiesPage: React.FC = () => {
             { num: '2,298+', label: 'qualified demos booked' },
             { num: '$22M+', label: 'pipeline generated' },
             { num: '9', label: 'supply chain software clients' },
-            { num: '6', label: 'languages, native speakers' },
+            { num: '6', label: 'languages, fluent teams' },
           ].map((stat, i) => (
             <div key={i}>
               <div className="font-serif text-3xl text-white leading-none mb-1">{stat.num}</div>

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Phone, Globe, Calendar, ArrowUpRight, Menu, X, ChevronDown, Calculator, BarChart3 } from 'lucide-react';
+import { ArrowRight, Phone, Globe, Calendar, ArrowUpRight, Menu, X, ChevronDown, Calculator, BarChart3, Target, Mail } from 'lucide-react';
 import { CalendarUI } from './components/CalendarUI';
 import { WhoWeReach } from './components/WhoWeReach';
 import { FirstMover } from './components/FirstMover';
@@ -15,6 +15,10 @@ import { ResourcesPage } from './components/ResourcesPage';
 import { CaseStudyCarousel } from './components/CaseStudyCarousel';
 import { ROICalculatorPage } from './components/ROICalculatorPage';
 import { MarketScannerPage } from './components/MarketScannerPage';
+import { PrivacyPage } from './components/PrivacyPage';
+import { TermsPage } from './components/TermsPage';
+import { GDPRPage } from './components/GDPRPage';
+import { CookieBanner } from './components/CookieBanner';
 
 import { CountUp } from './components/CountUp';
 
@@ -201,6 +205,12 @@ const App: React.FC = () => {
           <ROICalculatorPage />
         ) : route === '#/market-scanner' ? (
           <MarketScannerPage />
+        ) : route === '#/privacy' ? (
+          <PrivacyPage />
+        ) : route === '#/terms' ? (
+          <TermsPage />
+        ) : route === '#/gdpr' ? (
+          <GDPRPage />
         ) : route.startsWith('#/case-study/') ? (
           <CaseStudyDetailPage key={route} slug={route.replace('#/case-study/', '')} />
         ) : (
@@ -296,14 +306,14 @@ const App: React.FC = () => {
                     <div className="w-5 h-5 rounded-full bg-[#C5A059]/15 text-[#C5A059] flex items-center justify-center shrink-0">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
                     </div>
-                    <span><strong className="text-[#1a1a1a]">30 demos in 90 days</strong> — guaranteed</span>
+                    <span><strong className="text-[#1a1a1a]">Qualified demos, guaranteed</strong></span>
                   </div>
                   <div className="h-4 w-px bg-stone-300 hidden sm:block" />
                   <div className="flex items-center gap-1.5 text-xs text-stone-400">
                     {['EN', 'FR', 'DE', 'ES', 'IT', 'PT'].map((code, i) => (
                       <span key={i} className="px-2 py-1 rounded bg-stone-100 text-stone-500 font-medium">{code}</span>
                     ))}
-                    <span className="pl-1 text-[11px]">native speakers</span>
+                    <span className="pl-1 text-[11px]">fluent speakers</span>
                   </div>
                 </motion.div>
               </div>
@@ -359,15 +369,15 @@ const App: React.FC = () => {
               <div>
                 <div className="inline-block px-3 py-1 bg-stone-800 text-stone-300 text-[10px] uppercase tracking-wider font-bold rounded-full mb-6">THE GUARANTEE</div>
                 <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-                  30 qualified demos. 90 days.<br/>
+                  Guaranteed results.<br/>
                   <span className="text-[#C5A059] font-normal">Or we keep going.</span>
                 </h2>
                 <p className="text-xl text-stone-400 mb-8 leading-relaxed">
-                  If we don't hit 30 demos in 90 days, we keep working at no extra cost for up to 45 additional days.
+                  We agree on a target number of qualified demos before we start. If we don't hit it, we keep working at no extra cost.
                 </p>
                 <div className="bg-stone-900 border border-stone-800 p-6 rounded-xl mb-10">
                   <p className="text-stone-300 leading-relaxed">
-                    No retainer agencies hedging with "activity reports." A specific number, a specific deadline, and a written guarantee.
+                    No retainer agencies hedging with "activity reports." A specific target, a specific deadline, and a written guarantee tailored to your market.
                   </p>
                 </div>
                 
@@ -413,28 +423,35 @@ const App: React.FC = () => {
               <div className="inline-block mb-4 text-xs font-bold tracking-widest text-stone-400 uppercase">The Process</div>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1a1a1a] leading-tight mb-6">Precision <span className="text-stone-400 font-normal">and</span> Speed.</h2>
               <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
-                We build highly targeted lists and run coordinated outbound — calling and email, working together. Native speakers, high volume, relentless execution.
+                We build highly targeted lists and run coordinated outbound — calling and email, working together. Fluent in 6 languages, high volume, relentless execution.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
               {[
                 {
                   step: 1,
-                  icon: <Phone size={22} />,
-                  title: '200+ Dials Per Day',
-                  desc: 'Calling is our primary channel. We get decision-makers on the phone while email sequences warm the accounts around them.',
+                  icon: <Target size={22} />,
+                  title: 'GTM Strategy & List Build',
+                  desc: 'Our GTM engineers research your market, map every decision-maker that fits your ICP, and build segmented lists by region, role, and pain point. You launch with a precise target set — not a generic database pull.',
                   highlight: false,
                 },
                 {
                   step: 2,
-                  icon: <Globe size={22} />,
-                  title: 'Native Language',
-                  desc: 'Our teams are native speakers across 6 European languages, with full English coverage for the US and global markets. We build rapport instantly, no matter the region.',
+                  icon: <Mail size={22} />,
+                  title: 'Personalised Email Sequences',
+                  desc: "We write multi-step email campaigns tailored to each segment — referencing their industry, tech stack, and specific challenges. Every sequence is written in the prospect's language by fluent copywriters, crafted to feel like a one-to-one message, not a mass blast.",
                   highlight: false,
                 },
                 {
                   step: 3,
+                  icon: <Phone size={22} />,
+                  title: '200+ Dials Per Day',
+                  desc: 'Fluent speakers across 6 European languages, with full English coverage for the US and global markets. While email sequences warm accounts, our callers get decision-makers on the phone and book directly into your calendar.',
+                  highlight: false,
+                },
+                {
+                  step: 4,
                   icon: <Calendar size={22} />,
                   title: '30 Guaranteed Demos',
                   desc: 'Within 90 days, your calendar is full of qualified prospects — booked through calls, email replies, or both — ready to discuss your solution.',
@@ -484,7 +501,7 @@ const App: React.FC = () => {
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-serif text-4xl md:text-6xl text-[#1a1a1a] mb-8 leading-tight">Your sales team deserves a full calendar.</h2>
             <p className="text-xl text-stone-600 font-light max-w-2xl mx-auto mb-12">
-              30 qualified demos in 90 days. If we don't hit it, we keep working for up to 45 more days at no extra cost. Book a call and we'll show you exactly how it works for your market.
+              We build your GTM engine, fill your pipeline with qualified demos, and guarantee results. Book a call and we'll show you exactly how it works for your market.
             </p>
             <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-base font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
               Book your strategy call →
@@ -504,7 +521,7 @@ const App: React.FC = () => {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <img src="/assets/dark_logo.png" alt="Lynn" className="h-16 w-auto" />
-                  <span className="font-serif font-bold text-2xl text-white tracking-tight">Lynn Lead Gen</span>
+                  <span className="font-serif font-normal text-xl text-stone-400 tracking-tight">Lynn Lead Gen</span>
                 </div>
                 <div className="border-t border-stone-700 pt-5">
                   <p className="text-sm text-stone-500 leading-relaxed max-w-xs">
@@ -545,15 +562,20 @@ const App: React.FC = () => {
           </div>
 
           <div className="text-xs text-stone-600 flex flex-col md:flex-row justify-between items-center gap-4">
-            <span>&copy; {new Date().getFullYear()} Lynn Lead Gen. All rights reserved.</span>
-            <span className="tracking-widest uppercase">EN · FR · DE · ES · IT · PT</span>
+            <span>&copy; {new Date().getFullYear()} Lynn Lead Generation Ltd. Company No. 15427579 | Registered in England & Wales.</span>
+            <div className="flex items-center gap-4">
+              <a href="#/privacy" className="hover:text-white transition-colors">Privacy</a>
+              <a href="#/terms" className="hover:text-white transition-colors">Terms</a>
+              <a href="#/gdpr" className="hover:text-white transition-colors">GDPR</a>
+              <span className="tracking-widest uppercase">EN · FR · DE · ES · IT · PT</span>
+            </div>
           </div>
         </div>
       </footer>
 
       {/* Sticky Bottom Bar */}
       <AnimatePresence>
-        {scrollPercent > 60 && (
+        {scrollPercent > 60 && scrollPercent < 92 && (
           <motion.div 
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -561,7 +583,7 @@ const App: React.FC = () => {
             className="fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-stone-200 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] py-4 px-6"
           >
             <div className="container mx-auto max-w-6xl flex justify-between items-center">
-              <div className="text-sm font-medium text-[#1a1a1a] hidden sm:block">30 demos in 90 days, guaranteed.</div>
+              <div className="text-sm font-medium text-[#1a1a1a] hidden sm:block">Qualified demos, guaranteed.</div>
               <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="w-full sm:w-auto text-center px-8 py-3 bg-[#1a1a1a] text-white rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
                 Book a call
               </a>
@@ -569,6 +591,8 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <CookieBanner />
     </div>
   );
 };

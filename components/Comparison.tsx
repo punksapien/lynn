@@ -8,7 +8,7 @@ export const Comparison = () => {
         <div className="text-center mb-16">
           <div className="text-xs font-bold tracking-widest text-stone-400 uppercase mb-4">How We Compare</div>
           <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a1a] mb-6 tracking-tight">
-            Why clients choose Lynn over <span className="text-[#C5A059]">everyone else.</span>
+            Why clients choose <span className="text-[#C5A059]">Lynn.</span>
           </h2>
           <p className="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
             There are plenty of outbound agencies. Most are generalists running the same playbook for any software company that will have them. Lynn is built for one market, and one market only — and that specificity shows up in every part of how we operate.
@@ -34,7 +34,7 @@ export const Comparison = () => {
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-stone-800 mb-1">Supply chain, logistics and procurement — exclusively</div>
-                      <div className="text-xs text-stone-600 leading-relaxed">Every caller, every script, every email sequence is built for this vertical and nothing else.</div>
+                      <div className="text-xs text-stone-600 leading-relaxed">Every caller, every script, every GTM campaign is engineered for this vertical and nothing else.</div>
                     </div>
                   </div>
                 </td>
@@ -83,8 +83,8 @@ export const Comparison = () => {
                   <div className="flex gap-2 items-start">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-stone-800 mb-1">English, French, German, Spanish, Italian, Portuguese — natively</div>
-                      <div className="text-xs text-stone-600 leading-relaxed">Native speakers on the phone and native-language email copy in every market. Primary coverage across Europe and the US, with proven results globally.</div>
+                      <div className="font-semibold text-stone-800 mb-1">English, French, German, Spanish, Italian, Portuguese — fluently</div>
+                      <div className="text-xs text-stone-600 leading-relaxed">Fluent speakers on the phone and multilingual email copy written in each language. Primary coverage across Europe and the US, with proven results globally.</div>
                     </div>
                   </div>
                 </td>
@@ -107,8 +107,8 @@ export const Comparison = () => {
                   <div className="flex gap-2 items-start">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-stone-800 mb-1">200+ precision dials per caller, per day — plus email sequences</div>
-                      <div className="text-xs text-stone-600 leading-relaxed">Calling and email reinforce each other across every market.</div>
+                      <div className="font-semibold text-stone-800 mb-1">200+ precision dials per day — plus hyper-targeted GTM email campaigns</div>
+                      <div className="text-xs text-stone-600 leading-relaxed">Calling and personalised email campaigns reinforce each other across every market.</div>
                     </div>
                   </div>
                 </td>
@@ -133,8 +133,8 @@ export const Comparison = () => {
                   <div className="flex gap-2 items-start">
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-stone-800 mb-1">30 qualified demos in 90 days — or we keep working at no extra cost for up to 45 additional days</div>
-                      <div className="text-xs text-stone-600 leading-relaxed">A specific number, a specific deadline, no wiggle room.</div>
+                      <div className="font-semibold text-stone-800 mb-1">Agreed demo target with a written guarantee — or we keep working at no extra cost</div>
+                      <div className="text-xs text-stone-600 leading-relaxed">A specific number tailored to your market, a specific deadline, no wiggle room.</div>
                     </div>
                   </div>
                 </td>
@@ -158,7 +158,7 @@ export const Comparison = () => {
                     <Check className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                     <div>
                       <div className="font-semibold text-stone-800 mb-1">Week 3 — no ramp, no recruitment delay</div>
-                      <div className="text-xs text-stone-600 leading-relaxed">Email sequences begin in week one, calling by week two, first bookings typically arrive by week three.</div>
+                      <div className="text-xs text-stone-600 leading-relaxed">GTM campaigns launch in week one, calling by week two, first bookings typically arrive by week three.</div>
                     </div>
                   </div>
                 </td>

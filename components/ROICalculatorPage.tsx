@@ -92,7 +92,7 @@ export const ROICalculatorPage: React.FC = () => {
             <span className="text-[#C5A059] font-normal">outbound.</span>
           </motion.h1>
           <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed max-w-2xl">
-            We guarantee 30 qualified demos in 90 days. Plug in your numbers to see what that means for your pipeline, revenue, and payback period.
+            We guarantee qualified demos on a timeline agreed before we start. Plug in your numbers to see what that means for your pipeline, revenue, and payback period.
           </motion.p>
         </div>
       </section>

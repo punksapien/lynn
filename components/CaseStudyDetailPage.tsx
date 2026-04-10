@@ -80,7 +80,7 @@ const STUDIES: CaseStudyData[] = [
       title: 'Zero internal SDR capacity across six European markets',
       paragraphs: [
         'Alpega is a leading European transport management software (TMS) provider serving enterprise logistics operations. Their platform handles billions in freight spend annually — but their outbound sales engine didn\'t match the scale of their product.',
-        'They had no internal SDR team, no structured outbound process, and no way to reach decision-makers across the DACH, French, Spanish, Italian, Benelux, and Nordic markets in their native languages.',
+        'They had no internal SDR team, no structured outbound process, and no way to reach decision-makers across the DACH, French, Spanish, Italian, Benelux, and Nordic markets in their local languages.',
       ],
       bullets: [
         'No SDR team or outbound infrastructure',
@@ -92,10 +92,10 @@ const STUDIES: CaseStudyData[] = [
     },
     solution: {
       title: 'Built a full outbound engine from scratch',
-      intro: 'We designed and deployed a coordinated outbound programme — calling and email — covering all six language markets. Native speakers were briefed on Alpega\'s platform, competitive landscape, and buyer personas, then live within two weeks.',
+      intro: 'We designed and deployed a coordinated outbound programme — calling and email — covering all six language markets. Fluent speakers were briefed on Alpega\'s platform, competitive landscape, and buyer personas, then live within two weeks.',
       timeline: [
         { title: 'ICP definition and list building', body: 'Mapped Alpega\'s ideal customers across each market — enterprise logistics operations, 3PLs, manufacturers with complex supply chains. Built targeted contact lists of VP/Director-level decision-makers.' },
-        { title: 'Team recruitment and training', body: 'Recruited native speakers for each market (EN, FR, DE, ES, IT, and Nordics). Trained every caller on Alpega\'s product, competitive positioning, and enterprise logistics buyer pain points.' },
+        { title: 'Team recruitment and training', body: 'Recruited fluent speakers for each market (EN, FR, DE, ES, IT, and Nordics). Trained every caller on Alpega\'s product, competitive positioning, and enterprise logistics buyer pain points.' },
         { title: 'Script and email sequence development', body: 'Created market-specific call scripts that addressed local buying patterns and objections. Tested and iterated within the first two weeks of live calling.' },
         { title: 'High-volume calling (200+ dials/day) + email sequences', body: '200+ dials per day across all six markets plus targeted email sequences. Every conversation handled by a human — no AI, no automation.' },
         { title: 'Continuous optimisation', body: 'Weekly performance reviews, script adjustments, and market prioritisation based on conversion data. Scaled up callers in high-performing markets.' },
@@ -121,7 +121,7 @@ const STUDIES: CaseStudyData[] = [
     whyItWorked: {
       title: 'What made this engagement successful',
       bullets: [
-        '<strong>Native-language teams in every market — on the phone and in the inbox</strong>',
+        '<strong>Fluent teams in every market — on the phone and in the inbox</strong>',
         '<strong>Domain expertise</strong> (TMS, freight management, supply chain operations)',
         '<strong>Speed to market</strong> (live in 2 weeks vs 12+ months hiring internally)',
         '<strong>Scale without overhead</strong> (output of a 6-person multilingual SDR team)',
@@ -169,7 +169,7 @@ const STUDIES: CaseStudyData[] = [
       timeline: [
         { title: 'Buyer persona mapping', body: 'Identified the specific titles, industries, and company sizes that convert best for commodity intelligence platforms.' },
         { title: 'Data sourcing and enrichment', body: 'Built custom contact lists of procurement VPs, CPOs, and category managers at target manufacturers across four markets.' },
-        { title: 'Native-language calling teams deployed', body: 'English, French, and German callers trained on procurement workflows, commodity markets, and Mintec\'s competitive advantages.' },
+        { title: 'Multilingual calling teams deployed', body: 'English, French, and German callers trained on procurement workflows, commodity markets, and Mintec\'s competitive advantages.' },
         { title: 'Qualification framework', body: 'Every meeting qualified against strict criteria — company size, active procurement challenges, decision-making authority, and timeline.' },
         { title: 'Pipeline reporting and optimisation', body: 'Weekly syncs with Mintec\'s sales team to review meeting quality, adjust targeting, and double down on what worked.' },
       ],
@@ -196,7 +196,7 @@ const STUDIES: CaseStudyData[] = [
       bullets: [
         '<strong>Procurement domain expertise</strong> — Our callers could discuss commodity price volatility, category management, and procurement transformation with credibility.',
         '<strong>Strict qualification</strong> — Every demo was with a named decision-maker at a company matching the ICP. No padding the numbers.',
-        '<strong>Multi-market coverage</strong> — Reached procurement leaders across UK, DACH, France, and Benelux with native speakers.',
+        '<strong>Multi-market coverage</strong> — Reached procurement leaders across UK, DACH, France, and Benelux with fluent speakers and multilingual email sequences.',
         '<strong>Speed</strong> — First meetings booked within 10 days of campaign launch.',
       ],
     },
@@ -453,7 +453,7 @@ const STUDIES: CaseStudyData[] = [
       bullets: [
         '<strong>Parallel market testing</strong> — Three markets at once gave WowFlow comparative data to make smart expansion decisions.',
         '<strong>Speed</strong> — 100-day sprint delivered results that would have taken 12+ months with internal hiring.',
-        '<strong>Native speakers</strong> — Callers who could have real conversations in German, French, and Dutch.',
+        '<strong>Fluent speakers</strong> — Callers who could have real conversations in German, French, and Dutch, backed by multilingual email sequences in each language.',
       ],
     },
     more: [
@@ -562,7 +562,7 @@ const STUDIES: CaseStudyData[] = [
       intro: 'We built a calling programme focused on procurement leaders at enterprises running complex tendering processes.',
       timeline: [
         { title: 'Procurement buyer mapping', body: 'Identified organisations with active or upcoming tendering challenges — the right moment to engage.' },
-        { title: 'Native-language deployment', body: 'Dutch, German, and French callers trained on procurement processes and tendering workflows.' },
+        { title: 'Multilingual deployment', body: 'Dutch, German, and French callers trained on procurement processes and tendering workflows.' },
         { title: 'Consistent calling programme', body: 'Daily high-volume calling with strict qualification criteria for every meeting booked.' },
         { title: 'Pipeline optimisation', body: 'Ongoing script refinement and market prioritisation based on conversion data.' },
       ],
@@ -644,7 +644,7 @@ const STUDIES: CaseStudyData[] = [
       bullets: [
         '<strong>Freed the founder</strong> — SmartBooking\'s founder went from spending 50% of time prospecting to 100% on closing.',
         '<strong>Predictable pipeline</strong> — 20 meetings per month replaced the feast-or-famine cycle.',
-        '<strong>Multi-market from day one</strong> — UK, DACH, and Benelux covered simultaneously with native speakers.',
+        '<strong>Multi-market from day one</strong> — UK, DACH, and Benelux covered simultaneously with fluent speakers and localised email outreach.',
       ],
     },
     more: [

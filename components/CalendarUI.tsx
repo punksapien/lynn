@@ -349,7 +349,7 @@ export const CalendarUI: React.FC = () => {
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                title="How Lynn guarantees 30 demos in 90 days"
+                title="How Lynn guarantees results"
               />
             </motion.div>
           </motion.div>

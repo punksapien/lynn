@@ -33,7 +33,7 @@ export const AboutPage: React.FC = () => {
                 Lynn exists because we watched brilliant supply chain software companies pour money into agencies that didn't understand their buyers, their market, or their language. And we thought: someone should fix that.
               </motion.p>
               <motion.p {...stagger(0.3)} className="text-lg text-stone-600 leading-relaxed max-w-xl">
-                So we built the agency we wished existed when we were on the other side of the table — one that only works in supply chain, logistics, and procurement software. One that hires native speakers who actually understand what a TMS does — and puts them on the phones and behind the email copy. One that guarantees results because it knows it will hit the number.
+                So we built the agency we wished existed when we were on the other side of the table — one that only works in supply chain, logistics, and procurement software. One that hires fluent speakers who actually understand what a TMS does — and puts them on the phones and behind the email copy. One that guarantees results because it knows it will hit the number.
               </motion.p>
             </div>
 
@@ -64,8 +64,8 @@ export const AboutPage: React.FC = () => {
             {[
               { num: '2,298+', label: 'qualified demos booked' },
               { num: '$22M+', label: 'pipeline generated for clients' },
-              { num: '6', label: 'languages, native speakers' },
-              { num: '30', label: 'demos in 90 days, guaranteed' },
+              { num: '6', label: 'languages, fluent teams' },
+              { num: '90', label: 'day guaranteed programmes' },
             ].map((stat, i) => (
               <div key={i}>
                 <div className="font-serif text-3xl text-white leading-none mb-1">{stat.num}</div>
@@ -222,17 +222,17 @@ export const AboutPage: React.FC = () => {
               {
                 num: '02',
                 title: 'Human teams, not AI',
-                desc: 'Every call is made by a real person. Every email is written by a native speaker with domain knowledge. Your buyers can tell the difference — and so can your conversion rates.',
+                desc: 'Every call is made by a real person. Every email is written by a fluent copywriter with domain knowledge. Your buyers can tell the difference — and so can your conversion rates.',
               },
               {
                 num: '03',
-                title: '30-meeting guarantee',
-                desc: '30 qualified, attended demos in 90 days. If we don\'t hit it, we keep working at no extra cost for up to 45 more days. In writing.',
+                title: 'Results guarantee',
+                desc: 'We agree on a demo target before we start. If we don\'t hit it, we keep working at no extra cost. In writing.',
               },
               {
                 num: '04',
                 title: 'Multilingual from day one',
-                desc: 'English, French, German, Spanish, Italian, Portuguese. Native speakers, not translators. Reach markets your competitors can\'t.',
+                desc: 'English, French, German, Spanish, Italian, Portuguese. Fluent speakers on the phone and multilingual email copy written in each language. Reach markets your competitors can\'t.',
               },
               {
                 num: '05',
@@ -271,11 +271,11 @@ export const AboutPage: React.FC = () => {
                 Our Caller Bench
               </motion.div>
               <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-8">
-                Native speakers who understand your{' '}
+                Fluent speakers who understand your{' '}
                 <span className="text-[#C5A059] font-normal">buyers</span> — on the phone and in the inbox.
               </motion.h2>
               <motion.p {...stagger(0.2)} className="text-stone-400 leading-relaxed mb-4">
-                We don't hire generalist SDRs and hand them a script. Every team member is recruited for native fluency in their language and trained specifically on supply chain, logistics, and procurement software — whether they're dialling or writing outbound email.
+                We don't hire generalist SDRs and hand them a script. Every team member is recruited for fluency in their language and trained specifically on supply chain, logistics, and procurement software — whether they're dialling or writing outbound email.
               </motion.p>
               <motion.p {...stagger(0.25)} className="text-stone-400 leading-relaxed mb-8">
                 When a French VP of Supply Chain picks up the phone — or opens an email — they encounter someone who speaks their language, literally and technically. That changes the conversation entirely.

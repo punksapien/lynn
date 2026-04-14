@@ -28,8 +28,6 @@ interface CaseStudyData {
   tagColor: string;
   summary: string;
   markets: string;
-  duration: string;
-  retainer: string;
   heroStats: { num: string; label: string }[];
   featuredStat?: { num: string; label: string };
   challenge: {
@@ -67,13 +65,11 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-stone-200/80 text-stone-700',
     summary: 'How Lynn helped Europe\'s leading transport management platform scale from zero outbound to 80+ qualified demos per month across 6 languages.',
     markets: 'DACH, France, Spain, Italy, Benelux, Nordics',
-    duration: '12+ months (ongoing)',
-    retainer: '£14,000/month',
     heroStats: [
       { num: '80+', label: 'demos per month' },
       { num: '$12M+', label: 'pipeline generated' },
       { num: '6', label: 'languages covered' },
-      { num: '12+', label: 'months ongoing' },
+      { num: '0 to 80+', label: 'from standing start' },
     ],
     featuredStat: { num: 'Largest client engagement', label: 'Multi-language, multi-market, scaled outbound' },
     challenge: {
@@ -114,7 +110,6 @@ const STUDIES: CaseStudyData[] = [
         { num: '$12M+', label: 'pipeline generated' },
         { num: '80+', label: 'meetings per month (ongoing)' },
         { num: '6', label: 'languages covered natively' },
-        { num: '$14K', label: 'monthly retainer' },
         { num: '0 to 80+', label: 'meetings/month from standing start', highlight: true },
       ],
     },
@@ -141,8 +136,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
     summary: 'How Lynn helped a commodity data platform book 30+ enterprise demos per month with procurement leaders at $300M+ manufacturers.',
     markets: 'UK, DACH, France, Benelux',
-    duration: '6 months (ongoing)',
-    retainer: '£9,500/month',
     heroStats: [
       { num: '30+', label: 'demos per month' },
       { num: '$5.5M', label: 'pipeline generated' },
@@ -213,8 +206,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-emerald-100 text-emerald-800',
     summary: 'How Lynn helped a logistics platform book 28+ qualified meetings per month with enterprise distributors across Europe and LATAM.',
     markets: 'DACH, France, Spain, LATAM',
-    duration: '3 months initial, extended ongoing',
-    retainer: '£8,500/month',
     heroStats: [
       { num: '28+', label: 'demos per month' },
       { num: '20-30', label: 'per month ongoing' },
@@ -279,8 +270,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
     summary: 'How Lynn built a consistent pipeline of 20 qualified meetings per month with senior procurement decision-makers in metals and energy markets.',
     markets: 'UK, DACH, Nordics',
-    duration: '6+ months (ongoing)',
-    retainer: '£7,500/month',
     heroStats: [
       { num: '20', label: 'qualified meetings/month' },
       { num: '3', label: 'markets covered' },
@@ -341,8 +330,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-stone-200/80 text-stone-700',
     summary: 'How Lynn helped a global logistics technology leader build outbound pipeline for their compliance division targeting aerospace and defence.',
     markets: 'UK, DACH, France, Benelux, Nordics',
-    duration: '8+ months (ongoing)',
-    retainer: '£11,000/month',
     heroStats: [
       { num: 'EMEA', label: 'wide outbound coverage' },
       { num: 'A&D', label: 'aerospace & defence focus' },
@@ -407,8 +394,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-emerald-100 text-emerald-800',
     summary: 'How Lynn helped an operations platform generate 300 qualified meetings in 100 days while expanding across multiple EU countries simultaneously.',
     markets: 'DACH, France, Benelux',
-    duration: '100 days initial, extended ongoing',
-    retainer: '£7,000/month',
     heroStats: [
       { num: '300', label: 'qualified meetings in 100 days' },
       { num: '3', label: 'markets launched simultaneously' },
@@ -469,8 +454,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
     summary: 'How Lynn took Teamlearn from 1-2 demos per month to 20-30 per month, generating $1.5M in pipeline with no structured outbound in place.',
     markets: 'UK, DACH',
-    duration: '6+ months (ongoing)',
-    retainer: '£6,500/month',
     heroStats: [
       { num: '20-30', label: 'demos/month (from 1-2)' },
       { num: '$1.5M', label: 'pipeline generated' },
@@ -536,8 +519,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
     summary: 'How Lynn built a consistent pipeline of 20 qualified demos per month for a procurement tendering platform targeting enterprise buyers.',
     markets: 'Benelux, DACH, France',
-    duration: '6+ months (ongoing)',
-    retainer: '£7,000/month',
     heroStats: [
       { num: '20', label: 'demos per month' },
       { num: '3', label: 'markets covered' },
@@ -598,8 +579,6 @@ const STUDIES: CaseStudyData[] = [
     tagColor: 'bg-stone-200/80 text-stone-700',
     summary: 'How Lynn helped a logistics booking platform generate 20 qualified demos per month with operations and supply chain decision-makers.',
     markets: 'UK, DACH, Benelux',
-    duration: '4+ months (ongoing)',
-    retainer: '£6,500/month',
     heroStats: [
       { num: '20', label: 'demos per month' },
       { num: '3', label: 'markets covered' },
@@ -653,6 +632,194 @@ const STUDIES: CaseStudyData[] = [
       { slug: 'wowflow', name: 'WowFlow', tag: 'Operations / Facilities Software', stat: '300', statLabel: 'qualified meetings in 100 days' },
     ],
   },
+  {
+    slug: 'buyco',
+    name: 'BuyCo',
+    tag: 'Ocean Shipping Software',
+    tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
+    summary: 'How Lynn helped an ocean container shipping platform book 67 qualified demos with senior logistics leaders at companies like Siemens, Ferrero, and thyssenkrupp.',
+    markets: 'DACH, France, Spain, Benelux, UK, Italy, Turkey',
+    heroStats: [
+      { num: '67', label: 'demos booked' },
+      { num: '13+', label: 'demos per month' },
+      { num: '7', label: 'European markets' },
+      { num: 'VP/Director', label: 'average seniority' },
+    ],
+    featuredStat: { num: 'Enterprise pipeline', label: 'Siemens, Ferrero, thyssenkrupp, Stellantis, Evonik, EssilorLuxottica' },
+    challenge: {
+      title: 'Enterprise buyers spread across seven European markets',
+      paragraphs: [
+        'BuyCo is an ocean container shipping platform that centralises execution, visibility, and collaboration for large shippers. Their ideal customers are EUR 250M+ manufacturers and consumer goods companies shipping thousands of containers per year.',
+        'Reaching VP- and Director-level logistics leaders across DACH, France, Spain, Benelux, UK, Italy, and Turkey required fluent speakers who understood container shipping operations \u2014 not generic SDRs reading a script.',
+      ],
+      bullets: [
+        'Target buyers are senior logistics leaders at EUR 250M+ enterprises',
+        'Seven European language markets to cover simultaneously',
+        'Highly technical conversations around container shipping workflows',
+        'Needed to position alongside existing ERP, TMS, and freight forwarders \u2014 not as a replacement',
+        'Long enterprise sales cycles requiring qualified, senior-level conversations',
+      ],
+    },
+    solution: {
+      title: 'Fluent callers trained on container shipping operations',
+      intro: 'We deployed native-speaking callers across all seven markets, each trained on BuyCo\'s platform, competitive positioning against visibility-only tools (Project44, FourKites), and the specific pain points of large-scale container shipping.',
+      timeline: [
+        { title: 'ICP mapping across seven markets', body: 'Identified enterprise manufacturers, consumer goods, and chemical companies with high container volumes and dedicated logistics teams across DACH, France, Spain, Italy, Benelux, UK, and Turkey.' },
+        { title: 'Caller training on ocean shipping', body: 'Every caller briefed on container shipping workflows: bookings, vessel selection, SI/VGM documentation, D&D costs, and ETA reliability. Positioned BuyCo as complementary to existing ERP and TMS.' },
+        { title: 'Multi-channel outbound launch', body: 'High-volume calling plus targeted email sequences across all markets. Conversations focused on diagnosing current shipping management \u2014 not pitching.' },
+        { title: 'Continuous qualification refinement', body: 'Tightened qualification criteria based on container volume thresholds and decision-maker seniority. Weekly reviews to prioritise highest-converting markets and verticals.' },
+      ],
+    },
+    results: {
+      title: '67 qualified demos with enterprise logistics leaders',
+      paragraph: 'Within five months, BuyCo had a consistent stream of qualified demos with VP- and Director-level logistics leaders at major European enterprises \u2014 including multiple Fortune 500 companies.',
+      cards: [
+        { num: '67', label: 'qualified demos booked', highlight: true },
+        { num: '13+', label: 'demos per month average' },
+        { num: '7', label: 'European markets covered' },
+        { num: 'VP/Director', label: 'average seniority level', highlight: true },
+      ],
+    },
+    whyItWorked: {
+      title: 'What made this engagement successful',
+      bullets: [
+        '<strong>Domain expertise in container shipping</strong> \u2014 callers understood bookings, D&D costs, rollovers, and carrier management',
+        '<strong>Complementary positioning</strong> \u2014 never pitched BuyCo as a TMS replacement, always as a shipping-specific layer alongside existing systems',
+        '<strong>Enterprise-grade conversations</strong> \u2014 qualified on container volume, logistics team structure, and decision-making authority',
+        '<strong>Seven markets, one coordinated engine</strong> \u2014 fluent speakers in EN, DE, FR, ES, IT, NL, and TR',
+      ],
+    },
+    more: [
+      { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
+      { slug: 'kpler', name: 'Kpler', tag: 'Maritime Intelligence', stat: '19', statLabel: 'demos per month' },
+      { slug: 'descartes', name: 'Descartes Systems', tag: 'Compliance / Export Control', stat: 'EMEA', statLabel: 'wide outbound' },
+    ],
+  },
+  {
+    slug: 'matium',
+    name: 'Matium',
+    tag: 'Plastics Trading Platform',
+    tagColor: 'bg-emerald-100/60 text-emerald-700',
+    summary: 'How Lynn helped a plastics trading infrastructure platform book 42 demos with procurement and sales leaders at companies like DuPont, ExxonMobil, and Jabil.',
+    markets: 'North America (US & Canada)',
+    heroStats: [
+      { num: '42', label: 'demos booked' },
+      { num: '14', label: 'demos per month' },
+      { num: '5', label: 'campaign segments' },
+      { num: 'VP/Director', label: 'average seniority' },
+    ],
+    featuredStat: { num: 'Enterprise plastics pipeline', label: 'DuPont, ExxonMobil, Jabil, Saint-Gobain, NOVA Chemicals, Huntsman' },
+    challenge: {
+      title: 'Breaking into a fragmented industry that runs on relationships and spreadsheets',
+      paragraphs: [
+        'Matium is the operating system for the plastics market \u2014 connecting buyers and sellers with real-time data, auctions, and transaction infrastructure. But the plastics industry is notoriously relationship-driven, and most companies still manage pricing, sourcing, and deals through emails, phone calls, and personal networks.',
+        'Matium needed to reach procurement managers, sales directors, and CEOs at compounders, converters, traders, and resin producers across North America \u2014 and convince them that a platform could improve outcomes without replacing their existing relationships.',
+      ],
+      bullets: [
+        'Highly fragmented industry with deep resistance to new platforms',
+        'Buyers and sellers operate on personal relationships and trust',
+        'Most prospects had never heard of a "plastics trading platform"',
+        'Needed to reach both buy-side (procurement) and sell-side (sales/commercial) personas',
+        'North American market with wide company size range ($50M to multi-billion)',
+      ],
+    },
+    solution: {
+      title: 'Consultative outbound positioning Matium as infrastructure, not a marketplace',
+      intro: 'We trained callers to lead with curiosity \u2014 asking how prospects currently buy and sell plastics, where they see friction, and what visibility they have into market pricing. The pitch was never "replace your network" but "see the market clearly."',
+      timeline: [
+        { title: 'Persona-specific campaigns', body: 'Built separate campaigns for compounders (procurement/sourcing), compounders (sales/marketing), and converters. Each had tailored messaging for buy-side vs. sell-side pain points.' },
+        { title: 'Caller training on plastics industry', body: 'Callers briefed on resin types, compounding vs. converting, margin dynamics, and common objections ("we already know everyone," "sounds like a marketplace"). Positioned Matium as infrastructure, not a marketplace.' },
+        { title: 'High-volume consultative calling', body: 'Daily calling focused on diagnostic conversations: "How do you currently find new buyers?" / "Do you have real-time visibility into market pricing?" Every call aimed to qualify, not pitch.' },
+        { title: 'Rapid iteration on messaging', body: 'Refined scripts weekly based on what resonated. "Real-time pricing visibility" and "verified buyer/seller network" consistently outperformed generic value props.' },
+      ],
+    },
+    results: {
+      title: '42 qualified demos in three months \u2014 including Fortune 500 names',
+      paragraph: 'Matium went from cold-starting outbound in North America to a consistent pipeline of 14 demos per month with decision-makers at companies ranging from mid-market compounders to Fortune 500 chemical and manufacturing giants.',
+      cards: [
+        { num: '42', label: 'qualified demos booked', highlight: true },
+        { num: '14', label: 'demos per month average' },
+        { num: '5', label: 'campaign segments' },
+        { num: 'VP/Director', label: 'average seniority level', highlight: true },
+      ],
+    },
+    whyItWorked: {
+      title: 'What made this engagement successful',
+      bullets: [
+        '<strong>Industry-specific training</strong> \u2014 callers understood compounding, converting, resin grades, and margin dynamics',
+        '<strong>"Infrastructure, not marketplace" positioning</strong> \u2014 neutralised the #1 objection before it came up',
+        '<strong>Dual-persona campaigns</strong> \u2014 separate messaging for procurement (cost savings, supplier discovery) and sales (market visibility, new buyer access)',
+        '<strong>Consultative approach</strong> \u2014 led with questions about their current process, never a hard pitch',
+      ],
+    },
+    more: [
+      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
+      { slug: 'teamlearn', name: 'Teamlearn', tag: 'Enterprise Software / L&D', stat: '$1.5M', statLabel: 'pipeline generated' },
+    ],
+  },
+  {
+    slug: 'kpler',
+    name: 'Kpler',
+    tag: 'Maritime Intelligence',
+    tagColor: 'bg-stone-200/80 text-stone-700',
+    summary: 'How Lynn helped Kpler\'s MarineTraffic solution book 19 qualified demos per month with logistics leaders at companies like Nestl\u00e9, Ford, and Stellantis.',
+    markets: 'Europe, North America, Middle East, Asia',
+    heroStats: [
+      { num: '19', label: 'demos per month' },
+      { num: 'Global', label: 'market reach' },
+      { num: 'Fortune 500', label: 'enterprise logos' },
+      { num: 'VP/Director', label: 'average seniority' },
+    ],
+    featuredStat: { num: 'Enterprise logos', label: 'Nestl\u00e9, Ford, Stellantis, Merck, GAP Inc, Flex, Sappi' },
+    challenge: {
+      title: 'Scaling outbound for a container tracking solution across global markets',
+      paragraphs: [
+        'Kpler is a leading commodity and energy data intelligence company. Following their acquisition of MarineTraffic, they needed to drive adoption of their container tracking solution among large manufacturers and shippers worldwide.',
+        'The challenge was reaching senior logistics and supply chain decision-makers at enterprises that ship thousands of containers per year \u2014 across Europe, North America, the Middle East, and Asia \u2014 and positioning container tracking as a must-have operational tool, not a nice-to-have.',
+      ],
+      bullets: [
+        'Global target market spanning multiple continents and time zones',
+        'Needed to reach VP/Director-level logistics and supply chain leaders',
+        'Highly competitive space with established visibility providers',
+        'Enterprise buyers with long evaluation cycles',
+        'Had to differentiate container tracking from generic supply chain visibility',
+      ],
+    },
+    solution: {
+      title: 'High-volume global outbound combining calling and email',
+      intro: 'We launched a coordinated calling and email programme targeting manufacturers and large shippers globally. Callers were trained on container tracking use cases, competitive differentiation, and the specific pain points of managing ocean freight visibility.',
+      timeline: [
+        { title: 'Global list building', body: 'Built targeted lists of 69,000+ contacts at manufacturers and large shippers across Europe, North America, Middle East, and Asia \u2014 filtered by container volume and logistics team structure.' },
+        { title: 'Multi-market email campaigns', body: 'Launched region-specific email sequences for manufacturers in North America and Europe, tailored to local supply chain challenges and container shipping patterns.' },
+        { title: 'Calling programme deployment', body: 'Dedicated callers focused on converting email engagement into booked demos. Every conversation centred on current container tracking pain points and visibility gaps.' },
+        { title: 'Enterprise qualification', body: 'Strict qualification on container volume, existing tracking solutions, and decision-making authority to ensure every demo was worth Kpler\'s time.' },
+      ],
+    },
+    results: {
+      title: '19 qualified demos per month with global enterprises',
+      paragraph: 'Kpler achieved a consistent flow of 19 qualified demos per month with senior logistics and supply chain leaders, including meetings with some of the world\'s largest manufacturers and consumer goods companies.',
+      cards: [
+        { num: '19', label: 'demos per month', highlight: true },
+        { num: 'Global', label: 'market reach' },
+        { num: 'Fortune 500', label: 'enterprise logos booked', highlight: true },
+      ],
+    },
+    whyItWorked: {
+      title: 'What made this engagement successful',
+      bullets: [
+        '<strong>Global scale</strong> \u2014 coordinated outbound across Europe, North America, Middle East, and Asia',
+        '<strong>Container tracking expertise</strong> \u2014 callers understood ETA reliability, demurrage, and ocean freight operations',
+        '<strong>Enterprise-calibre pipeline</strong> \u2014 Nestl\u00e9, Ford, Stellantis, Merck, and other Fortune 500 companies booked within weeks',
+        '<strong>Speed to results</strong> \u2014 19 demos in the first month from a standing start',
+      ],
+    },
+    more: [
+      { slug: 'buyco', name: 'BuyCo', tag: 'Ocean Shipping Software', stat: '67', statLabel: 'demos booked' },
+      { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
+      { slug: 'descartes', name: 'Descartes Systems', tag: 'Compliance / Export Control', stat: 'EMEA', statLabel: 'wide outbound' },
+    ],
+  },
 ];
 
 const fadeUp = {
@@ -700,8 +867,6 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
               <p className="text-stone-500 leading-relaxed mb-6">{study.summary}</p>
               <div className="space-y-1.5 text-sm">
                 <p className="text-stone-400"><strong className="text-[#1a1a1a]">Markets:</strong> {study.markets}</p>
-                <p className="text-stone-400"><strong className="text-[#1a1a1a]">Campaign duration:</strong> {study.duration}</p>
-                <p className="text-stone-400"><strong className="text-[#1a1a1a]">Retainer:</strong> {study.retainer}</p>
               </div>
             </motion.div>
 

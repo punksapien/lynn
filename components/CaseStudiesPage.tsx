@@ -19,53 +19,13 @@ const CASE_STUDIES: CaseStudy[] = [
     name: 'Alpega Group',
     tag: 'TMS / Logistics Software',
     tagColor: 'stone',
-
     desc: 'Enterprise logistics software company needed to scale outbound across 6 European markets with zero internal SDR capacity.',
     metrics: [
       { num: '80+', label: 'demos per month' },
       { num: '$12M+', label: 'pipeline generated' },
-      { num: '12+', label: 'months ongoing' },
     ],
     logo: '/assets/brand_alpega.avif',
     logoClass: 'max-h-20 max-w-[50%] mt-4',
-  },
-  {
-    slug: 'mintec',
-    name: 'Mintec / Expana',
-    tag: 'Procurement Intelligence',
-    tagColor: 'gold',
-    desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
-    metrics: [
-      { num: '30+', label: 'demos per month' },
-      { num: '$5.5M', label: 'pipeline generated' },
-    ],
-    logo: '/assets/brand_mintec.avif',
-    logoClass: 'max-h-24 max-w-[50%]',
-  },
-  {
-    slug: 'easy4pro',
-    name: 'Easy4Pro',
-    tag: 'Supply Chain Platform',
-    tagColor: 'green',
-    desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
-    metrics: [
-      { num: '28+', label: 'demos per month' },
-      { num: '4', label: 'markets covered' },
-    ],
-    logo: '/assets/easypro.avif',
-    logoClass: 'max-h-16 max-w-[55%]',
-  },
-  {
-    slug: 'trayport',
-    name: 'Trayport',
-    tag: 'Energy Trading / Procurement',
-    tagColor: 'gold',
-    desc: 'Procurement platform for metals markets needed consistent qualified pipeline with senior decision-makers.',
-    metrics: [
-      { num: '20', label: 'qualified meetings/month' },
-    ],
-    logo: '/assets/trayport.jpeg',
-    logoClass: 'max-h-12 max-w-[55%]',
   },
   {
     slug: 'descartes',
@@ -81,6 +41,93 @@ const CASE_STUDIES: CaseStudy[] = [
     logoClass: 'max-h-10 max-w-[55%]',
   },
   {
+    slug: 'kpler',
+    name: 'Kpler',
+    tag: 'Maritime Intelligence',
+    tagColor: 'stone',
+    desc: 'Kpler needed enterprise demos for their MarineTraffic container tracking solution with global manufacturers.',
+    metrics: [
+      { num: '19', label: 'demos/month' },
+    ],
+    logo: '/assets/kpler.svg',
+    logoClass: 'max-h-36 max-w-[80%]',
+  },
+  {
+    slug: 'buyco',
+    name: 'BuyCo',
+    tag: 'Ocean Shipping Software',
+    tagColor: 'gold',
+    desc: 'Ocean container shipping platform needed enterprise demos with senior logistics leaders across 7 European markets.',
+    metrics: [
+      { num: '67', label: 'demos booked' },
+      { num: '7', label: 'European markets' },
+    ],
+    logo: '/assets/buyco.png',
+    logoClass: 'max-h-16 max-w-[50%]',
+  },
+  {
+    slug: 'mintec',
+    name: 'Mintec / Expana',
+    tag: 'Procurement Intelligence',
+    tagColor: 'gold',
+    desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
+    metrics: [
+      { num: '30+', label: 'demos per month' },
+      { num: '$5.5M', label: 'pipeline generated' },
+    ],
+    logo: '/assets/brand_mintec.avif',
+    logoClass: 'max-h-24 max-w-[50%]',
+  },
+  {
+    slug: 'trayport',
+    name: 'Trayport',
+    tag: 'Energy Trading / Procurement',
+    tagColor: 'gold',
+    desc: 'Procurement platform for metals markets needed consistent qualified pipeline with senior decision-makers.',
+    metrics: [
+      { num: '20', label: 'qualified meetings/month' },
+    ],
+    logo: '/assets/trayport.jpeg',
+    logoClass: 'max-h-12 max-w-[55%]',
+  },
+  {
+    slug: 'easy4pro',
+    name: 'Easy4Pro',
+    tag: 'Supply Chain Platform',
+    tagColor: 'green',
+    desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
+    metrics: [
+      { num: '28+', label: 'demos per month' },
+      { num: '4', label: 'markets covered' },
+    ],
+    logo: '/assets/easypro.avif',
+    logoClass: 'max-h-16 max-w-[55%]',
+  },
+  {
+    slug: 'matium',
+    name: 'Matium',
+    tag: 'Plastics Trading Platform',
+    tagColor: 'green',
+    desc: 'Plastics trading platform needed to break into a relationship-driven industry with demos at DuPont, ExxonMobil, and Jabil.',
+    metrics: [
+      { num: '42', label: 'demos booked' },
+      { num: '14', label: 'demos/month' },
+    ],
+    logo: '/assets/matium.svg',
+    logoClass: 'max-h-14 max-w-[50%]',
+  },
+  {
+    slug: 'teamlearn',
+    name: 'Teamlearn',
+    tag: 'Enterprise Software / L&D',
+    tagColor: 'gold',
+    desc: 'Had 1-2 demos per month with no structured outbound — needed to scale pipeline fast.',
+    metrics: [
+      { num: '20-30', label: 'demos/month (from 1-2)' },
+      { num: '$1.5M', label: 'pipeline generated' },
+    ],
+  },
+  {
     slug: 'wowflow',
     name: 'WowFlow',
     tag: 'Operations / Facilities Software',
@@ -93,15 +140,13 @@ const CASE_STUDIES: CaseStudy[] = [
     logoClass: 'max-h-12 max-w-[50%]',
   },
   {
-    slug: 'teamlearn',
-    name: 'Teamlearn',
-    tag: 'Enterprise Software / L&D',
-    tagColor: 'gold',
-
-    desc: 'Had 1-2 demos per month with no structured outbound — needed to scale pipeline fast.',
+    slug: 'smartbooking',
+    name: 'SmartBooking',
+    tag: 'Logistics / Booking Platform',
+    tagColor: 'stone',
+    desc: 'Logistics booking platform needed qualified meetings with operations and supply chain decision-makers.',
     metrics: [
-      { num: '20-30', label: 'demos/month (from 1-2)' },
-      { num: '$1.5M', label: 'pipeline generated' },
+      { num: '20', label: 'demos/month' },
     ],
   },
   {
@@ -109,24 +154,12 @@ const CASE_STUDIES: CaseStudy[] = [
     name: 'Tendereasy',
     tag: 'Procurement / Tendering',
     tagColor: 'gold',
-
     desc: 'Procurement tendering platform needed a steady flow of qualified demos with enterprise buyers.',
     metrics: [
       { num: '20', label: 'demos/month' },
     ],
     logo: '/assets/tendereasy.png',
     logoClass: 'max-h-14 max-w-[55%]',
-  },
-  {
-    slug: 'smartbooking',
-    name: 'SmartBooking',
-    tag: 'Logistics / Booking Platform',
-    tagColor: 'stone',
-
-    desc: 'Logistics booking platform needed qualified meetings with operations and supply chain decision-makers.',
-    metrics: [
-      { num: '20', label: 'demos/month' },
-    ],
   },
 ];
 
@@ -180,7 +213,7 @@ export const CaseStudiesPage: React.FC = () => {
           {[
             { num: '2,298+', label: 'qualified demos booked' },
             { num: '$22M+', label: 'pipeline generated' },
-            { num: '9', label: 'supply chain software clients' },
+            { num: '12', label: 'supply chain software clients' },
             { num: '6', label: 'languages, fluent teams' },
           ].map((stat, i) => (
             <div key={i}>

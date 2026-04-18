@@ -349,6 +349,8 @@ const App: React.FC = () => {
                         { name: 'Meight', logo: '/assets/meight.png', h: 'h-8' },
                         { name: 'ShipmentX', logo: '/assets/shipmentx.png', h: 'h-8' },
                         { name: 'Sutherland', logo: '/assets/sutherland.svg', h: 'h-8' },
+                        { name: 'Volue', logo: '/assets/volue.svg', h: 'h-8' },
+                        { name: 'Vesper', logo: '/assets/vesper.svg', h: 'h-8' },
                       ].map((brand, i) => (
                         <div key={i} className="shrink-0 flex items-center justify-center h-16 opacity-40 grayscale hover:opacity-70 hover:grayscale-0 transition-all duration-500">
                           <img src={brand.logo} alt={brand.name} className={`${brand.h} w-auto object-contain`} style={{ mixBlendMode: 'multiply' }} />

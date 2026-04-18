@@ -30,6 +30,7 @@ interface CaseStudyData {
   markets: string;
   heroStats: { num: string; label: string }[];
   featuredStat?: { num: string; label: string };
+  enterpriseLogos?: { src: string; alt: string }[];
   challenge: {
     title: string;
     paragraphs: string[];
@@ -67,8 +68,8 @@ const STUDIES: CaseStudyData[] = [
     markets: 'DACH, France, Spain, Italy, Benelux, Nordics',
     heroStats: [
       { num: '80+', label: 'demos per month' },
-      { num: '$12M+', label: 'pipeline generated' },
       { num: '6', label: 'languages covered' },
+      { num: '6', label: 'European markets' },
       { num: '0 to 80+', label: 'from standing start' },
     ],
     featuredStat: { num: 'Largest client engagement', label: 'Multi-language, multi-market, scaled outbound' },
@@ -107,9 +108,8 @@ const STUDIES: CaseStudyData[] = [
       paragraph: 'Within the first month, Alpega was receiving a steady stream of qualified demos with senior decision-makers across their target markets. By month three, we had scaled to a consistent 80+ meetings per month.',
       cards: [
         { num: '80+', label: 'qualified demos per month', highlight: true },
-        { num: '$12M+', label: 'pipeline generated' },
-        { num: '80+', label: 'meetings per month (ongoing)' },
         { num: '6', label: 'languages covered natively' },
+        { num: '6', label: 'European markets' },
         { num: '0 to 80+', label: 'meetings/month from standing start', highlight: true },
       ],
     },
@@ -260,7 +260,7 @@ const STUDIES: CaseStudyData[] = [
     more: [
       { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
       { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
-      { slug: 'wowflow', name: 'WowFlow', tag: 'Operations / Facilities Software', stat: '300', statLabel: 'qualified meetings in 100 days' },
+      { slug: 'volue', name: 'Volue', tag: 'Energy & Trading Software', stat: '13+', statLabel: 'demos per month' },
     ],
   },
   {
@@ -388,128 +388,147 @@ const STUDIES: CaseStudyData[] = [
     ],
   },
   {
-    slug: 'wowflow',
-    name: 'WowFlow',
-    tag: 'Operations / Facilities Software',
-    tagColor: 'bg-emerald-100 text-emerald-800',
-    summary: 'How Lynn helped an operations platform generate 300 qualified meetings in 100 days while expanding across multiple EU countries simultaneously.',
-    markets: 'DACH, France, Benelux',
+    slug: 'volue',
+    name: 'Volue',
+    tag: 'Energy & Trading Software',
+    tagColor: 'bg-stone-200/80 text-stone-700',
+    summary: 'How Lynn booked enterprise demos for Volue with Tier 1 European energy and commodity trading houses — including TotalEnergies, EDF Trading, Mercuria, Siemens Energy, Ørsted, INEOS, National Grid, Crédit Agricole CIB, and Alpiq.',
+    markets: 'Europe (Nordics, DACH, France, UK, Iberia, BeNeLux)',
     heroStats: [
-      { num: '300', label: 'qualified meetings in 100 days' },
-      { num: '3', label: 'markets launched simultaneously' },
-      { num: '100 days', label: 'initial campaign' },
-      { num: 'Ongoing', label: 'extended engagement' },
+      { num: '13+', label: 'demos per month' },
+      { num: '70', label: 'enterprise leads engaged' },
+      { num: 'Tier 1', label: 'energy & trading houses' },
+      { num: 'VP/Director', label: 'average seniority' },
+    ],
+    featuredStat: { num: 'Enterprise logos', label: 'TotalEnergies, EDF Trading, Mercuria, Siemens Energy, Ørsted, INEOS, National Grid, Crédit Agricole CIB, Alpiq' },
+    enterpriseLogos: [
+      { src: '/assets/logos/volue/totalenergies.png', alt: 'TotalEnergies' },
+      { src: '/assets/logos/volue/edftrading.png', alt: 'EDF Trading' },
+      { src: '/assets/logos/volue/mercuria.svg', alt: 'Mercuria' },
+      { src: '/assets/logos/volue/siemensenergy.png', alt: 'Siemens Energy' },
+      { src: '/assets/logos/volue/orsted.png', alt: 'Ørsted' },
+      { src: '/assets/logos/volue/ineos.png', alt: 'INEOS' },
+      { src: '/assets/logos/volue/nationalgrid.png', alt: 'National Grid' },
+      { src: '/assets/logos/volue/creditagricole.png', alt: 'Crédit Agricole' },
+      { src: '/assets/logos/volue/alpiq.png', alt: 'Alpiq' },
     ],
     challenge: {
-      title: 'Needed to expand across multiple EU countries from a standing start',
+      title: 'Reaching senior decision-makers across European energy and commodity trading',
       paragraphs: [
-        'WowFlow offers an operations and facilities management platform for enterprises. They had strong product-market fit in their home market but no presence across broader Europe.',
-        'They needed to test and validate multiple markets simultaneously without building internal teams in each country.',
+        'Volue is a Norwegian energy software company providing trading, forecasting, and grid technology to Europe\'s largest power producers, traders, utilities, and grid operators. Their buyers — Heads of Trading, VP Energy Markets, Chief Power Traders — are notoriously hard to reach: small in number, deeply technical, and inundated with vendor pitches.',
+        'They needed enterprise demos with Tier 1 European energy houses without building an in-house multilingual SDR team across Nordics, DACH, France, UK, and Iberia.',
       ],
       bullets: [
-        'No brand awareness outside home market',
-        'Needed to test DACH, France, and Benelux simultaneously',
-        'Limited internal sales capacity',
-        'Needed fast market validation, not a 6-month experiment',
+        'Small, hard-to-reach pool of senior energy trading buyers',
+        'Multilingual coverage required across Nordics, DACH, France, UK, Iberia',
+        'Needed to differentiate Volue against established energy software competitors',
+        'Highly technical buyers expecting domain-fluent conversations',
       ],
     },
     solution: {
-      title: 'Simultaneous multi-market launch via calling',
-      intro: 'We deployed native-speaking callers across three markets simultaneously, testing messaging, verticals, and buyer personas in parallel.',
+      title: 'Multilingual outbound into European energy and trading houses',
+      intro: 'We launched a coordinated calling and email programme targeting senior energy trading, power markets, and renewable operations leaders at Tier 1 European energy houses, banks, and grid operators.',
       timeline: [
-        { title: 'Market selection and ICP design', body: 'Identified the most promising segments in each market based on WowFlow\'s existing customer profile.' },
-        { title: 'Parallel market deployment', body: 'German, French, and Dutch/English callers launched within the same two-week window.' },
-        { title: 'Rapid testing and iteration', body: 'Tested different verticals, company sizes, and messaging in each market. Doubled down on what converted.' },
-        { title: 'Scale and extend', body: 'After proving ROI in 100 days, expanded the engagement with increased caller capacity.' },
+        { title: 'Energy-house targeting', body: 'Built focused account lists across power producers, commodity traders, banks with energy desks, renewable operators, BRPs, and TSOs across Europe.' },
+        { title: 'Domain-fluent callers', body: 'Callers trained on energy trading workflows — power markets, gas trading, balancing, forecasting, and renewables — to hold credible conversations with senior buyers.' },
+        { title: 'Multilingual reach', body: 'Native-speaking outbound in Norwegian, German, French, English, and Spanish to engage decision-makers in their primary language.' },
+        { title: 'Targeted scaling', body: 'Constant list refresh and persona refinement based on what was converting — from major utilities to commodity trading houses to banks running energy desks.' },
       ],
     },
     results: {
-      title: '300 qualified meetings in 100 days',
-      paragraph: 'WowFlow validated three new markets in just over three months and extended the engagement to continue building pipeline across Europe.',
+      title: '13+ enterprise demos per month with Tier 1 energy houses',
+      paragraph: 'Volue engaged 70 enterprise leads in the first two months — including booked demos with TotalEnergies, EDF Trading, Mercuria, Siemens Energy, Ørsted, INEOS, National Grid, Crédit Agricole CIB, and Alpiq.',
       cards: [
-        { num: '300', label: 'qualified meetings in 100 days', highlight: true },
-        { num: '3', label: 'markets launched simultaneously' },
-        { num: '14 days', label: 'from start to first leads' },
-        { num: 'Extended', label: 'engagement ongoing', highlight: true },
+        { num: '13+', label: 'demos per month', highlight: true },
+        { num: '70', label: 'enterprise leads engaged' },
+        { num: 'Tier 1', label: 'European energy houses', highlight: true },
       ],
     },
     whyItWorked: {
       title: 'What made this engagement successful',
       bullets: [
-        '<strong>Parallel market testing</strong> — Three markets at once gave WowFlow comparative data to make smart expansion decisions.',
-        '<strong>Speed</strong> — 100-day sprint delivered results that would have taken 12+ months with internal hiring.',
-        '<strong>Fluent speakers</strong> — Callers who could have real conversations in German, French, and Dutch, backed by multilingual email sequences in each language.',
+        '<strong>Domain expertise</strong> — Callers spoke the language of energy trading: power markets, balancing, forecasting, and renewables.',
+        '<strong>Tier 1 access</strong> — Booked Heads of Trading and VP Energy Markets at TotalEnergies, EDF, Mercuria, Ørsted, and others.',
+        '<strong>Multilingual coverage</strong> — Native-speaking outbound across Nordics, DACH, France, UK, and Iberia.',
+        '<strong>Acceleration</strong> — Demo volume increased month over month as the playbook locked in.',
       ],
     },
     more: [
-      { slug: 'easy4pro', name: 'Easy4Pro', tag: 'Supply Chain Platform', stat: '28+', statLabel: 'demos per month' },
-      { slug: 'teamlearn', name: 'Teamlearn', tag: 'Enterprise Software / L&D', stat: '$1.5M', statLabel: 'pipeline generated' },
-      { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
+      { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
+      { slug: 'matium', name: 'Matium', tag: 'Plastics Trading Platform', stat: '42', statLabel: 'demos booked' },
+      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
     ],
   },
   {
-    slug: 'teamlearn',
-    name: 'Teamlearn',
-    tag: 'Enterprise Software / L&D',
-    tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
-    summary: 'How Lynn took Teamlearn from 1-2 demos per month to 20-30 per month, generating $1.5M in pipeline with no structured outbound in place.',
-    markets: 'UK, DACH',
+    slug: 'freightgate',
+    name: 'Freightgate',
+    tag: 'Freight Rate Management',
+    tagColor: 'bg-stone-200/80 text-stone-700',
+    summary: 'How Lynn delivered ~20 enterprise demos per month for Freightgate across Europe — booking meetings with retail and F&B giants like Chanel, Primark, Heineken, Danone, Dr. Oetker, and Coca-Cola HBC.',
+    markets: 'Europe',
     heroStats: [
-      { num: '20-30', label: 'demos/month (from 1-2)' },
-      { num: '$1.5M', label: 'pipeline generated' },
-      { num: '2', label: 'markets covered' },
-      { num: '15x', label: 'increase in demo volume' },
+      { num: '20+', label: 'demos per month' },
+      { num: '160+', label: 'enterprise leads engaged' },
+      { num: 'EU-wide', label: 'market reach' },
+      { num: 'VP/Director', label: 'average seniority' },
+    ],
+    featuredStat: { num: 'Enterprise logos', label: 'Chanel, Primark, Heineken, Danone, Dr. Oetker, Coca-Cola HBC, Stellantis, Philips, Reckitt' },
+    enterpriseLogos: [
+      { src: '/assets/logos/freightgate/chanel.png', alt: 'Chanel' },
+      { src: '/assets/logos/freightgate/primark.png', alt: 'Primark' },
+      { src: '/assets/logos/freightgate/heineken.png', alt: 'Heineken' },
+      { src: '/assets/logos/freightgate/danone.png', alt: 'Danone' },
+      { src: '/assets/logos/freightgate/droetker.png', alt: 'Dr. Oetker' },
+      { src: '/assets/logos/freightgate/cocacolahbc.png', alt: 'Coca-Cola HBC' },
+      { src: '/assets/logos/freightgate/stellantis.png', alt: 'Stellantis' },
+      { src: '/assets/logos/freightgate/philips.png', alt: 'Philips' },
+      { src: '/assets/logos/freightgate/reckitt.png', alt: 'Reckitt' },
     ],
     challenge: {
-      title: 'Had 1-2 demos per month with no structured outbound',
+      title: 'Reaching enterprise shippers in a saturated freight tech market',
       paragraphs: [
-        'Teamlearn offers an enterprise L&D and training platform. They had a strong product but almost no pipeline — just 1-2 demos per month from sporadic inbound and founder networking.',
-        'They needed a step-change in demo volume to hit their growth targets, but didn\'t have the budget or time to build an internal SDR team.',
+        'Freightgate offers a freight rate management platform for ocean and air shipping procurement. They needed enterprise demos with shippers managing high freight volumes across Europe — buyers who are already drowning in pitches from established TMS competitors.',
+        'Their target audience — VP Supply Chain, Heads of Logistics, Procurement Directors at retailers, F&B brands, and industrial manufacturers — is notoriously hard to reach through email alone, and Freightgate didn\'t have the in-house SDR capacity to run a multilingual European outbound programme.',
       ],
       bullets: [
-        'Only 1-2 demos per month before Lynn',
-        'No outbound process, tools, or dedicated prospecting',
-        'Needed to reach L&D and HR decision-makers at enterprises',
-        'Small team — couldn\'t afford to distract sellers with prospecting',
+        'Crowded freight tech market with established TMS competitors',
+        'Hard-to-reach enterprise supply chain and procurement buyers',
+        'Multiple European geographies and languages to cover',
+        'Enterprise sales cycles requiring senior decision-maker engagement',
       ],
     },
     solution: {
-      title: 'From zero outbound to 20-30 demos per month',
-      intro: 'We built Teamlearn\'s entire outbound engine from scratch — ICP definition, data sourcing, caller training, and live calling — within two weeks.',
+      title: 'European outbound focused on enterprise shippers at scale',
+      intro: 'We launched a multilingual outbound programme targeting senior supply chain and procurement leaders at large European shippers, with calling and email designed around freight rate management pain points.',
       timeline: [
-        { title: 'ICP and persona mapping', body: 'Identified the key buyers — Heads of L&D, HR Directors, Chief People Officers — at enterprise companies in UK and DACH.' },
-        { title: 'Data build and enrichment', body: 'Built targeted contact lists with verified direct dials for decision-makers at target companies.' },
-        { title: 'Caller deployment', body: 'English and German callers trained on Teamlearn\'s platform, competitive landscape, and L&D buyer pain points.' },
-        { title: 'Rapid scaling', body: 'Went from first dials to 20+ demos per month within 6 weeks. Hit 30/month run rate by month 3.' },
+        { title: 'Enterprise shipper targeting', body: 'Focused on retailers, F&B brands, and industrial manufacturers with high ocean and air freight volumes across Europe.' },
+        { title: 'Multilingual coverage', body: 'Callers operating in English, German, French, Italian, and Spanish to engage decision-makers in their native language.' },
+        { title: 'Calling + email coordination', body: 'Email sequences warmed up accounts; callers converted engagement into booked demos with VP/Director-level supply chain leaders.' },
+        { title: 'Continuous list refresh', body: 'Constant additions of new accounts and personas based on what was converting — from automotive Tier 1s to F&B retailers.' },
       ],
     },
-    quote: {
-      text: 'In 10 months, we spent a ton on Google Ads and LinkedIn and only got two demos. Then you launched the first campaign at 10:00 am, and by noon, we had a booking. Another came in just half an hour later. The people booking were spot-on. I thought, \'How did you guys pull this off?\'',
-      name: 'Robert Blaga',
-      title: 'Chief Learning Officer, Teamlearn',
-    },
     results: {
-      title: 'From 1-2 to 20-30 demos per month',
-      paragraph: 'Teamlearn went from near-zero pipeline to a predictable, consistent flow of qualified demos with enterprise L&D buyers — generating $1.5M in pipeline within six months.',
+      title: '~20 enterprise demos per month across Europe',
+      paragraph: 'Freightgate engaged 160+ enterprise leads in the first two months of activity — including booked demos with Chanel, Primark, Heineken, Danone, Dr. Oetker, Coca-Cola HBC, Stellantis, Philips, and Reckitt.',
       cards: [
-        { num: '20-30', label: 'demos per month', highlight: true },
-        { num: '$1.5M', label: 'pipeline generated' },
-        { num: '15x', label: 'increase in demo volume' },
-        { num: '1-2 → 30', label: 'monthly demo transformation', highlight: true },
+        { num: '20+', label: 'demos per month', highlight: true },
+        { num: '160+', label: 'enterprise leads engaged' },
+        { num: 'EU-wide', label: 'market reach', highlight: true },
       ],
     },
     whyItWorked: {
       title: 'What made this engagement successful',
       bullets: [
-        '<strong>Massive uplift from a low base</strong> — Going from 1-2 to 20-30 demos/month transformed Teamlearn\'s growth trajectory.',
-        '<strong>Speed to impact</strong> — First demos within two weeks. 20+/month within six weeks.',
-        '<strong>Enterprise-grade conversations</strong> — Callers could discuss L&D strategy, training ROI, and workforce development at a senior level.',
+        '<strong>Enterprise focus</strong> — every demo a senior buyer at a household-name retailer, F&B brand, or industrial manufacturer.',
+        '<strong>Multilingual coverage</strong> — fluent calling in English, German, French, Italian, and Spanish across European markets.',
+        '<strong>Freight tech expertise</strong> — callers spoke the language of rate management, freight procurement, and ocean/air spend.',
+        '<strong>Speed</strong> — 16 booked demos in the first full month from a standing start.',
       ],
     },
     more: [
-      { slug: 'wowflow', name: 'WowFlow', tag: 'Operations / Facilities Software', stat: '300', statLabel: 'qualified meetings in 100 days' },
-      { slug: 'tendereasy', name: 'Tendereasy', tag: 'Procurement / Tendering', stat: '20', statLabel: 'demos/month' },
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'buyco', name: 'BuyCo', tag: 'Ocean Shipping Software', stat: '67', statLabel: 'demos booked' },
+      { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
+      { slug: 'easy4pro', name: 'Easy4Pro', tag: 'Supply Chain Platform', stat: '28+', statLabel: 'demos per month' },
     ],
   },
   {
@@ -568,68 +587,80 @@ const STUDIES: CaseStudyData[] = [
     },
     more: [
       { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
-      { slug: 'smartbooking', name: 'SmartBooking', tag: 'Logistics / Booking Platform', stat: '20', statLabel: 'demos/month' },
+      { slug: 'vesper', name: 'Vesper', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'enterprise leads/month' },
       { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
     ],
   },
   {
-    slug: 'smartbooking',
-    name: 'SmartBooking',
-    tag: 'Logistics / Booking Platform',
-    tagColor: 'bg-stone-200/80 text-stone-700',
-    summary: 'How Lynn helped a logistics booking platform generate 20 qualified demos per month with operations and supply chain decision-makers.',
-    markets: 'UK, DACH, Benelux',
+    slug: 'vesper',
+    name: 'Vesper',
+    tag: 'Procurement Intelligence',
+    tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
+    summary: 'How Lynn delivered 30+ enterprise leads per month for Vesper — booking demos and positive responses with Pret a Manger, Twinings, Compass Group, Fever-Tree, JOE & THE JUICE, Duvel Moortgat, Fentimans, Hero, and Wahaca.',
+    markets: 'Europe (UK, DACH, Benelux, Iberia, Nordics)',
     heroStats: [
-      { num: '20', label: 'demos per month' },
-      { num: '3', label: 'markets covered' },
-      { num: 'Ops', label: 'and SC decision-makers' },
-      { num: 'Ongoing', label: 'engagement' },
+      { num: '30+', label: 'enterprise leads per month' },
+      { num: '150', label: 'leads engaged in 6 months' },
+      { num: '46', label: 'enterprise demos booked' },
+      { num: 'Procurement', label: 'and category buyers' },
+    ],
+    featuredStat: { num: 'Enterprise logos', label: 'Pret a Manger, Twinings, Compass Group, Fever-Tree, Duvel Moortgat, Fentimans, Hero, Maldon Salt, Wahaca' },
+    enterpriseLogos: [
+      { src: '/assets/logos/vesper/pretamanger.png', alt: 'Pret a Manger' },
+      { src: '/assets/logos/vesper/twinings.png', alt: 'Twinings' },
+      { src: '/assets/logos/vesper/compassgroup.jpeg', alt: 'Compass Group' },
+      { src: '/assets/logos/vesper/fevertree.png', alt: 'Fever-Tree' },
+      { src: '/assets/logos/vesper/duvelmoortgat.svg', alt: 'Duvel Moortgat' },
+      { src: '/assets/logos/vesper/fentimans.svg', alt: 'Fentimans' },
+      { src: '/assets/logos/vesper/hero.png', alt: 'Hero' },
+      { src: '/assets/logos/vesper/maldonsalt.svg', alt: 'Maldon Salt' },
+      { src: '/assets/logos/vesper/wahaca.png', alt: 'Wahaca' },
     ],
     challenge: {
-      title: 'Needed qualified meetings with operations and supply chain leaders',
+      title: 'Reaching procurement and category buyers across European F&B',
       paragraphs: [
-        'SmartBooking offers a logistics booking and coordination platform. They needed to systematically reach operations and supply chain decision-makers at companies managing complex logistics.',
-        'Their previous outbound efforts had been founder-led and inconsistent — they needed a scalable, repeatable process.',
+        'Vesper provides commodity and ingredient intelligence to F&B procurement teams — pricing benchmarks, supply forecasts, and market signals across hundreds of categories. Their buyers — Heads of Procurement, Category Managers, Sales Directors at suppliers — sit deep inside complex food and beverage organisations and are very hard to reach through any single channel.',
+        'They needed consistent, qualified pipeline across the European F&B landscape: branded food, beverages, ingredients, hospitality, and grocery — without building an internal multilingual SDR team.',
       ],
       bullets: [
-        'Founder-led sales with no dedicated prospecting',
-        'Inconsistent pipeline — feast or famine',
-        'Needed to reach operations and logistics leaders across multiple markets',
-        'Growing competition required faster pipeline build',
+        'Highly specialised buyer personas across procurement and category management',
+        'Multi-vertical: branded food, drinks, ingredients, hospitality, grocery',
+        'Multilingual coverage across UK, DACH, Benelux, Iberia, Nordics',
+        'Crowded procurement-tech market with established competitors',
       ],
     },
     solution: {
-      title: 'Structured outbound targeting logistics operations',
-      intro: 'We built a calling programme targeting operations directors, logistics managers, and supply chain VPs at companies with complex booking and coordination needs.',
+      title: 'Multi-channel outbound targeting F&B procurement leaders',
+      intro: 'We built a coordinated calling and email programme targeting procurement, category, and senior commercial buyers at branded F&B, hospitality groups, and ingredient suppliers across Europe.',
       timeline: [
-        { title: 'ICP refinement and targeting', body: 'Identified the industries and company profiles with the most complex logistics coordination needs.' },
-        { title: 'Caller deployment', body: 'English, German, and Dutch callers trained on logistics booking workflows and SmartBooking\'s platform.' },
-        { title: 'Consistent outbound execution', body: 'Daily calling with focus on quality conversations and strict meeting qualification.' },
-        { title: 'Growth and optimisation', body: 'Expanded into additional verticals as initial markets proved out.' },
+        { title: 'F&B account targeting', body: 'Built lists of branded F&B, hospitality, and ingredient companies with measurable commodity exposure — the buyers most likely to value market intelligence.' },
+        { title: 'Persona-specific messaging', body: 'Separate sequences for procurement managers (cost/risk angle) and sales/category directors (margin/forecasting angle).' },
+        { title: 'Multilingual outreach', body: 'Callers and email sequences in English, German, French, Dutch, and Spanish to engage decision-makers in their native language.' },
+        { title: 'Constant iteration', body: 'Refined ICP, scripts, and category focus based on what converted — from premium drinks to large hospitality groups.' },
       ],
     },
     results: {
-      title: '20 qualified demos per month',
-      paragraph: 'SmartBooking now has a consistent, reliable pipeline of qualified meetings — freeing the founder to focus on closing instead of prospecting.',
+      title: '150 enterprise leads engaged in 6 months',
+      paragraph: 'Vesper engaged 150 enterprise procurement and commercial leaders across European F&B — including booked demos with JOE & THE JUICE, Duvel Moortgat, Fentimans, Hero, Wahaca, and Baxters, plus positive responses from Pret a Manger, Twinings, Compass Group, Fever-Tree, Maldon Salt, and Läderach.',
       cards: [
-        { num: '20', label: 'demos per month', highlight: true },
-        { num: '3', label: 'markets covered' },
-        { num: 'Director+', label: 'average seniority' },
-        { num: 'Ongoing', label: 'engagement continues', highlight: true },
+        { num: '30+', label: 'enterprise leads per month', highlight: true },
+        { num: '150', label: 'leads engaged in 6 months' },
+        { num: '46', label: 'enterprise demos booked', highlight: true },
       ],
     },
     whyItWorked: {
       title: 'What made this engagement successful',
       bullets: [
-        '<strong>Freed the founder</strong> — SmartBooking\'s founder went from spending 50% of time prospecting to 100% on closing.',
-        '<strong>Predictable pipeline</strong> — 20 meetings per month replaced the feast-or-famine cycle.',
-        '<strong>Multi-market from day one</strong> — UK, DACH, and Benelux covered simultaneously with fluent speakers and localised email outreach.',
+        '<strong>Domain-fluent calling</strong> — Callers held credible conversations about commodity pricing, sourcing risk, and category management.',
+        '<strong>Dual-persona messaging</strong> — Separate angles for procurement (cost/risk) and commercial/category leaders (margin/forecasting).',
+        '<strong>Multilingual reach</strong> — Native-speaking coverage across UK, DACH, Benelux, Iberia, and Nordics.',
+        '<strong>Recognisable F&B logos</strong> — Pret a Manger, Twinings, Compass Group, Fever-Tree, Duvel, Fentimans, and others all engaged inside the first 6 months.',
       ],
     },
     more: [
+      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'tendereasy', name: 'Tendereasy', tag: 'Procurement / Tendering', stat: '20', statLabel: 'demos/month' },
-      { slug: 'easy4pro', name: 'Easy4Pro', tag: 'Supply Chain Platform', stat: '28+', statLabel: 'demos per month' },
-      { slug: 'wowflow', name: 'WowFlow', tag: 'Operations / Facilities Software', stat: '300', statLabel: 'qualified meetings in 100 days' },
+      { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
     ],
   },
   {
@@ -755,7 +786,7 @@ const STUDIES: CaseStudyData[] = [
     more: [
       { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
-      { slug: 'teamlearn', name: 'Teamlearn', tag: 'Enterprise Software / L&D', stat: '$1.5M', statLabel: 'pipeline generated' },
+      { slug: 'freightgate', name: 'Freightgate', tag: 'Freight Rate Management', stat: '20+', statLabel: 'demos per month' },
     ],
   },
   {
@@ -894,6 +925,32 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
           </div>
         </div>
       </section>
+
+      {/* Enterprise logos strip */}
+      {study.enterpriseLogos && study.enterpriseLogos.length > 0 && (
+        <section className="px-6 pb-16">
+          <div className="container mx-auto max-w-5xl">
+            <motion.div
+              {...fadeUp}
+              className="bg-white border border-stone-200 rounded-2xl px-6 py-8 md:px-10 md:py-10"
+            >
+              <div className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-6 text-center">
+                Enterprise demos booked with
+              </div>
+              <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-9 gap-x-6 gap-y-8 items-center justify-items-center">
+                {study.enterpriseLogos.map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-10 md:h-12 max-w-[100px] object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  />
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Content */}
       <div className="px-6 pb-16">

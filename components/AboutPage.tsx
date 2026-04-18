@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { EuropeMap } from './EuropeMap';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -29,30 +30,20 @@ export const AboutPage: React.FC = () => {
                 The only outbound agency that speaks{' '}
                 <span className="text-[#C5A059] font-normal">supply chain.</span>
               </motion.h1>
-              <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed mb-4 max-w-xl">
-                Lynn exists because we watched brilliant supply chain software companies pour money into agencies that didn't understand their buyers, their market, or their language. And we thought: someone should fix that.
-              </motion.p>
-              <motion.p {...stagger(0.3)} className="text-lg text-stone-600 leading-relaxed max-w-xl">
-                So we built the agency we wished existed when we were on the other side of the table — one that only works in supply chain, logistics, and procurement software. One that hires fluent speakers who actually understand what a TMS does — and puts them on the phones and behind the email copy. One that guarantees results because it knows it will hit the number.
+              <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed max-w-xl">
+                Lynn exists because we watched brilliant supply chain software companies burn budget with generalist agencies that didn't understand their buyers. So we built the opposite: a fully in-house team that only works in supply chain, logistics, and procurement software — fluent in 8 European languages, trained on what a TMS actually does, and willing to put a results guarantee in writing.
               </motion.p>
             </div>
 
-            {/* Abstract visual block instead of image */}
+            {/* Animated Europe map — language hubs */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative h-[420px] bg-[#1a1a1a] rounded-2xl overflow-hidden"
+              className="relative h-[420px]"
             >
-              {/* Atmospheric gradient orbs */}
-              <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-[#C5A059]/20 rounded-full blur-[80px]" />
-              <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-stone-600/30 rounded-full blur-[60px]" />
-              {/* Centered typography treatment */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-12">
-                <div className="font-serif text-7xl text-white/10 mb-4 tracking-tight">Lynn.</div>
-                <div className="text-[10px] tracking-[0.3em] text-stone-500 uppercase">Built for supply chain</div>
-              </div>
+              <EuropeMap />
             </motion.div>
           </div>
 
@@ -64,7 +55,7 @@ export const AboutPage: React.FC = () => {
             {[
               { num: '2,298+', label: 'qualified demos booked' },
               { num: '$22M+', label: 'pipeline generated for clients' },
-              { num: '6', label: 'languages, fluent teams' },
+              { num: '8', label: 'languages, fluent teams' },
               { num: '90', label: 'day guaranteed programmes' },
             ].map((stat, i) => (
               <div key={i}>
@@ -89,13 +80,10 @@ export const AboutPage: React.FC = () => {
                 <span className="text-[#C5A059] font-normal">refuse</span> to do that.
               </motion.h2>
               <motion.p {...stagger(0.2)} className="text-stone-600 leading-relaxed mb-4">
-                Most lead gen agencies work across 50+ industries. They rotate your account between junior reps who can't tell a WMS from a TMS. Your buyers hear it instantly — and they hang up.
+                Most lead gen agencies cover 50+ industries and rotate accounts between junior reps who can't tell a WMS from a TMS. Your buyers hear it in the first 10 seconds — and they hang up.
               </motion.p>
-              <motion.p {...stagger(0.25)} className="text-stone-600 leading-relaxed mb-4">
-                We made a different bet. We chose one vertical and went deep. Every caller, every script, every email sequence, every contact list, every piece of intelligence we've gathered across years of campaigns in this space — it all compounds. When our team picks up the phone or writes an outbound email, they can hold a real conversation about freight management, procurement workflows, or supply chain visibility.
-              </motion.p>
-              <motion.p {...stagger(0.3)} className="text-stone-600 leading-relaxed">
-                The result: we know what works before we start. We know which titles pick up, which pain points land, which markets respond to calling vs. email, and which objections to expect. That's not something a generalist agency can offer you.
+              <motion.p {...stagger(0.25)} className="text-stone-600 leading-relaxed">
+                We made the opposite bet: one vertical, gone deep. Every caller, script, email sequence, and contact list compounds across campaigns. We already know which titles pick up, which pain points land, which markets respond to calling vs. email, and which objections to expect — before we even start your account.
               </motion.p>
             </div>
 
@@ -146,39 +134,79 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Founder Section */}
+      {/* Team Section */}
       <section className="py-24 px-6 border-t border-stone-200">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-12 items-start">
-            {/* Founder visual */}
+            {/* Team visual — stat block */}
             <motion.div
               {...fadeUp}
-              className="bg-stone-200/60 rounded-2xl h-[400px] flex items-center justify-center relative overflow-hidden"
+              className="bg-[#1a1a1a] rounded-2xl h-[400px] flex flex-col items-center justify-center relative overflow-hidden p-10"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-stone-100 to-stone-300/50" />
+              <div className="absolute top-1/3 left-1/3 w-56 h-56 bg-[#C5A059]/15 rounded-full blur-[80px]" />
+              <div className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-stone-700/40 rounded-full blur-[60px]" />
               <div className="relative text-center">
-                <div className="font-serif text-5xl text-stone-400/50 mb-2">C</div>
-                <div className="text-xs text-stone-400 tracking-widest uppercase">Founder photo</div>
+                <div className="font-serif text-7xl text-white leading-none mb-3">25+</div>
+                <div className="text-xs text-stone-400 tracking-[0.2em] uppercase mb-8">In-house team</div>
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4 text-left">
+                  <div>
+                    <div className="font-serif text-2xl text-[#C5A059] leading-none mb-1">18</div>
+                    <div className="text-[10px] text-stone-500 uppercase tracking-wider">Cold callers</div>
+                  </div>
+                  <div>
+                    <div className="font-serif text-2xl text-[#C5A059] leading-none mb-1">7+</div>
+                    <div className="text-[10px] text-stone-500 uppercase tracking-wider">Strategy & ops</div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
-            {/* Founder content */}
+            {/* Team content */}
             <div>
               <motion.div {...fadeUp} className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-6">
-                Founder
+                The Team
               </motion.div>
-              <motion.div {...stagger(0.1)} className="font-serif text-3xl mb-1">Christian</motion.div>
-              <motion.div {...stagger(0.15)} className="text-sm text-stone-400 mb-6">Founder, Lynn Lead Generation</motion.div>
+              <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-6">
+                A team of 25+ behind every{' '}
+                <span className="text-[#C5A059] font-normal">campaign.</span>
+              </motion.h2>
 
               <motion.p {...stagger(0.2)} className="text-stone-600 leading-relaxed mb-4">
-                [This is where your story goes. Why did you start Lynn? What were you doing before? What made you realise that supply chain SaaS companies were being underserved by generalist agencies? What's the moment that made you decide to go all-in on one niche?]
+                Lynn isn't a one-person shop with a handful of contractors. We're a fully in-house team of 25+ specialists — 18 cold callers and a 7-person strategy and ops core — purpose-built for supply chain, logistics, and procurement software.
               </motion.p>
-              <motion.p {...stagger(0.25)} className="text-stone-600 leading-relaxed mb-4">
-                [Talk about what drives you — the obsession with results, the decision to put a guarantee on it, the choice to stay founder-led on every account instead of handing clients off to junior AMs. This is the section where enterprise buyers decide whether they trust you.]
+              <motion.p {...stagger(0.25)} className="text-stone-600 leading-relaxed mb-6">
+                Every campaign you run with us touches every one of these disciplines. Nothing is outsourced to virtual assistants, nothing is handed to juniors who don't understand your buyers.
               </motion.p>
-              <motion.p {...stagger(0.3)} className="text-stone-600 leading-relaxed mb-8">
-                [Keep it honest and direct. No corporate fluff. The people reading this are senior leaders who can spot inauthenticity immediately.]
-              </motion.p>
+
+              <motion.div {...stagger(0.3)} className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                {[
+                  { title: 'GTM Engineers', desc: 'Build the data, targeting, and intelligence behind every campaign.' },
+                  { title: 'Campaign Managers', desc: 'Run your account day-to-day, accountable to your numbers.' },
+                  { title: 'Email Deliverability', desc: 'Domain managers ensuring your sequences hit the inbox, not spam.' },
+                  { title: 'Cold Callers', desc: '18 dialers trained on supply chain, logistics, and procurement.' },
+                  { title: 'Native-Language Experts', desc: 'Fluent in 8 European languages — EN, DE, FR, IT, ES, NL, PT, NO.' },
+                  { title: 'Copywriters', desc: 'Outbound email written by people who know what a TMS does.' },
+                ].map((role, i) => (
+                  <div key={i} className="border-l-2 border-[#C5A059]/40 pl-3 py-1">
+                    <div className="text-sm font-semibold text-[#1a1a1a]">{role.title}</div>
+                    <div className="text-xs text-stone-500 leading-relaxed mt-0.5">{role.desc}</div>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* Team operating stats */}
+              <motion.div {...stagger(0.32)} className="grid grid-cols-3 gap-3 mb-6">
+                {[
+                  { num: '200+', label: 'dials per day per caller' },
+                  { num: '0', label: 'AI-generated calls or emails' },
+                  { num: '14 days', label: 'from kickoff to live' },
+                ].map((s, i) => (
+                  <div key={i} className="bg-stone-100/70 border border-stone-200 rounded-xl p-4">
+                    <div className="font-serif text-xl text-[#1a1a1a] leading-none mb-1">{s.num}</div>
+                    <div className="text-[10px] text-stone-500 uppercase tracking-wider">{s.label}</div>
+                  </div>
+                ))}
+              </motion.div>
 
               <motion.div {...stagger(0.35)} className="flex flex-wrap gap-3">
                 <a
@@ -187,13 +215,13 @@ export const AboutPage: React.FC = () => {
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-[#C5A059] border border-[#C5A059] px-5 py-2.5 rounded-xl hover:bg-[#C5A059]/10 transition-colors"
                 >
-                  Connect on LinkedIn
+                  Follow us on LinkedIn
                 </a>
                 <a
                   href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
                   className="text-sm font-medium text-white bg-[#1a1a1a] px-5 py-2.5 rounded-xl hover:bg-stone-800 transition-colors"
                 >
-                  Book a call with me
+                  Talk to our team
                 </a>
               </motion.div>
             </div>
@@ -201,14 +229,14 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
-      {/* How We're Different */}
+      {/* Why Lynn — merged differentiators + values */}
       <section className="py-24 px-6 border-t border-stone-200">
         <div className="container mx-auto max-w-6xl">
           <motion.div {...fadeUp} className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-6">
-            How We're Different
+            Why Lynn
           </motion.div>
           <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-12 max-w-2xl">
-            Six things that separate Lynn from every other{' '}
+            Five things that separate Lynn from every other{' '}
             <span className="text-[#C5A059] font-normal">agency.</span>
           </motion.h2>
 
@@ -216,33 +244,28 @@ export const AboutPage: React.FC = () => {
             {[
               {
                 num: '01',
-                title: 'Founder on every account',
-                desc: 'No junior account managers. No layers. You work directly with the person who built this agency and understands your business.',
+                title: 'Results guarantee, in writing',
+                desc: 'We agree on a demo target before we start. If we don\'t hit it, we keep working at no extra cost — in writing, before you sign.',
               },
               {
                 num: '02',
-                title: 'Human teams, not AI',
-                desc: 'Every call is made by a real person. Every email is written by a fluent copywriter with domain knowledge. Your buyers can tell the difference — and so can your conversion rates.',
+                title: 'Live in 14 days',
+                desc: 'No 3-month onboarding. Teams trained and dialling within two weeks. First demos typically land in week 3.',
               },
               {
                 num: '03',
-                title: 'Results guarantee',
-                desc: 'We agree on a demo target before we start. If we don\'t hit it, we keep working at no extra cost. In writing.',
+                title: 'Calling-led outbound',
+                desc: 'We lead with the phone and back it with email. A 3-minute conversation supported by a well-timed sequence outperforms either channel alone.',
               },
               {
                 num: '04',
-                title: 'Multilingual from day one',
-                desc: 'English, French, German, Spanish, Italian, Portuguese. Fluent speakers on the phone and multilingual email copy written in each language. Reach markets your competitors can\'t.',
+                title: 'Honest about what works',
+                desc: 'If your ICP needs adjusting, we say so. If a campaign isn\'t landing, we tell you. If we\'re not the right fit, we point you to someone who is — before you sign anything.',
               },
               {
                 num: '05',
-                title: 'Live in 2 weeks',
-                desc: 'No 3-month onboarding. Teams are trained and running within 14 days. First meetings typically land in week 3.',
-              },
-              {
-                num: '06',
-                title: 'Calling-led outbound',
-                desc: 'We lead with the phone and back it with email — because a 3-minute conversation supported by a well-timed sequence outperforms either channel alone.',
+                title: 'Results over activity',
+                desc: 'We don\'t send reports packed with vanity metrics. We measure qualified, attended demos with named decision-makers. Everything else is noise.',
               },
             ].map((card, i) => (
               <motion.div
@@ -256,128 +279,6 @@ export const AboutPage: React.FC = () => {
                 <div className="font-serif text-4xl text-[#C5A059]/60 mb-4 leading-none">{card.num}</div>
                 <h3 className="font-semibold text-[#1a1a1a] mb-2">{card.title}</h3>
                 <p className="text-sm text-stone-500 leading-relaxed">{card.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Caller Bench — Dark Section */}
-      <section className="py-24 px-6 bg-[#1a1a1a] text-white">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <motion.div {...fadeUp} className="text-[10px] font-bold tracking-[0.2em] text-stone-500 uppercase mb-6">
-                Our Caller Bench
-              </motion.div>
-              <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-8">
-                Fluent speakers who understand your{' '}
-                <span className="text-[#C5A059] font-normal">buyers</span> — on the phone and in the inbox.
-              </motion.h2>
-              <motion.p {...stagger(0.2)} className="text-stone-400 leading-relaxed mb-4">
-                We don't hire generalist SDRs and hand them a script. Every team member is recruited for fluency in their language and trained specifically on supply chain, logistics, and procurement software — whether they're dialling or writing outbound email.
-              </motion.p>
-              <motion.p {...stagger(0.25)} className="text-stone-400 leading-relaxed mb-8">
-                When a French VP of Supply Chain picks up the phone — or opens an email — they encounter someone who speaks their language, literally and technically. That changes the conversation entirely.
-              </motion.p>
-
-              {/* Stats */}
-              <motion.div {...stagger(0.3)} className="grid grid-cols-2 gap-3">
-                {[
-                  { num: '200+', label: 'dials per day per caller' },
-                  { num: '6', label: 'Email sequences in all 6 languages' },
-                  { num: '0', label: 'AI-generated calls or emails — ever' },
-                  { num: 'Scales', label: 'up the moment you need more' },
-                ].map((s, i) => (
-                  <div key={i} className="bg-white/5 border border-white/10 rounded-xl p-5">
-                    <div className="font-serif text-2xl text-white leading-none mb-1">{s.num}</div>
-                    <div className="text-[11px] text-stone-500">{s.label}</div>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-
-            {/* Language Cards */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-3"
-            >
-              {[
-                { code: 'EN', name: 'English', detail: 'UK, US, Global' },
-                { code: 'FR', name: 'French', detail: 'France, Benelux' },
-                { code: 'DE', name: 'German', detail: 'DACH region' },
-                { code: 'ES', name: 'Spanish', detail: 'Spain, LATAM' },
-                { code: 'IT', name: 'Italian', detail: 'Italy' },
-                { code: 'PT', name: 'Portuguese', detail: 'Portugal, Brazil' },
-              ].map((lang, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:border-[#C5A059]/30 transition-colors"
-                >
-                  <div className="font-serif text-3xl text-[#C5A059]/70 mb-2">{lang.code}</div>
-                  <div className="font-semibold text-sm text-white mb-0.5">{lang.name}</div>
-                  <div className="text-[11px] text-stone-500">{lang.detail}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* How We Work / Values */}
-      <section className="py-24 px-6 border-t border-stone-200">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div {...fadeUp} className="text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-6">
-            How We Work
-          </motion.div>
-          <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-12 max-w-2xl">
-            What it's actually like to work{' '}
-            <span className="text-[#C5A059] font-normal">with us.</span>
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              {
-                num: '01',
-                title: 'Direct communication, always',
-                desc: 'No ticket systems, no account managers relaying messages. You talk directly to the founder and the people running your campaign. Decisions happen in hours, not days.',
-              },
-              {
-                num: '02',
-                title: 'Honest about what works',
-                desc: 'If something isn\'t working, we tell you. If your ICP needs adjusting, we say so. If we\'re not the right fit, we tell you that too — before you sign anything.',
-              },
-              {
-                num: '03',
-                title: 'We adapt quickly',
-                desc: 'Market not responding? We shift. Script not landing? We rewrite it. Email sequence underperforming? We test a new angle. No fighting through layers of process.',
-              },
-              {
-                num: '04',
-                title: 'Results over activity',
-                desc: 'We don\'t send you reports packed with vanity metrics. We measure qualified, attended demos with named decision-makers. Everything else is noise.',
-              },
-            ].map((value, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white border border-stone-200 rounded-2xl p-8 flex gap-5 items-start hover:border-[#C5A059]/30 transition-colors"
-              >
-                <div className="font-serif text-2xl text-stone-200 shrink-0 leading-none">{value.num}</div>
-                <div>
-                  <h3 className="font-semibold text-[#1a1a1a] mb-2">{value.title}</h3>
-                  <p className="text-sm text-stone-500 leading-relaxed">{value.desc}</p>
-                </div>
               </motion.div>
             ))}
           </div>

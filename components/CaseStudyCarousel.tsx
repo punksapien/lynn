@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -8,105 +8,167 @@ interface CarouselStudy {
   slug: string;
   name: string;
   tag: string;
-  gradient: string;
+  tagColor: 'gold' | 'green' | 'stone';
   desc: string;
   metrics: { num: string; label: string }[];
+  logo: string;
+  logoClass: string;
 }
+
+const tagStyles = {
+  gold: 'bg-[#C5A059]/10 text-[#C5A059]',
+  green: 'bg-emerald-50 text-emerald-700',
+  stone: 'bg-stone-100 text-stone-600',
+};
 
 const STUDIES: CarouselStudy[] = [
   {
     slug: 'alpega',
     name: 'Alpega Group',
     tag: 'TMS / Logistics Software',
-    gradient: 'from-stone-800 to-stone-600',
+    tagColor: 'stone',
     desc: 'Enterprise logistics software company needed to scale outbound across 6 European markets with zero internal SDR capacity.',
     metrics: [
       { num: '80+', label: 'demos per month' },
       { num: '6', label: 'European markets' },
       { num: '12+', label: 'months ongoing' },
     ],
-  },
-  {
-    slug: 'mintec',
-    name: 'Mintec / Expana',
-    tag: 'Procurement Intelligence',
-    gradient: 'from-[#6b5630] to-[#C5A059]',
-    desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
-    metrics: [
-      { num: '30+', label: 'demos per month' },
-      { num: '$5.5M', label: 'pipeline generated' },
-    ],
-  },
-  {
-    slug: 'easy4pro',
-    name: 'Easy4Pro',
-    tag: 'Supply Chain Platform',
-    gradient: 'from-emerald-900 to-emerald-700',
-    desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
-    metrics: [
-      { num: '28+', label: 'demos per month' },
-      { num: '4', label: 'markets covered' },
-    ],
-  },
-  {
-    slug: 'trayport',
-    name: 'Trayport',
-    tag: 'Energy Trading / Procurement',
-    gradient: 'from-[#5a4418] to-[#9a7a38]',
-    desc: 'Procurement platform for metals markets needed consistent qualified pipeline with senior decision-makers.',
-    metrics: [{ num: '20', label: 'qualified meetings/month' }],
+    logo: '/assets/brand_alpega.avif',
+    logoClass: 'max-h-20 max-w-[50%] mt-4',
   },
   {
     slug: 'descartes',
     name: 'Descartes Systems',
     tag: 'Compliance / Export Control',
-    gradient: 'from-stone-900 to-stone-700',
+    tagColor: 'stone',
     desc: 'Global logistics tech leader needed outbound for their compliance division targeting aerospace and defence.',
     metrics: [
       { num: 'EMEA', label: 'wide outbound' },
       { num: 'A&D', label: 'aerospace & defence' },
     ],
+    logo: '/assets/descartes-dark.png',
+    logoClass: 'max-h-10 max-w-[55%]',
   },
   {
-    slug: 'volue',
-    name: 'Volue',
-    tag: 'Energy & Trading Software',
-    gradient: 'from-[#7a2a00] to-[#FF7F33]',
-    desc: 'Energy and commodity trading software booking demos with Tier 1 European energy houses including TotalEnergies, EDF Trading, Mercuria, and Ørsted.',
+    slug: 'kpler',
+    name: 'Kpler',
+    tag: 'Maritime Intelligence',
+    tagColor: 'stone',
+    desc: 'Kpler needed enterprise demos for their MarineTraffic container tracking solution with global manufacturers.',
+    metrics: [{ num: '19', label: 'demos/month' }],
+    logo: '/assets/kpler.svg',
+    logoClass: 'max-h-36 max-w-[80%]',
+  },
+  {
+    slug: 'buyco',
+    name: 'BuyCo',
+    tag: 'Ocean Shipping Software',
+    tagColor: 'gold',
+    desc: 'Ocean container shipping platform needed enterprise demos with senior logistics leaders across 7 European markets.',
     metrics: [
-      { num: '13+', label: 'demos per month' },
-      { num: '70', label: 'enterprise leads engaged' },
+      { num: '67', label: 'demos booked' },
+      { num: '7', label: 'European markets' },
     ],
+    logo: '/assets/buyco.png',
+    logoClass: 'max-h-16 max-w-[50%]',
   },
   {
     slug: 'freightgate',
     name: 'Freightgate',
     tag: 'Freight Rate Management',
-    gradient: 'from-[#1a3a5a] to-[#3a6a8a]',
+    tagColor: 'stone',
     desc: 'Freight rate management platform needed enterprise demos with retail and F&B shippers — booking Chanel, Heineken, Danone, and Stellantis across Europe.',
     metrics: [
       { num: '20+', label: 'demos per month' },
       { num: '160+', label: 'enterprise leads engaged' },
     ],
+    logo: '/assets/freightgate.png',
+    logoClass: 'max-h-12 max-w-[60%]',
   },
   {
-    slug: 'tendereasy',
-    name: 'Tendereasy',
-    tag: 'Procurement / Tendering',
-    gradient: 'from-[#3a2a10] to-[#7a6030]',
-    desc: 'Procurement tendering platform needed a steady flow of qualified demos with enterprise buyers.',
-    metrics: [{ num: '20', label: 'demos/month' }],
+    slug: 'mintec',
+    name: 'Mintec / Expana',
+    tag: 'Procurement Intelligence',
+    tagColor: 'gold',
+    desc: 'Commodity data platform needed enterprise demos with procurement leaders at $300M+ manufacturers.',
+    metrics: [
+      { num: '30+', label: 'demos per month' },
+      { num: '$5.5M', label: 'pipeline generated' },
+    ],
+    logo: '/assets/brand_mintec.avif',
+    logoClass: 'max-h-24 max-w-[50%]',
+  },
+  {
+    slug: 'trayport',
+    name: 'Trayport',
+    tag: 'Energy Trading / Procurement',
+    tagColor: 'gold',
+    desc: 'Procurement platform for metals markets needed consistent qualified pipeline with senior decision-makers.',
+    metrics: [{ num: '20', label: 'qualified meetings/month' }],
+    logo: '/assets/trayport.jpeg',
+    logoClass: 'max-h-12 max-w-[55%]',
+  },
+  {
+    slug: 'easy4pro',
+    name: 'Easy4Pro',
+    tag: 'Supply Chain Platform',
+    tagColor: 'green',
+    desc: 'Logistics platform needed qualified meetings with enterprise distributors across Europe and LATAM.',
+    metrics: [
+      { num: '28+', label: 'demos per month' },
+      { num: '4', label: 'markets covered' },
+    ],
+    logo: '/assets/easypro.avif',
+    logoClass: 'max-h-16 max-w-[55%]',
+  },
+  {
+    slug: 'matium',
+    name: 'Matium',
+    tag: 'Plastics Trading Platform',
+    tagColor: 'green',
+    desc: 'Plastics trading platform needed to break into a relationship-driven industry with demos at DuPont, ExxonMobil, and Jabil.',
+    metrics: [
+      { num: '42', label: 'demos booked' },
+      { num: '14', label: 'demos/month' },
+    ],
+    logo: '/assets/matium.svg',
+    logoClass: 'max-h-14 max-w-[50%]',
+  },
+  {
+    slug: 'volue',
+    name: 'Volue',
+    tag: 'Energy & Trading Software',
+    tagColor: 'stone',
+    desc: 'Energy and commodity trading software booking demos with Tier 1 European energy houses including TotalEnergies, EDF Trading, Mercuria, and Ørsted.',
+    metrics: [
+      { num: '13+', label: 'demos per month' },
+      { num: '70', label: 'enterprise leads engaged' },
+    ],
+    logo: '/assets/volue.svg',
+    logoClass: 'max-h-10 max-w-[55%]',
   },
   {
     slug: 'vesper',
     name: 'Vesper',
     tag: 'Procurement Intelligence',
-    gradient: 'from-[#3a2a10] to-[#a07b40]',
+    tagColor: 'gold',
     desc: 'Commodity intelligence platform booking demos with European F&B leaders — Pret a Manger, Twinings, Compass Group, Fever-Tree, and more.',
     metrics: [
       { num: '30+', label: 'enterprise leads/month' },
       { num: '150', label: 'leads engaged in 6 months' },
     ],
+    logo: '/assets/vesper.svg',
+    logoClass: 'max-h-12 max-w-[50%]',
+  },
+  {
+    slug: 'tendereasy',
+    name: 'Tendereasy',
+    tag: 'Procurement / Tendering',
+    tagColor: 'gold',
+    desc: 'Procurement tendering platform needed a steady flow of qualified demos with enterprise buyers.',
+    metrics: [{ num: '20', label: 'demos/month' }],
+    logo: '/assets/tendereasy.png',
+    logoClass: 'max-h-14 max-w-[55%]',
   },
 ];
 
@@ -119,13 +181,33 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
   const [direction, setDirection] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [currentVertical, setCurrentVertical] = useState(0);
+  const [hasEntered, setHasEntered] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
+
+  // Start animations only once the section has scrolled into view
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || hasEntered) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setHasEntered(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasEntered]);
 
   useEffect(() => {
+    if (!hasEntered) return;
     const interval = setInterval(() => {
       setCurrentVertical(prev => (prev + 1) % verticals.length);
     }, 2500);
     return () => clearInterval(interval);
-  }, []);
+  }, [hasEntered]);
 
   const total = STUDIES.length;
 
@@ -134,12 +216,12 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
     setCurrent(prev => (prev + dir + total) % total);
   }, [total]);
 
-  // Auto-advance every 5s
+  // Auto-advance every 5s — only after section enters view
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || !hasEntered) return;
     const timer = setInterval(() => go(1), 5000);
     return () => clearInterval(timer);
-  }, [isPaused, go]);
+  }, [isPaused, hasEntered, go]);
 
   // Visible cards: current + next two
   const visibleIndices = [0, 1, 2].map(offset => (current + offset) % total);
@@ -160,7 +242,7 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
   };
 
   return (
-    <section id="case-studies" className="py-16 md:py-20 bg-[#F9F8F4] border-t border-stone-200">
+    <section ref={sectionRef} id="case-studies" className="py-16 md:py-20 bg-[#F9F8F4] border-t border-stone-200">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] items-end gap-6 mb-12">
@@ -230,19 +312,24 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
                     href={`#/case-study/${cs.slug}`}
                     className="group bg-white border border-stone-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col"
                   >
-                    {/* Gradient Header */}
-                    <div className={`relative aspect-[5/3] bg-gradient-to-br ${cs.gradient} flex items-center justify-center p-8`}>
-                      <span className="absolute top-4 left-4 text-[10px] font-semibold tracking-wide px-3 py-1 rounded-full bg-white/20 text-white">
+                    {/* Logo Header */}
+                    <div className="relative aspect-[5/3] bg-white border-b border-stone-100 flex items-center justify-center overflow-hidden pt-6">
+                      <span className={`absolute top-4 left-4 z-10 text-[10px] font-semibold tracking-wide px-3 py-1 rounded-full ${tagStyles[cs.tagColor]}`}>
                         {cs.tag}
                       </span>
-                      <span className="absolute top-4 right-4 w-8 h-8 bg-white/10 rounded-full flex items-center justify-center text-white/70 group-hover:bg-white/20 transition-colors">
+                      <span className="absolute top-4 right-4 z-10 w-8 h-8 bg-stone-200/50 rounded-full flex items-center justify-center text-stone-400 group-hover:bg-stone-200 group-hover:text-stone-600 transition-colors">
                         <ArrowUpRight size={14} />
                       </span>
-                      <span className="font-serif text-3xl text-white text-center leading-tight">{cs.name}</span>
+                      <img
+                        src={cs.logo}
+                        alt={cs.name}
+                        className={`object-contain ${cs.logoClass}`}
+                      />
                     </div>
 
                     {/* Body */}
                     <div className="p-6 flex flex-col flex-1">
+                      <h3 className="font-serif text-xl mb-2">{cs.name}</h3>
                       <p className="text-sm text-stone-500 leading-relaxed mb-5">{cs.desc}</p>
                       <div className="flex gap-6 pt-4 border-t border-stone-100 mt-auto">
                         {cs.metrics.map((m, j) => (

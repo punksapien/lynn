@@ -167,11 +167,9 @@ export const FirstMover = () => {
           
           <div className="bg-[#1a1a1a] rounded-2xl p-8 text-white">
             <div className="text-xs font-bold text-stone-400 uppercase mb-4">The guarantee</div>
-            <div className="font-serif text-5xl mb-2">
-              <CountUp end={30} suffix=" demos" />
-            </div>
+            <div className="font-serif text-5xl mb-2">15-30 demos</div>
             <div className="font-semibold mb-4">in 90 days — or we keep working</div>
-            <div className="text-sm text-stone-400 leading-relaxed">Thirty first conversations with decision-makers who fit your ICP. At your average deal size, it takes one closed deal to pay for the programme many times over. Guaranteed.</div>
+            <div className="text-sm text-stone-400 leading-relaxed">Between fifteen and thirty first conversations with decision-makers who fit your ICP. At your average deal size, it takes one closed deal to pay for the programme many times over. Guaranteed.</div>
           </div>
         </div>
       </div>

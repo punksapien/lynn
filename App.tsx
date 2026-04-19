@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Phone, Globe, Calendar, ArrowUpRight, Menu, X, ChevronDown, Calculator, BarChart3, Target, Mail } from 'lucide-react';
 import { CalendarUI } from './components/CalendarUI';
@@ -47,6 +47,25 @@ const App: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [toolsOpen, setToolsOpen] = useState(false);
   const [currentWord, setCurrentWord] = useState(0);
+  const [logoStripVisible, setLogoStripVisible] = useState(false);
+  const logoStripRef = useRef<HTMLDivElement | null>(null);
+
+  // Pause the logo strip animation until it scrolls into view (keeps Alpega visible on first sight)
+  useEffect(() => {
+    const el = logoStripRef.current;
+    if (!el || logoStripVisible) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setLogoStripVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [logoStripVisible]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -327,30 +346,32 @@ const App: React.FC = () => {
               className="mt-24 pt-12 border-t border-stone-200"
             >
               <div className="text-center text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-8">Trusted by supply chain software companies across Europe</div>
-              <div className="relative overflow-hidden">
+              <div ref={logoStripRef} className="relative overflow-hidden">
                 {/* Fade edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F9F8F4] to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#F9F8F4] to-transparent z-10 pointer-events-none" />
-                <div className="flex animate-scroll-logos">
+                <div className={`flex ${logoStripVisible ? 'animate-scroll-logos' : ''}`}>
                   {[...Array(2)].map((_, setIdx) => (
                     <div key={setIdx} className="flex shrink-0 items-center gap-16 px-8">
                       {[
-                        { name: 'Alpega Group', logo: '/assets/brand_alpega.avif', h: 'h-8' },
-                        { name: 'Mintec', logo: '/assets/mintec.jpg', h: 'h-8' },
-                        { name: 'Easy4Pro', logo: '/assets/easypro.avif', h: 'h-8' },
-                        { name: 'Descartes', logo: '/assets/descartes.png', h: 'h-8' },
-                        { name: 'WowFlow', logo: '/assets/wowflow.svg', h: 'h-8' },
-                        { name: 'Trayport', logo: '/assets/tmx_trayport.png', h: 'h-14' },
-                        { name: 'Hyperplan', logo: '/assets/Hyperplan.png', h: 'h-10' },
-                        { name: 'Optimix', logo: '/assets/Optimix.svg', h: 'h-8' },
-                        { name: 'BuyCo', logo: '/assets/buyco.png', h: 'h-8' },
-                        { name: 'FreightGate', logo: '/assets/freightgate.png', h: 'h-8' },
-                        { name: 'Matium', logo: '/assets/matium.svg', h: 'h-8' },
                         { name: 'Meight', logo: '/assets/meight.png', h: 'h-8' },
-                        { name: 'ShipmentX', logo: '/assets/shipmentx.png', h: 'h-8' },
                         { name: 'Sutherland', logo: '/assets/sutherland.svg', h: 'h-8' },
+                        { name: 'Hyperplan', logo: '/assets/Hyperplan.png', h: 'h-16' },
+                        { name: 'Alpega Group', logo: '/assets/brand_alpega.avif', h: 'h-12' },
+                        { name: 'Descartes', logo: '/assets/descartes.png', h: 'h-6' },
+                        { name: 'Kpler', logo: '/assets/kpler.svg', h: 'h-32' },
+                        { name: 'Trayport', logo: '/assets/tmx_trayport.png', h: 'h-40' },
+                        { name: 'Mintec', logo: '/assets/mintec.jpg', h: 'h-8' },
                         { name: 'Volue', logo: '/assets/volue.svg', h: 'h-8' },
+                        { name: 'FreightGate', logo: '/assets/freightgate.png', h: 'h-10' },
+                        { name: 'BuyCo', logo: '/assets/buyco.png', h: 'h-8' },
+                        { name: 'Easy4Pro', logo: '/assets/easypro.avif', h: 'h-14' },
                         { name: 'Vesper', logo: '/assets/vesper.svg', h: 'h-8' },
+                        { name: 'Matium', logo: '/assets/matium.svg', h: 'h-9' },
+                        { name: 'Tendereasy', logo: '/assets/tendereasy.png', h: 'h-8' },
+                        { name: 'WowFlow', logo: '/assets/wowflow.svg', h: 'h-7' },
+                        { name: 'Optimix', logo: '/assets/Optimix.svg', h: 'h-8' },
+                        { name: 'ShipmentX', logo: '/assets/shipmentx.png', h: 'h-8' },
                       ].map((brand, i) => (
                         <div key={i} className="shrink-0 flex items-center justify-center h-16 opacity-40 grayscale hover:opacity-70 hover:grayscale-0 transition-all duration-500">
                           <img src={brand.logo} alt={brand.name} className={`${brand.h} w-auto object-contain`} style={{ mixBlendMode: 'multiply' }} />
@@ -455,8 +476,8 @@ const App: React.FC = () => {
                 {
                   step: 4,
                   icon: <Calendar size={22} />,
-                  title: '30 Guaranteed Demos',
-                  desc: 'Within 90 days, your calendar is full of qualified prospects — booked through calls, email replies, or both — ready to discuss your solution.',
+                  title: 'Qualified Demos, Guaranteed',
+                  desc: 'Within 90 days, your calendar is full of qualified prospects — booked through calls, email replies, or both — ready to discuss your solution. Minimum floor written into the contract; no cap on the upside.',
                   highlight: true,
                 },
               ].map((item, i) => (

@@ -31,7 +31,7 @@ export const AboutPage: React.FC = () => {
                 <span className="text-[#C5A059] font-normal">supply chain.</span>
               </motion.h1>
               <motion.p {...stagger(0.2)} className="text-lg text-stone-600 leading-relaxed max-w-xl">
-                Lynn exists because we watched brilliant supply chain software companies burn budget with generalist agencies that didn't understand their buyers. So we built the opposite: a fully in-house team that only works in supply chain, logistics, and procurement software — fluent in 8 European languages, trained on what a TMS actually does, and willing to put a results guarantee in writing.
+                Lynn exists because we watched brilliant supply chain software companies burn budget with generalist agencies that didn't understand their buyers. So we built the opposite: a fully in-house team that only works in supply chain, logistics, and procurement software — fluent in 6 European languages, trained on what a TMS actually does, and willing to put a results guarantee in writing.
               </motion.p>
             </div>
 
@@ -55,7 +55,7 @@ export const AboutPage: React.FC = () => {
             {[
               { num: '2,298+', label: 'qualified demos booked' },
               { num: '$22M+', label: 'pipeline generated for clients' },
-              { num: '8', label: 'languages, fluent teams' },
+              { num: '6', label: 'languages, fluent teams' },
               { num: '90', label: 'day guaranteed programmes' },
             ].map((stat, i) => (
               <div key={i}>
@@ -184,7 +184,7 @@ export const AboutPage: React.FC = () => {
                   { title: 'Campaign Managers', desc: 'Run your account day-to-day, accountable to your numbers.' },
                   { title: 'Email Deliverability', desc: 'Domain managers ensuring your sequences hit the inbox, not spam.' },
                   { title: 'Cold Callers', desc: '18 dialers trained on supply chain, logistics, and procurement.' },
-                  { title: 'Native-Language Experts', desc: 'Fluent in 8 European languages — EN, DE, FR, IT, ES, NL, PT, NO.' },
+                  { title: 'Native-Language Experts', desc: 'Fluent in 6 European languages — EN, DE, FR, IT, ES, NL.' },
                   { title: 'Copywriters', desc: 'Outbound email written by people who know what a TMS does.' },
                 ].map((role, i) => (
                   <div key={i} className="border-l-2 border-[#C5A059]/40 pl-3 py-1">
@@ -236,11 +236,11 @@ export const AboutPage: React.FC = () => {
             Why Lynn
           </motion.div>
           <motion.h2 {...stagger(0.1)} className="font-serif text-4xl md:text-5xl leading-tight mb-12 max-w-2xl">
-            Five things that separate Lynn from every other{' '}
+            Four things that separate Lynn from every other{' '}
             <span className="text-[#C5A059] font-normal">agency.</span>
           </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
                 num: '01',
@@ -261,11 +261,6 @@ export const AboutPage: React.FC = () => {
                 num: '04',
                 title: 'Honest about what works',
                 desc: 'If your ICP needs adjusting, we say so. If a campaign isn\'t landing, we tell you. If we\'re not the right fit, we point you to someone who is — before you sign anything.',
-              },
-              {
-                num: '05',
-                title: 'Results over activity',
-                desc: 'We don\'t send reports packed with vanity metrics. We measure qualified, attended demos with named decision-makers. Everything else is noise.',
               },
             ].map((card, i) => (
               <motion.div

@@ -4,17 +4,15 @@ import DottedMap from 'dotted-map';
 
 const LINE_COLOR = '#C5A059';
 
-// 8 European hubs (positions in dotted-map's 198 x 100 viewBox)
+// 6 European hubs (positions in dotted-map's 198 x 100 viewBox)
 // y values approximated from same projection used in WorldMap.tsx
 const HUBS = [
-  { x: 99,    y: 25.11, label: 'EN', name: 'English',    region: 'UK & Ireland',         city: 'London' },
-  { x: 100.5, y: 26.85, label: 'FR', name: 'French',     region: 'France',                city: 'Paris' },
-  { x: 106.5, y: 24.25, label: 'DE', name: 'German',     region: 'DACH (DE/AT/CH)',       city: 'Berlin' },
-  { x: 102,   y: 24.50, label: 'NL', name: 'Dutch',      region: 'Benelux',               city: 'Amsterdam' },
-  { x: 105,   y: 18.50, label: 'NO', name: 'Norwegian',  region: 'Nordics',               city: 'Oslo' },
-  { x: 96.5,  y: 34.64, label: 'ES', name: 'Spanish',    region: 'Spain & Iberia',        city: 'Madrid' },
-  { x: 106.5, y: 32.91, label: 'IT', name: 'Italian',    region: 'Italy',                 city: 'Milan' },
-  { x: 94,    y: 35.51, label: 'PT', name: 'Portuguese', region: 'Portugal',              city: 'Lisbon' },
+  { x: 99,    y: 25.11, label: 'EN', name: 'English',  region: 'UK & Ireland',         city: 'London' },
+  { x: 100.5, y: 26.85, label: 'FR', name: 'French',   region: 'France',                city: 'Paris' },
+  { x: 106.5, y: 24.25, label: 'DE', name: 'German',   region: 'DACH (DE/AT/CH)',       city: 'Berlin' },
+  { x: 102,   y: 24.50, label: 'NL', name: 'Dutch',    region: 'Benelux',               city: 'Amsterdam' },
+  { x: 96.5,  y: 34.64, label: 'ES', name: 'Spanish',  region: 'Spain & Iberia',        city: 'Madrid' },
+  { x: 106.5, y: 32.91, label: 'IT', name: 'Italian',  region: 'Italy',                 city: 'Milan' },
 ];
 
 // Network of connecting lines between hubs (subtle "we run as one team" visual)
@@ -22,12 +20,10 @@ const LINKS: [number, number][] = [
   [0, 1], // London → Paris
   [0, 3], // London → Amsterdam
   [1, 2], // Paris → Berlin
-  [1, 5], // Paris → Madrid
+  [1, 4], // Paris → Madrid
   [2, 3], // Berlin → Amsterdam
-  [2, 4], // Berlin → Oslo
-  [2, 6], // Berlin → Milan
-  [5, 7], // Madrid → Lisbon
-  [5, 6], // Madrid → Milan
+  [2, 5], // Berlin → Milan
+  [4, 5], // Madrid → Milan
 ];
 
 // Cropped Europe viewBox — focuses on the cluster
@@ -217,7 +213,7 @@ export const EuropeMap: React.FC = () => {
       {/* Caption strip */}
       <div className="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/80 to-transparent pointer-events-none">
         <div className="text-[10px] tracking-[0.25em] text-stone-400 uppercase text-center">
-          Native-language outbound across 8 European markets
+          Native-language outbound across 6 European markets
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import { AboutPage } from './components/AboutPage';
 import { CaseStudiesPage } from './components/CaseStudiesPage';
 import { CaseStudyDetailPage } from './components/CaseStudyDetailPage';
 import { ResourcesPage } from './components/ResourcesPage';
+import ArticleDetailPage from './components/ArticleDetailPage';
 import { CaseStudyCarousel } from './components/CaseStudyCarousel';
 import { ROICalculatorPage } from './components/ROICalculatorPage';
 import { MarketScannerPage } from './components/MarketScannerPage';
@@ -220,6 +221,8 @@ const App: React.FC = () => {
           <CaseStudiesPage />
         ) : route === '#/resources' ? (
           <ResourcesPage />
+        ) : route.startsWith('#/resources/') ? (
+          <ArticleDetailPage key={route} />
         ) : route === '#/roi-calculator' ? (
           <ROICalculatorPage />
         ) : route === '#/market-scanner' ? (
@@ -350,7 +353,7 @@ const App: React.FC = () => {
                 {/* Fade edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F9F8F4] to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#F9F8F4] to-transparent z-10 pointer-events-none" />
-                <div className={`flex ${logoStripVisible ? 'animate-scroll-logos' : ''}`}>
+                <div className={`flex w-max ${logoStripVisible ? 'animate-scroll-logos' : ''}`}>
                   {[...Array(2)].map((_, setIdx) => (
                     <div key={setIdx} className="flex shrink-0 items-center gap-16 px-8">
                       {[

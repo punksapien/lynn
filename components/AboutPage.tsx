@@ -54,7 +54,7 @@ export const AboutPage: React.FC = () => {
           >
             {[
               { num: '2,298+', label: 'qualified demos booked' },
-              { num: '$22M+', label: 'pipeline generated for clients' },
+              { num: '$45M+', label: 'pipeline generated for clients' },
               { num: '6', label: 'languages, fluent teams' },
               { num: '90', label: 'day guaranteed programmes' },
             ].map((stat, i) => (
@@ -184,7 +184,7 @@ export const AboutPage: React.FC = () => {
                   { title: 'Campaign Managers', desc: 'Run your account day-to-day, accountable to your numbers.' },
                   { title: 'Email Deliverability', desc: 'Domain managers ensuring your sequences hit the inbox, not spam.' },
                   { title: 'Cold Callers', desc: '18 dialers trained on supply chain, logistics, and procurement.' },
-                  { title: 'Native-Language Experts', desc: 'Fluent in 6 European languages — EN, DE, FR, IT, ES, NL.' },
+                  { title: 'Native-Language Experts', desc: 'Fluent in 6 European languages — EN, DE, FR, IT, ES, PT.' },
                   { title: 'Copywriters', desc: 'Outbound email written by people who know what a TMS does.' },
                 ].map((role, i) => (
                   <div key={i} className="border-l-2 border-[#C5A059]/40 pl-3 py-1">

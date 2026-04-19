@@ -45,82 +45,170 @@ const MEETINGS: Meeting[] = [
 
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
 const START_HOUR = 9;
-const END_HOUR = 19;
+const END_HOUR = 18;
 const TOTAL_HOURS = END_HOUR - START_HOUR;
 
-const TOAST_MESSAGES: ToastData[] = [
-  { title: 'New demo booked!', detail: 'VP Procurement · SAP · Germany' },
-  { title: 'Meeting confirmed!', detail: 'Head of Ops · Roche · Switzerland' },
-  { title: 'Discovery call booked!', detail: 'CPO · Danone · France' },
-  { title: 'New demo booked!', detail: 'Dir. Supply Chain · ABB · Sweden' },
-  { title: 'Meeting confirmed!', detail: 'VP Logistics · FedEx · Netherlands' },
+// Fisher-Yates shuffle (one-shot per page load).
+const shuffle = <T,>(arr: T[]): T[] => {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+};
+
+// Which meetings are already booked on page load.
+// For each day, pick 2 random meetings — scatters the pre-fill across morning/afternoon
+// as well as across all 5 days, so the grid feels "sporadically booked" on arrival.
+const PRE_FILLED_IDS: Set<string> = (() => {
+  const ids = new Set<string>();
+  const byDay: Record<number, Meeting[]> = {};
+  MEETINGS.forEach(m => { (byDay[m.day] = byDay[m.day] || []).push(m); });
+  Object.values(byDay).forEach(dayMeetings => {
+    shuffle(dayMeetings).slice(0, 2).forEach(m => ids.add(m.id));
+  });
+  return ids;
+})();
+
+// Order in which the remaining "live" bookings appear — fully randomised across the week,
+// so new bookings pop in from random days/times rather than sweeping top-to-bottom.
+const LIVE_QUEUE: Meeting[] = shuffle(MEETINGS.filter(m => !PRE_FILLED_IDS.has(m.id)));
+
+// Helper: current-week Monday, formatted for the calendar header.
+const getWeekLabel = () => {
+  const now = new Date();
+  const day = now.getDay(); // 0 Sun … 6 Sat
+  const diff = day === 0 ? -6 : 1 - day;
+  const monday = new Date(now);
+  monday.setDate(now.getDate() + diff);
+  return monday.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+};
+
+// Late bookings: each toast is PAIRED with a real meeting that appears on the calendar
+// right after the toast fires. Sequence: toast → dot on calendar → dot expands to card.
+// This is what makes the toast feel real — it announces something that actually happens.
+interface LateBooking {
+  meeting: Meeting;
+  toast: ToastData;
+}
+
+const LATE_BOOKINGS: LateBooking[] = [
+  {
+    meeting: { id: 'late-sap', day: 0, start: 12.0, duration: 1, title: 'Demo — VP Procurement', type: 'demo', status: 'upcoming', tooltip: 'Qualified demo · VP Procurement · SAP · Germany · Booked via cold call in German.' },
+    toast: { title: 'New demo booked!', detail: 'VP Procurement · SAP · Germany' },
+  },
+  {
+    meeting: { id: 'late-roche', day: 1, start: 10.5, duration: 1, title: 'Meeting — Head of Ops', type: 'meeting', status: 'upcoming', tooltip: 'Follow-up · Head of Ops · Roche · Switzerland · Booked via cold call in German.' },
+    toast: { title: 'Meeting confirmed!', detail: 'Head of Ops · Roche · Switzerland' },
+  },
+  {
+    meeting: { id: 'late-danone', day: 2, start: 11.5, duration: 1, title: 'Discovery — CPO', type: 'discovery', status: 'upcoming', tooltip: 'Discovery call · CPO · Danone · France · Booked via cold call in French.' },
+    toast: { title: 'Discovery call booked!', detail: 'CPO · Danone · France' },
+  },
+  {
+    meeting: { id: 'late-abb', day: 3, start: 9.0, duration: 0.75, title: 'Demo — Dir. Supply Chain', type: 'demo', status: 'upcoming', tooltip: 'Qualified demo · Director of Supply Chain · ABB · Sweden · Booked via cold call in English.' },
+    toast: { title: 'New demo booked!', detail: 'Dir. Supply Chain · ABB · Sweden' },
+  },
+  {
+    meeting: { id: 'late-fedex', day: 4, start: 15.0, duration: 1, title: 'Meeting — VP Logistics', type: 'meeting', status: 'upcoming', tooltip: 'Follow-up · VP Logistics · FedEx · Netherlands · Booked via cold call in English.' },
+    toast: { title: 'Meeting confirmed!', detail: 'VP Logistics · FedEx · Netherlands' },
+  },
 ];
+
+const LATE_MEETINGS = LATE_BOOKINGS.map(lb => lb.meeting);
+// Combined list used for rendering. MEETINGS is the pre/initial set; LATE_MEETINGS
+// appear later tied to toasts.
+const ALL_MEETINGS: Meeting[] = [...MEETINGS, ...LATE_MEETINGS];
 
 const getCardClasses = (meeting: Meeting) => {
   if (meeting.status === 'confirmed') return { bg: 'bg-stone-700', text: 'text-stone-100', border: 'border-stone-600' };
-  if (meeting.type === 'demo') return { bg: 'bg-[#C5A059]/12', text: 'text-[#9c7a3d]', border: 'border-[#C5A059]/20' };
+  // Demos (what Lynn sells) get the strongest visual weight among upcoming meetings.
+  if (meeting.type === 'demo') return { bg: 'bg-[#C5A059]/25', text: 'text-[#1a1a1a]', border: 'border-[#C5A059]/60' };
   if (meeting.type === 'discovery') return { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200/60' };
   return { bg: 'bg-stone-50', text: 'text-stone-500', border: 'border-stone-200/60' };
 };
 
 export const CalendarUI: React.FC = () => {
   const [hoveredMeeting, setHoveredMeeting] = useState<string | null>(null);
-  // Each meeting goes through: hidden → dot → card (single element, CSS transitions)
-  const [meetingStates, setMeetingStates] = useState<Record<string, 'hidden' | 'dot' | 'card'>>({});
+
+  // Pre-filled meetings (2 per day, balanced across the week) start as cards on mount.
+  // LIVE_QUEUE and LATE_BOOKINGS both start hidden — they animate in later.
+  const [meetingStates, setMeetingStates] = useState<Record<string, 'hidden' | 'dot' | 'card'>>(() => {
+    const state: Record<string, 'hidden' | 'dot' | 'card'> = {};
+    ALL_MEETINGS.forEach((m) => {
+      state[m.id] = PRE_FILLED_IDS.has(m.id) ? 'card' : 'hidden';
+    });
+    return state;
+  });
+
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [activeToast, setActiveToast] = useState<ToastData | null>(null);
-  const [meetingCount, setMeetingCount] = useState(0);
+  const [meetingCount, setMeetingCount] = useState(PRE_FILLED_IDS.size);
   const [showVideo, setShowVideo] = useState(false);
-  const toastIndexRef = useRef(0);
+  const [weekLabel] = useState(getWeekLabel);
+  const lateIdxRef = useRef(0);
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
-    const DOT_DELAY = 150; // ms between each dot appearing
-    const DOT_PHASE = 800; // ms before dots start
-    const CARD_PHASE_START = DOT_PHASE + MEETINGS.length * DOT_DELAY + 800; // pause after all dots
-    const CARD_DELAY = 130; // ms between each card expanding
+    const LIVE_START = 900;       // delay before the first initial-live booking appears
+    const BOOKING_INTERVAL = 550; // gap between each successive initial-live booking
+    const DOT_TO_CARD = 380;      // delay from dot → card for each booking
 
-    // Phase 1: dots appear staggered
-    MEETINGS.forEach((meeting, i) => {
-      const t = setTimeout(() => {
+    // Phase 1 — initial live bookings (no toasts; too busy to pair one-to-one).
+    LIVE_QUEUE.forEach((meeting, i) => {
+      const base = LIVE_START + i * BOOKING_INTERVAL;
+      const dotT = setTimeout(() => {
         setMeetingStates(prev => ({ ...prev, [meeting.id]: 'dot' }));
-      }, DOT_PHASE + i * DOT_DELAY);
-      timersRef.current.push(t);
-    });
-
-    // Phase 2: dots expand to cards staggered
-    MEETINGS.forEach((meeting, i) => {
-      const t = setTimeout(() => {
+      }, base);
+      const cardT = setTimeout(() => {
         setMeetingStates(prev => ({ ...prev, [meeting.id]: 'card' }));
-        setMeetingCount(i + 1);
-      }, CARD_PHASE_START + i * CARD_DELAY);
-      timersRef.current.push(t);
+        setMeetingCount(PRE_FILLED_IDS.size + i + 1);
+      }, base + DOT_TO_CARD);
+      timersRef.current.push(dotT, cardT);
     });
 
-    // Show video pill after all cards
-    const totalTime = CARD_PHASE_START + MEETINGS.length * CARD_DELAY;
-    const videoT = setTimeout(() => setShowVideo(true), totalTime + 500);
-    timersRef.current.push(videoT);
+    const initialEndTime = LIVE_START + LIVE_QUEUE.length * BOOKING_INTERVAL + DOT_TO_CARD;
+    const videoT = setTimeout(() => setShowVideo(true), initialEndTime + 400);
 
-    // Start toast cycle
-    const toastStart = setTimeout(() => startToastCycle(), totalTime + 2000);
-    timersRef.current.push(toastStart);
+    // Phase 2 — late bookings, paced ~every 10–14s, each paired with a toast and a
+    // real meeting that materialises on the calendar. Starts 1.8s after initial phase ends.
+    const lateStart = setTimeout(() => fireLateBooking(), initialEndTime + 1800);
+
+    timersRef.current.push(videoT, lateStart);
 
     return () => timersRef.current.forEach(t => clearTimeout(t));
   }, []);
 
-  const startToastCycle = () => {
-    const showToast = () => {
-      if (toastIndexRef.current >= 5) return;
-      const msg = TOAST_MESSAGES[toastIndexRef.current];
-      setActiveToast(msg);
-      toastIndexRef.current++;
+  // Fires one late booking: toast first, then dot on the calendar, then dot → card.
+  // This is what makes the toast feel real — it announces something that actually happens.
+  const fireLateBooking = () => {
+    if (lateIdxRef.current >= LATE_BOOKINGS.length) return;
 
-      const hideT = setTimeout(() => setActiveToast(null), 3500);
-      const nextT = setTimeout(showToast, 8000 + Math.random() * 4000);
-      timersRef.current.push(hideT, nextT);
-    };
-    showToast();
+    const { meeting, toast } = LATE_BOOKINGS[lateIdxRef.current];
+    lateIdxRef.current++;
+
+    // t=0: toast pops up
+    setActiveToast(toast);
+
+    // t=500ms: dot appears on the calendar at the meeting's slot (eye travels from toast → grid)
+    const dotT = setTimeout(() => {
+      setMeetingStates(prev => ({ ...prev, [meeting.id]: 'dot' }));
+    }, 500);
+
+    // t=950ms: dot expands to a card
+    const cardT = setTimeout(() => {
+      setMeetingStates(prev => ({ ...prev, [meeting.id]: 'card' }));
+      setMeetingCount(prev => prev + 1);
+    }, 950);
+
+    // t=4200ms: toast fades
+    const hideT = setTimeout(() => setActiveToast(null), 4200);
+
+    // t=10–14s: next late booking
+    const nextT = setTimeout(fireLateBooking, 10000 + Math.random() * 4000);
+
+    timersRef.current.push(dotT, cardT, hideT, nextT);
   };
 
   // Escape key to close video
@@ -139,7 +227,7 @@ export const CalendarUI: React.FC = () => {
         {/* Header */}
         <div className="flex items-center justify-between px-4 py-2.5 border-b border-stone-100 bg-stone-50/80 rounded-t-2xl">
           <div className="text-xs font-semibold text-stone-400 tracking-wide">
-            This week
+            Week of {weekLabel}
             {meetingCount > 0 && (
               <span className="ml-1.5">
                 — <span className="text-[#C5A059]">{meetingCount}</span> meetings
@@ -187,22 +275,28 @@ export const CalendarUI: React.FC = () => {
             ))}
           </div>
 
-          {/* Toast Notification */}
+          {/* Toast Notification — floats off the calendar's bottom-right, half inside / half outside
+              so it reads as a real-world alert popping out of the calendar rather than UI chrome. */}
           <AnimatePresence>
             {activeToast && (
               <motion.div
-                initial={{ opacity: 0, y: -8, x: 8 }}
-                animate={{ opacity: 1, y: 0, x: 0 }}
-                exit={{ opacity: 0, y: -6 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="absolute top-3 right-3 z-[70] bg-white border border-stone-200 rounded-xl shadow-lg px-3.5 py-2.5 flex items-start gap-2.5 w-56"
+                initial={{ opacity: 0, x: 24, y: 6, scale: 0.94 }}
+                animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                exit={{ opacity: 0, x: 18, scale: 0.96 }}
+                transition={{ type: 'spring', stiffness: 280, damping: 26 }}
+                className="absolute z-[80] bg-white border border-stone-200 rounded-xl flex items-start gap-2.5 w-60 px-4 py-3"
+                style={{
+                  right: '-32px',
+                  bottom: '88px',
+                  boxShadow: '0 18px 40px -12px rgba(26,26,26,0.22), 0 4px 12px -4px rgba(26,26,26,0.08)',
+                }}
               >
-                <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
-                  <CalendarCheck size={12} className="text-emerald-600" />
+                <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center shrink-0 mt-0.5 ring-4 ring-emerald-50">
+                  <CalendarCheck size={13} className="text-emerald-600" strokeWidth={2.5} />
                 </div>
-                <div>
-                  <div className="text-[11px] font-semibold text-[#1a1a1a]">{activeToast.title}</div>
-                  <div className="text-[10px] text-stone-400 mt-0.5">{activeToast.detail}</div>
+                <div className="min-w-0">
+                  <div className="text-[12px] font-semibold text-[#1a1a1a] leading-tight">{activeToast.title}</div>
+                  <div className="text-[11px] text-stone-500 mt-1 leading-snug">{activeToast.detail}</div>
                 </div>
               </motion.div>
             )}
@@ -212,7 +306,7 @@ export const CalendarUI: React.FC = () => {
           <div className="flex-1 flex relative">
             {DAYS.map((_, dayIndex) => (
               <div key={dayIndex} className={`flex-1 relative ${dayIndex !== 0 ? 'border-l border-stone-100/60' : ''}`}>
-                {MEETINGS.filter(m => m.day === dayIndex).map((meeting) => {
+                {ALL_MEETINGS.filter(m => m.day === dayIndex).map((meeting) => {
                   const topPercent = ((meeting.start - START_HOUR) / TOTAL_HOURS) * 100;
                   const heightPercent = (meeting.duration / TOTAL_HOURS) * 100;
                   const state = meetingStates[meeting.id] || 'hidden';

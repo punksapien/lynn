@@ -7,21 +7,21 @@ const LINE_COLOR = '#C5A059';
 // 6 European hubs (positions in dotted-map's 198 x 100 viewBox)
 // y values approximated from same projection used in WorldMap.tsx
 const HUBS = [
-  { x: 99,    y: 25.11, label: 'EN', name: 'English',  region: 'UK & Ireland',         city: 'London' },
-  { x: 100.5, y: 26.85, label: 'FR', name: 'French',   region: 'France',                city: 'Paris' },
-  { x: 106.5, y: 24.25, label: 'DE', name: 'German',   region: 'DACH (DE/AT/CH)',       city: 'Berlin' },
-  { x: 102,   y: 24.50, label: 'NL', name: 'Dutch',    region: 'Benelux',               city: 'Amsterdam' },
-  { x: 96.5,  y: 34.64, label: 'ES', name: 'Spanish',  region: 'Spain & Iberia',        city: 'Madrid' },
-  { x: 106.5, y: 32.91, label: 'IT', name: 'Italian',  region: 'Italy',                 city: 'Milan' },
+  { x: 99,    y: 25.11, label: 'EN', name: 'English',    region: 'UK & Ireland',     city: 'London' },
+  { x: 100.5, y: 26.85, label: 'FR', name: 'French',     region: 'France',           city: 'Paris' },
+  { x: 106.5, y: 24.25, label: 'DE', name: 'German',     region: 'DACH (DE/AT/CH)',  city: 'Berlin' },
+  { x: 94,    y: 36.20, label: 'PT', name: 'Portuguese', region: 'Portugal & Brazil', city: 'Lisbon' },
+  { x: 96.5,  y: 34.64, label: 'ES', name: 'Spanish',    region: 'Spain & Iberia',   city: 'Madrid' },
+  { x: 106.5, y: 32.91, label: 'IT', name: 'Italian',    region: 'Italy',            city: 'Milan' },
 ];
 
 // Network of connecting lines between hubs (subtle "we run as one team" visual)
 const LINKS: [number, number][] = [
   [0, 1], // London → Paris
-  [0, 3], // London → Amsterdam
+  [0, 4], // London → Madrid
   [1, 2], // Paris → Berlin
   [1, 4], // Paris → Madrid
-  [2, 3], // Berlin → Amsterdam
+  [3, 4], // Lisbon → Madrid
   [2, 5], // Berlin → Milan
   [4, 5], // Madrid → Milan
 ];

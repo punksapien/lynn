@@ -218,8 +218,8 @@ export const CaseStudiesPage: React.FC = () => {
         >
           {[
             { num: '2,298+', label: 'qualified demos booked' },
-            { num: '$22M+', label: 'pipeline generated' },
-            { num: '12', label: 'supply chain software clients' },
+            { num: '$45M+', label: 'pipeline generated' },
+            { num: '30+', label: 'supply chain software clients' },
             { num: '6', label: 'languages, fluent teams' },
           ].map((stat, i) => (
             <div key={i}>

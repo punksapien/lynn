@@ -148,7 +148,7 @@ export const WhoWeReach = () => {
         <div className="bg-[#1a1a1a] rounded-2xl p-8 md:p-12 text-white grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { stat: '2,298+', label: 'qualified demos booked for clients' },
-            { stat: '$22M+', label: 'new pipeline generated' },
+            { stat: '$45M+', label: 'new pipeline generated' },
             { stat: 'C-suite to Head of', label: 'seniority verified before every booking' },
             { stat: 'ICP-matched', label: 'every contact checked against your ideal profile' },
           ].map((item, i) => (

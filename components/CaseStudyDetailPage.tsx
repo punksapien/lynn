@@ -92,7 +92,7 @@ const STUDIES: CaseStudyData[] = [
       intro: 'We designed and deployed a coordinated outbound programme — calling and email — covering all six language markets. Fluent speakers were briefed on Alpega\'s platform, competitive landscape, and buyer personas, then live within two weeks.',
       timeline: [
         { title: 'ICP definition and list building', body: 'Mapped Alpega\'s ideal customers across each market — enterprise logistics operations, 3PLs, manufacturers with complex supply chains. Built targeted contact lists of VP/Director-level decision-makers.' },
-        { title: 'Team recruitment and training', body: 'Recruited fluent speakers for each market (EN, FR, DE, ES, IT, and Nordics). Trained every caller on Alpega\'s product, competitive positioning, and enterprise logistics buyer pain points.' },
+        { title: 'Team recruitment and training', body: 'Recruited fluent native speakers across EN, DE, FR, IT, ES, and PT. Trained every caller on Alpega\'s product, competitive positioning, and enterprise logistics buyer pain points.' },
         { title: 'Script and email sequence development', body: 'Created market-specific call scripts that addressed local buying patterns and objections. Tested and iterated within the first two weeks of live calling.' },
         { title: 'High-volume calling (200+ dials/day) + email sequences', body: '200+ dials per day across all six markets plus targeted email sequences. Every conversation handled by a human — no AI, no automation.' },
         { title: 'Continuous optimisation', body: 'Weekly performance reviews, script adjustments, and market prioritisation based on conversion data. Scaled up callers in high-performing markets.' },
@@ -124,14 +124,14 @@ const STUDIES: CaseStudyData[] = [
       ],
     },
     more: [
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'easy4pro', name: 'Easy4Pro', tag: 'Supply Chain Platform', stat: '28+', statLabel: 'demos per month' },
       { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
     ],
   },
   {
     slug: 'mintec',
-    name: 'Mintec / Expana',
+    name: 'Mintec by Expana',
     tag: 'Procurement Intelligence',
     tagColor: 'bg-[#C5A059]/15 text-[#8a6a28]',
     summary: 'How Lynn helped a commodity data platform book 30+ enterprise demos per month with procurement leaders at $300M+ manufacturers.',
@@ -259,7 +259,7 @@ const STUDIES: CaseStudyData[] = [
     },
     more: [
       { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'volue', name: 'Volue', tag: 'Energy & Trading Software', stat: '13+', statLabel: 'demos per month' },
     ],
   },
@@ -320,7 +320,7 @@ const STUDIES: CaseStudyData[] = [
     more: [
       { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
       { slug: 'descartes', name: 'Descartes Systems', tag: 'Compliance / Export Control', stat: 'EMEA', statLabel: 'wide outbound' },
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
     ],
   },
   {
@@ -431,7 +431,7 @@ const STUDIES: CaseStudyData[] = [
       timeline: [
         { title: 'Energy-house targeting', body: 'Built focused account lists across power producers, commodity traders, banks with energy desks, renewable operators, BRPs, and TSOs across Europe.' },
         { title: 'Domain-fluent callers', body: 'Callers trained on energy trading workflows — power markets, gas trading, balancing, forecasting, and renewables — to hold credible conversations with senior buyers.' },
-        { title: 'Multilingual reach', body: 'Native-speaking outbound in Norwegian, German, French, English, and Spanish to engage decision-makers in their primary language.' },
+        { title: 'Multilingual reach', body: 'Native-speaking outbound in English, German, French, and Spanish to engage decision-makers across European energy markets in their primary language.' },
         { title: 'Targeted scaling', body: 'Constant list refresh and persona refinement based on what was converting — from major utilities to commodity trading houses to banks running energy desks.' },
       ],
     },
@@ -456,7 +456,7 @@ const STUDIES: CaseStudyData[] = [
     more: [
       { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
       { slug: 'matium', name: 'Matium', tag: 'Plastics Trading Platform', stat: '42', statLabel: 'demos booked' },
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
     ],
   },
   {
@@ -562,7 +562,7 @@ const STUDIES: CaseStudyData[] = [
       intro: 'We built a calling programme focused on procurement leaders at enterprises running complex tendering processes.',
       timeline: [
         { title: 'Procurement buyer mapping', body: 'Identified organisations with active or upcoming tendering challenges — the right moment to engage.' },
-        { title: 'Multilingual deployment', body: 'Dutch, German, and French callers trained on procurement processes and tendering workflows.' },
+        { title: 'Multilingual deployment', body: 'Native English, German, and French callers trained on procurement processes and tendering workflows.' },
         { title: 'Consistent calling programme', body: 'Daily high-volume calling with strict qualification criteria for every meeting booked.' },
         { title: 'Pipeline optimisation', body: 'Ongoing script refinement and market prioritisation based on conversion data.' },
       ],
@@ -586,7 +586,7 @@ const STUDIES: CaseStudyData[] = [
       ],
     },
     more: [
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'vesper', name: 'Vesper', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'enterprise leads/month' },
       { slug: 'alpega', name: 'Alpega Group', tag: 'TMS / Logistics Software', stat: '80+', statLabel: 'demos per month' },
     ],
@@ -635,7 +635,7 @@ const STUDIES: CaseStudyData[] = [
       timeline: [
         { title: 'F&B account targeting', body: 'Built lists of branded F&B, hospitality, and ingredient companies with measurable commodity exposure — the buyers most likely to value market intelligence.' },
         { title: 'Persona-specific messaging', body: 'Separate sequences for procurement managers (cost/risk angle) and sales/category directors (margin/forecasting angle).' },
-        { title: 'Multilingual outreach', body: 'Callers and email sequences in English, German, French, Dutch, and Spanish to engage decision-makers in their native language.' },
+        { title: 'Multilingual outreach', body: 'Callers and email sequences in English, German, French, Italian, and Spanish to engage decision-makers in their native language.' },
         { title: 'Constant iteration', body: 'Refined ICP, scripts, and category focus based on what converted — from premium drinks to large hospitality groups.' },
       ],
     },
@@ -658,7 +658,7 @@ const STUDIES: CaseStudyData[] = [
       ],
     },
     more: [
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'tendereasy', name: 'Tendereasy', tag: 'Procurement / Tendering', stat: '20', statLabel: 'demos/month' },
       { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
     ],
@@ -784,7 +784,7 @@ const STUDIES: CaseStudyData[] = [
       ],
     },
     more: [
-      { slug: 'mintec', name: 'Mintec / Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
+      { slug: 'mintec', name: 'Mintec by Expana', tag: 'Procurement Intelligence', stat: '30+', statLabel: 'demos per month' },
       { slug: 'trayport', name: 'Trayport', tag: 'Energy Trading / Procurement', stat: '20', statLabel: 'qualified meetings/month' },
       { slug: 'freightgate', name: 'Freightgate', tag: 'Freight Rate Management', stat: '20+', statLabel: 'demos per month' },
     ],
@@ -1066,7 +1066,7 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
               <p className="text-sm text-stone-400">Book a strategy call and we'll show you what we can do for your pipeline.</p>
             </div>
             <a
-              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer"
               className="shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium hover:bg-stone-100 transition-colors shadow-lg"
             >
               Book a strategy call <ArrowRight size={16} />

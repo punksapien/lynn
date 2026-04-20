@@ -11,7 +11,7 @@ export const PrivacyPage = () => {
           <div>
             <h2 className="font-serif text-xl text-[#1a1a1a] mb-3">Who we are</h2>
             <p>Lynn Lead Generation Ltd is a UK-registered company (Company Number 15427579). We provide B2B outbound lead generation services for supply chain, logistics, and procurement software companies. Our registered address is in England.</p>
-            <p className="mt-2">For any privacy-related queries, contact us at <a href="mailto:matas@lynnleadgen.com" className="text-[#C5A059] hover:underline">matas@lynnleadgen.com</a>.</p>
+            <p className="mt-2">For any privacy-related queries, contact us at <a href="mailto:privacy@lynnleadgen.com" className="text-[#C5A059] hover:underline">privacy@lynnleadgen.com</a>.</p>
           </div>
 
           <div>
@@ -63,7 +63,7 @@ export const PrivacyPage = () => {
               <li>Data portability</li>
               <li>Lodge a complaint with the Information Commissioner's Office (ICO)</li>
             </ul>
-            <p className="mt-2">To exercise any of these rights, email <a href="mailto:matas@lynnleadgen.com" className="text-[#C5A059] hover:underline">matas@lynnleadgen.com</a>.</p>
+            <p className="mt-2">To exercise any of these rights, email <a href="mailto:privacy@lynnleadgen.com" className="text-[#C5A059] hover:underline">privacy@lynnleadgen.com</a>.</p>
           </div>
 
           <div>

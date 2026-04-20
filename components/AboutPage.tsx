@@ -218,7 +218,7 @@ export const AboutPage: React.FC = () => {
                   Follow us on LinkedIn
                 </a>
                 <a
-                  href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
+                  href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer"
                   className="text-sm font-medium text-white bg-[#1a1a1a] px-5 py-2.5 rounded-xl hover:bg-stone-800 transition-colors"
                 >
                   Talk to our team
@@ -292,7 +292,7 @@ export const AboutPage: React.FC = () => {
           </motion.p>
           <motion.div {...stagger(0.2)} className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-200 transition-colors shadow-lg"
             >
               Book a strategy call

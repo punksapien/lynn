@@ -181,8 +181,8 @@ const App: React.FC = () => {
             </div>
 
             <a
-              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
-              onClick={scrollToSection('contact')}
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer"
+             
               className="px-6 py-2.5 bg-[#1a1a1a] text-white rounded-full hover:bg-stone-800 transition-colors shadow-sm cursor-pointer"
             >
               Book a call
@@ -205,8 +205,8 @@ const App: React.FC = () => {
             <a href="#/roi-calculator" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer text-base text-stone-400">ROI Calculator</a>
             <a href="#/market-scanner" onClick={() => setMenuOpen(false)} className="hover:text-[#C5A059] transition-colors cursor-pointer text-base text-stone-400">Market Scanner</a>
             <a
-              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer"
-              onClick={scrollToSection('contact')}
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer"
+             
               className="px-8 py-4 bg-[#1a1a1a] text-white rounded-full shadow-lg cursor-pointer mt-4"
             >
               Book a call
@@ -294,7 +294,7 @@ const App: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
                   className="flex flex-wrap items-center gap-6"
                 >
-                  <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="group inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
+                  <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-3 px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-sm font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
                     Book a strategy call
                   </a>
                   <a href="#pipeline" onClick={scrollToSection('pipeline')} className="text-sm font-medium text-[#C5A059] hover:text-[#1a1a1a] transition-colors flex items-center gap-2">
@@ -348,7 +348,7 @@ const App: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="mt-24 pt-12 border-t border-stone-200"
             >
-              <div className="text-center text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-8">Trusted by supply chain software companies across Europe</div>
+              <div className="text-center text-[10px] font-bold tracking-[0.2em] text-stone-400 uppercase mb-8">Trusted by supply chain, logistics, and procurement software companies across Europe</div>
               <div ref={logoStripRef} className="relative overflow-hidden">
                 {/* Fade edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#F9F8F4] to-transparent z-10 pointer-events-none" />
@@ -408,7 +408,7 @@ const App: React.FC = () => {
                 </div>
                 
                 <div className="flex flex-wrap items-center gap-6">
-                  <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-200 transition-all shadow-lg">
+                  <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1a1a1a] rounded-xl text-sm font-medium tracking-wide hover:bg-stone-200 transition-all shadow-lg">
                     Book a strategy call
                   </a>
                   <a href="#pipeline" onClick={scrollToSection('pipeline')} className="text-sm font-medium text-stone-400 hover:text-white transition-colors flex items-center gap-2">
@@ -529,7 +529,7 @@ const App: React.FC = () => {
             <p className="text-xl text-stone-600 font-light max-w-2xl mx-auto mb-12">
               We build your GTM engine, fill your pipeline with qualified demos, and guarantee results. Book a call and we'll show you exactly how it works for your market.
             </p>
-            <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-base font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
+            <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-10 py-5 bg-[#1a1a1a] text-white rounded-full text-base font-medium tracking-wide hover:bg-stone-800 transition-all shadow-lg hover:shadow-xl">
               Book your strategy call →
             </a>
           </div>
@@ -579,8 +579,8 @@ const App: React.FC = () => {
               <div>
                 <h4 className="text-white font-medium mb-4">Contact</h4>
                 <ul className="space-y-2.5 text-sm">
-                  <li><a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Book a strategy call</a></li>
-                  <li><a href="mailto:christian@lynnleadgen.com" className="hover:text-white transition-colors">christian@lynnleadgen.com</a></li>
+                  <li><a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Book a strategy call</a></li>
+                  <li><a href="mailto:info@lynnleadgen.com" className="hover:text-white transition-colors">info@lynnleadgen.com</a></li>
                   <li><a href="https://www.linkedin.com/company/lynn-lead-gen/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
                 </ul>
               </div>
@@ -593,7 +593,7 @@ const App: React.FC = () => {
               <a href="#/privacy" className="hover:text-white transition-colors">Privacy</a>
               <a href="#/terms" className="hover:text-white transition-colors">Terms</a>
               <a href="#/gdpr" className="hover:text-white transition-colors">GDPR</a>
-              <span className="tracking-widest uppercase">EN · FR · DE · ES · IT · PT</span>
+              <span className="tracking-widest uppercase">EN · DE · FR · IT · ES · PT</span>
             </div>
           </div>
         </div>
@@ -610,7 +610,7 @@ const App: React.FC = () => {
           >
             <div className="container mx-auto max-w-6xl flex justify-between items-center">
               <div className="text-sm font-medium text-[#1a1a1a] hidden sm:block">Qualified demos, guaranteed.</div>
-              <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w?month=2026-04" target="_blank" rel="noopener noreferrer" onClick={scrollToSection('contact')} className="w-full sm:w-auto text-center px-8 py-3 bg-[#1a1a1a] text-white rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
+              <a href="https://calendly.com/george-lynn-lead-gen/strategy-session-w" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto text-center px-8 py-3 bg-[#1a1a1a] text-white rounded-full text-sm font-medium hover:bg-stone-800 transition-colors">
                 Book a call
               </a>
             </div>

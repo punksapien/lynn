@@ -122,7 +122,7 @@ export const GDPRPage = () => {
               <li><strong>Object</strong> — Object to processing of your data for outreach purposes.</li>
               <li><strong>Complain</strong> — Lodge a complaint with the UK Information Commissioner's Office (ICO) at <span className="text-stone-800">ico.org.uk</span>.</li>
             </ul>
-            <p className="mt-2">To exercise any of these rights, email <a href="mailto:matas@lynnleadgen.com" className="text-[#C5A059] hover:underline">matas@lynnleadgen.com</a>. We aim to respond within 30 days.</p>
+            <p className="mt-2">To exercise any of these rights, email <a href="mailto:privacy@lynnleadgen.com" className="text-[#C5A059] hover:underline">privacy@lynnleadgen.com</a>. We aim to respond within 30 days.</p>
           </div>
 
           <div>
@@ -134,7 +134,7 @@ export const GDPRPage = () => {
               <li>Our Legitimate Interest Assessment methodology</li>
               <li>Information about our technical security measures</li>
             </ul>
-            <p className="mt-2">Contact <a href="mailto:matas@lynnleadgen.com" className="text-[#C5A059] hover:underline">matas@lynnleadgen.com</a> and we will respond within 48 hours.</p>
+            <p className="mt-2">Contact <a href="mailto:privacy@lynnleadgen.com" className="text-[#C5A059] hover:underline">privacy@lynnleadgen.com</a> and we will respond within 48 hours.</p>
           </div>
         </div>
       </div>

@@ -52,7 +52,7 @@ export const TermsPage = () => {
 
           <div>
             <h2 className="font-serif text-xl text-[#1a1a1a] mb-3">9. Contact</h2>
-            <p>For questions about these terms, contact us at <a href="mailto:matas@lynnleadgen.com" className="text-[#C5A059] hover:underline">matas@lynnleadgen.com</a>.</p>
+            <p>For questions about these terms, contact us at <a href="mailto:privacy@lynnleadgen.com" className="text-[#C5A059] hover:underline">privacy@lynnleadgen.com</a>.</p>
           </div>
         </div>
       </div>

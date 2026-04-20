@@ -330,7 +330,9 @@ export const ROICalculatorPage: React.FC = () => {
               how we'd deliver up to {GUARANTEED_DEMOS} qualified demos in 90 days.
             </p>
             <a
-              href="#book"
+              href="https://calendly.com/george-lynn-lead-gen/strategy-session-w"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#C5A059] text-white text-sm font-medium px-8 py-3.5 rounded-full hover:bg-[#b08d47] transition-colors duration-200"
             >
               Book a call

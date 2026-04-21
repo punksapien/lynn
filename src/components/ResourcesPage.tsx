@@ -26,7 +26,7 @@ const FEATURED = {
   title: 'Cold Calling Across Europe and the US in 2026',
   desc: 'Market-by-market connect rates, industry benchmarks, and where cold calling stops being the right channel. Based on 1.1M+ dials across eight markets.',
   meta: '9 min read · April 2026',
-  href: '#/resources/cold-calling-connect-rates-by-market',
+  href: '/resources/cold-calling-connect-rates-by-market',
 };
 
 const RESOURCES: Resource[] = [
@@ -36,7 +36,7 @@ const RESOURCES: Resource[] = [
     desc: 'The single variable most pan-European campaigns underspend on. Data for France, DACH, Italy, Spain, Portugal — and where language stops mattering.',
     readTime: '4 min read',
     date: 'April 2026',
-    href: '#/resources/multilingual-calling-doubles-connect-rates',
+    href: '/resources/multilingual-calling-doubles-connect-rates',
     thumbnailKey: 'blog-multilingual',
   },
   {
@@ -45,7 +45,7 @@ const RESOURCES: Resource[] = [
     desc: 'Fully-loaded costs line by line, ramp time, tenure, and what $400–570K of SDR spend actually produces in qualified meetings.',
     readTime: '6 min read',
     date: 'April 2026',
-    href: '#/resources/in-house-sdr-math-supply-chain',
+    href: '/resources/in-house-sdr-math-supply-chain',
     thumbnailKey: 'guide-sdr-math',
   },
   {
@@ -54,7 +54,7 @@ const RESOURCES: Resource[] = [
     desc: 'Plug in your deal size, sales cycle, and close rate. See the pipeline and revenue we guarantee to deliver in 90 days.',
     readTime: 'Interactive',
     date: 'Live',
-    href: '#/roi-calculator',
+    href: '/roi-calculator',
     thumbnailKey: 'tool-pipeline-calc',
   },
   {
@@ -63,7 +63,7 @@ const RESOURCES: Resource[] = [
     desc: 'Alpega, Mintec, Volue, Descartes, Trayport, Meight, BuyCo — how we built their outbound engines, segment by segment.',
     readTime: '10 min browse',
     date: '2026',
-    href: '#/case-studies',
+    href: '/case-studies',
     thumbnailKey: 'report-case-index',
   },
   {
@@ -72,7 +72,7 @@ const RESOURCES: Resource[] = [
     desc: 'Inside the largest outbound programme we run — how we structure a pan-European TMS motion, staff for language, and ship meetings weekly.',
     readTime: '5 min read',
     date: '2026',
-    href: '#/case-study/alpega',
+    href: '/case-study/alpega',
     thumbnailKey: 'report-alpega',
   },
   {
@@ -81,7 +81,7 @@ const RESOURCES: Resource[] = [
     desc: 'Procurement and FP&A buyers in consumer goods. A narrow ICP, a technical product, and what multilingual calling did for connect density.',
     readTime: '4 min read',
     date: '2026',
-    href: '#/case-study/mintec',
+    href: '/case-study/mintec',
     thumbnailKey: 'report-mintec',
   },
 ];

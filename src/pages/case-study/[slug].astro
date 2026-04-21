@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CaseStudyDetailPage } from '../../components/CaseStudyDetailPage';
+
+export function getStaticPaths() {
+  const slugs = [
+    'alpega', 'mintec', 'easy4pro', 'trayport', 'descartes',
+    'volue', 'freightgate', 'tendereasy', 'vesper', 'buyco',
+    'matium', 'kpler',
+  ];
+  return slugs.map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title={`${slug!.charAt(0).toUpperCase() + slug!.slice(1)} Case Study | Lynn Lead Gen`} description={`See how Lynn helped ${slug} generate qualified demos through targeted outbound.`}>
+  <CaseStudyDetailPage client:load slug={slug!} />
+</Layout>

@@ -279,7 +279,7 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
               <ChevronRight size={20} />
             </button>
             <a
-              href="#/case-studies"
+              href="/case-studies"
               className="ml-2 text-sm font-medium text-[#C5A059] hover:text-[#1a1a1a] transition-colors flex items-center gap-1.5 whitespace-nowrap"
             >
               View all <ArrowRight size={14} />
@@ -309,7 +309,7 @@ export const CaseStudyCarousel: React.FC<Props> = ({ scrollToSection }) => {
                 return (
                   <a
                     key={cs.slug}
-                    href={`#/case-study/${cs.slug}`}
+                    href={`/case-study/${cs.slug}`}
                     className="group bg-white border border-stone-200 rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-500 flex flex-col"
                   >
                     {/* Logo Header */}

@@ -868,7 +868,7 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       <div className="min-h-screen bg-[#F9F8F4] flex items-center justify-center pt-40">
         <div className="text-center">
           <h1 className="font-serif text-4xl mb-4">Case study not found</h1>
-          <a href="#/case-studies" className="text-[#C5A059] font-medium hover:underline">Back to all case studies</a>
+          <a href="/case-studies" className="text-[#C5A059] font-medium hover:underline">Back to all case studies</a>
         </div>
       </div>
     );
@@ -879,7 +879,7 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
       {/* Back Link */}
       <div className="pt-32 px-6">
         <div className="container mx-auto max-w-5xl">
-          <a href="#/case-studies" className="inline-flex items-center gap-2 text-sm text-[#C5A059] font-medium hover:underline">
+          <a href="/case-studies" className="inline-flex items-center gap-2 text-sm text-[#C5A059] font-medium hover:underline">
             <ArrowLeft size={16} /> Back to all case studies
           </a>
         </div>
@@ -1083,7 +1083,7 @@ export const CaseStudyDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
             {study.more.map((m, i) => (
               <a
                 key={i}
-                href={`#/case-study/${m.slug}`}
+                href={`/case-study/${m.slug}`}
                 className="group bg-white border border-stone-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="font-serif text-xl mb-1">{m.name}</div>

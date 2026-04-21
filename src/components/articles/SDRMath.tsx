@@ -57,7 +57,7 @@ export const SDRMathArticle: React.FC = () => {
       <section className="pt-40 pb-10 px-6">
         <div className="container mx-auto max-w-[1100px]">
           <motion.a
-            href="#/resources"
+            href="/resources"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
@@ -307,7 +307,7 @@ export const SDRMathArticle: React.FC = () => {
                 </p>
               </div>
               <a
-                href="#/roi-calculator"
+                href="/roi-calculator"
                 className="group inline-flex items-center gap-2 shrink-0 px-6 py-3 rounded-xl text-[13px] font-medium transition-colors hover:bg-[#d9b76f]"
                 style={{ background: GOLD, color: INK }}
               >
@@ -332,8 +332,8 @@ export const SDRMathArticle: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-[160px_1fr] gap-4 md:gap-10">
                 <Eyebrow>Related</Eyebrow>
                 <ul className="text-[13px] leading-[1.75] text-stone-600 space-y-1">
-                  <li><a href="#/resources/cold-calling-connect-rates-by-market" className="hover:text-[#1a1a1a] underline-offset-2 hover:underline">Cold calling across Europe and the US in 2026 →</a></li>
-                  <li><a href="#/resources/multilingual-calling-doubles-connect-rates" className="hover:text-[#1a1a1a] underline-offset-2 hover:underline">Why calling a French VP in French doubles your connects →</a></li>
+                  <li><a href="/resources/cold-calling-connect-rates-by-market" className="hover:text-[#1a1a1a] underline-offset-2 hover:underline">Cold calling across Europe and the US in 2026 →</a></li>
+                  <li><a href="/resources/multilingual-calling-doubles-connect-rates" className="hover:text-[#1a1a1a] underline-offset-2 hover:underline">Why calling a French VP in French doubles your connects →</a></li>
                 </ul>
               </div>
             </section>

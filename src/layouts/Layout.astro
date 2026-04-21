@@ -1,0 +1,103 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "The only outbound agency built exclusively for supply chain, logistics, and procurement software." } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/jpeg" href="/assets/light_logo.jpeg" />
+    <link rel="apple-touch-icon" href="/assets/light_logo.jpeg" />
+    <link rel="canonical" href={`https://lynnleadgen.com${currentPath}`} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://lynnleadgen.com${currentPath}`} />
+    <meta property="og:image" content="https://lynnleadgen.com/assets/light_logo.jpeg" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet" />
+
+    <style is:global>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+      body {
+        background-color: #F9F8F4;
+        color: #1a1a1a;
+      }
+      ::selection {
+        background-color: #C5A059;
+        color: #ffffff;
+      }
+      @keyframes scroll-logos {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll-logos {
+        animation: scroll-logos 75s linear infinite;
+      }
+      .animate-scroll-logos:hover {
+        animation-play-state: paused;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#F9F8F4] text-[#1a1a1a] selection:bg-[#C5A059] selection:text-white font-sans">
+    <div id="nav-root">
+      <script define:vars={{ currentPath }}>
+        window.__CURRENT_PATH__ = currentPath;
+      </script>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+
+    <div id="footer-root"></div>
+    <div id="cookie-root"></div>
+
+    <!-- Mount React nav, footer, and cookie banner -->
+    <script>
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      import Nav from '../components/Nav';
+      import Footer from '../components/Footer';
+      import { CookieBanner } from '../components/CookieBanner';
+
+      const currentPath = (window as any).__CURRENT_PATH__ || '/';
+
+      const navEl = document.getElementById('nav-root');
+      if (navEl) {
+        ReactDOM.createRoot(navEl).render(React.createElement(Nav, { currentPath }));
+      }
+
+      const footerEl = document.getElementById('footer-root');
+      if (footerEl) {
+        ReactDOM.createRoot(footerEl).render(React.createElement(Footer));
+      }
+
+      const cookieEl = document.getElementById('cookie-root');
+      if (cookieEl) {
+        ReactDOM.createRoot(cookieEl).render(React.createElement(CookieBanner));
+      }
+    </script>
+  </body>
+</html>

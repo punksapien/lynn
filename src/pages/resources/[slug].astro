@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ArticleDetailPage from '../../components/ArticleDetailPage';
+
+export function getStaticPaths() {
+  const slugs = [
+    'cold-calling-connect-rates-by-market',
+    'multilingual-calling-doubles-connect-rates',
+    'in-house-sdr-math-supply-chain',
+  ];
+  return slugs.map(slug => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+
+<Layout title={`${slug!.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} | Lynn Lead Gen`} description="Insights on outbound lead generation for supply chain, logistics, and procurement software.">
+  <ArticleDetailPage client:load slug={slug!} />
+</Layout>

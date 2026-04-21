@@ -9,8 +9,7 @@ const ARTICLES: Record<string, React.FC> = {
   'in-house-sdr-math-supply-chain':              SDRMathArticle,
 };
 
-export const ArticleDetailPage: React.FC = () => {
-  const slug = window.location.hash.replace('#/resources/', '').split('?')[0].split('/')[0];
+export const ArticleDetailPage: React.FC<{ slug: string }> = ({ slug }) => {
   const Article = ARTICLES[slug] ?? ConnectRatesArticle;
   return <Article />;
 };

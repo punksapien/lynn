@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 lynn-lead-gen.zip
 .vercel
+.astro/
+

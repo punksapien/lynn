@@ -37,7 +37,7 @@ export const CookieBanner = () => {
             <div className="bg-[#1a1a1a] border border-stone-700 rounded-xl p-5 flex flex-col sm:flex-row items-start sm:items-center gap-4 shadow-2xl">
               <p className="text-sm text-stone-300 flex-1">
                 We use cookies to improve your experience. See our{' '}
-                <a href="#/privacy" className="text-[#C5A059] hover:underline">Privacy Policy</a> for details.
+                <a href="/privacy" className="text-[#C5A059] hover:underline">Privacy Policy</a> for details.
               </p>
               <div className="flex gap-3 shrink-0">
                 <button

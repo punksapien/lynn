@@ -121,7 +121,7 @@ export const ConnectRatesArticle: React.FC = () => {
       <section className="pt-40 pb-10 px-6">
         <div className="container mx-auto max-w-[1100px]">
           <motion.a
-            href="#/resources"
+            href="/resources"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}

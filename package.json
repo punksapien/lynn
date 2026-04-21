@@ -4,18 +4,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/react": "^5.0.3",
+    "@astrojs/tailwind": "^6.0.2",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.0",
+    "astro": "^6.1.8",
     "dotted-map": "^3.1.0",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.553.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "tailwindcss": "^3.4.19",
     "three": "^0.181.1"
   },
   "devDependencies": {

@@ -237,7 +237,7 @@ export const CaseStudiesPage: React.FC = () => {
             {CASE_STUDIES.map((cs, i) => (
               <motion.a
                 key={i}
-                href={`#/case-study/${cs.slug}`}
+                href={`/case-study/${cs.slug}`}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}

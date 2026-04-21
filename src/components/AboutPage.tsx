@@ -298,7 +298,7 @@ export const AboutPage: React.FC = () => {
               Book a strategy call
             </a>
             <a
-              href="#/"
+              href="/"
               className="inline-flex items-center gap-2 px-8 py-4 text-stone-400 border border-stone-700 rounded-xl text-sm font-medium hover:text-white hover:border-stone-500 transition-colors"
             >
               See case studies <ArrowRight size={16} />

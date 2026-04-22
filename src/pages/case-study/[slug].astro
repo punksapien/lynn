@@ -2,6 +2,57 @@
 import Layout from '../../layouts/Layout.astro';
 import { CaseStudyDetailPage } from '../../components/CaseStudyDetailPage';
 
+const CASE_STUDIES: Record<string, { name: string; summary: string }> = {
+  alpega: {
+    name: 'Alpega Group',
+    summary: 'How Lynn helped Europe\'s leading transport management platform scale from zero outbound to 80+ qualified demos per month across 6 languages.',
+  },
+  mintec: {
+    name: 'Mintec by Expana',
+    summary: 'How Lynn helped a commodity data platform book 30+ enterprise demos per month with procurement leaders at $300M+ manufacturers.',
+  },
+  easy4pro: {
+    name: 'Easy4Pro',
+    summary: 'How Lynn helped a logistics platform book 28+ qualified meetings per month with enterprise distributors across Europe and LATAM.',
+  },
+  trayport: {
+    name: 'Trayport',
+    summary: 'How Lynn built a consistent pipeline of 20 qualified meetings per month with senior procurement decision-makers in metals and energy markets.',
+  },
+  descartes: {
+    name: 'Descartes Systems',
+    summary: 'How Lynn helped a global logistics technology leader build outbound pipeline for their compliance division targeting aerospace and defence.',
+  },
+  volue: {
+    name: 'Volue',
+    summary: 'How Lynn booked enterprise demos for Volue with Tier 1 European energy and commodity trading houses — including TotalEnergies, EDF Trading, Mercuria, Siemens Energy, Ørsted, INEOS, and National Grid.',
+  },
+  freightgate: {
+    name: 'Freightgate',
+    summary: 'How Lynn delivered ~20 enterprise demos per month for Freightgate across Europe — booking meetings with retail and F&B giants like Chanel, Primark, Heineken, Danone, and Coca-Cola HBC.',
+  },
+  tendereasy: {
+    name: 'Tendereasy',
+    summary: 'How Lynn built a consistent pipeline of 20 qualified demos per month for a procurement tendering platform targeting enterprise buyers.',
+  },
+  vesper: {
+    name: 'Vesper',
+    summary: 'How Lynn delivered 30+ enterprise leads per month for Vesper — booking demos with Pret a Manger, Twinings, Compass Group, Fever-Tree, Hero, and Wahaca.',
+  },
+  buyco: {
+    name: 'BuyCo',
+    summary: 'How Lynn helped an ocean container shipping platform book 67 qualified demos with senior logistics leaders at companies like Siemens, Ferrero, and thyssenkrupp.',
+  },
+  matium: {
+    name: 'Matium',
+    summary: 'How Lynn helped a plastics trading infrastructure platform book 42 demos with procurement and sales leaders at companies like DuPont, ExxonMobil, and Jabil.',
+  },
+  kpler: {
+    name: 'Kpler',
+    summary: 'How Lynn helped Kpler\'s MarineTraffic solution book 19 qualified demos per month with logistics leaders at companies like Nestlé, Ford, and Stellantis.',
+  },
+};
+
 export function getStaticPaths() {
   const slugs = [
     'alpega', 'mintec', 'easy4pro', 'trayport', 'descartes',
@@ -12,8 +63,9 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+const study = CASE_STUDIES[slug!] ?? { name: slug!, summary: `See how Lynn helped ${slug} generate qualified demos through targeted outbound.` };
 ---
 
-<Layout title={`${slug!.charAt(0).toUpperCase() + slug!.slice(1)} Case Study | Lynn Lead Gen`} description={`See how Lynn helped ${slug} generate qualified demos through targeted outbound.`}>
+<Layout title={`${study.name} — Case Study | Lynn Lead Gen`} description={study.summary}>
   <CaseStudyDetailPage client:load slug={slug!} />
 </Layout>

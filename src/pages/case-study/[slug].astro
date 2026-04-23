@@ -66,6 +66,6 @@ const { slug } = Astro.params;
 const study = CASE_STUDIES[slug!] ?? { name: slug!, summary: `See how Lynn helped ${slug} generate qualified demos through targeted outbound.` };
 ---
 
-<Layout title={`${study.name} — Case Study | Lynn Lead Gen`} description={study.summary}>
+<Layout title={`${study.name} — Case Study | Lynn Lead Gen`} description={study.summary} ogImage={`/og/case-${slug}.png`}>
   <CaseStudyDetailPage client:load slug={slug!} />
 </Layout>

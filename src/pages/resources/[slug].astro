@@ -38,6 +38,6 @@ const { slug } = Astro.params;
 const article = articlesBySlug[slug!] ?? { title: slug!, excerpt: 'Insights on outbound lead generation for supply chain, logistics, and procurement software.' };
 ---
 
-<Layout title={`${article.title} | Lynn Lead Gen`} description={article.excerpt}>
+<Layout title={`${article.title} | Lynn Lead Gen`} description={article.excerpt} ogImage={`/og/article-${slug}.png`}>
   <ArticleDetailPage client:load slug={slug!} />
 </Layout>
